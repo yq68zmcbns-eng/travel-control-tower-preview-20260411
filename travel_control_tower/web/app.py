@@ -13,7 +13,7 @@ from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
 
 from ..adapters.route_amap import AmapRouteAdapter
 from ..adapters.route_google import GoogleRouteAdapter
-from ..adapters.search_flyai import FlyAISearchAdapter
+from ..adapters.stable_search_flyai import StableFlyAISearchAdapter
 from ..exporters.excel_export import export_plan_to_excel
 from ..planner_core.models import TripRequest
 from ..planner_core.pipeline import build_plan_stub
@@ -829,7 +829,7 @@ def _build_route_adapter(request: TripRequest):
 def _build_search_adapter(request: TripRequest):
     if not request.enable_live_search:
         return None
-    adapter = FlyAISearchAdapter()
+    adapter = StableFlyAISearchAdapter()
     return adapter if adapter.is_available else None
 
 

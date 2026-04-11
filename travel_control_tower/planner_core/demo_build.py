@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 from travel_control_tower.adapters.route_google import GoogleRouteAdapter
-from travel_control_tower.adapters.search_flyai import FlyAISearchAdapter
+from travel_control_tower.adapters.stable_search_flyai import StableFlyAISearchAdapter
 
 from .models import TripRequest
 from .pipeline import build_plan_stub
@@ -21,7 +21,7 @@ def main() -> None:
     request_data = json.loads(request_path.read_text(encoding="utf-8"))
     request = TripRequest(**request_data)
     route_adapter = GoogleRouteAdapter()
-    search_adapter = FlyAISearchAdapter()
+    search_adapter = StableFlyAISearchAdapter()
     plan = build_plan_stub(
         request,
         route_adapter=route_adapter if route_adapter.is_available else None,

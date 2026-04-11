@@ -16,6 +16,10 @@ services:
         sync: false
       - key: GOOGLE_MAPS_API_KEY
         sync: false
+      - key: FLYAI_API_KEY
+        sync: false
+      - key: FLYAI_CMD
+        value: flyai
       - key: OPENAI_API_KEY
         sync: false
       - key: TRAVEL_PLANNER_MODE

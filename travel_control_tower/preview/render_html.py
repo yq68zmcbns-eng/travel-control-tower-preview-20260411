@@ -192,6 +192,7 @@ def _gantt(daily_plan: list[dict]) -> str:
         return "<div class='empty'>还没有逐日行程。</div>"
     start_axis = 8 * 60
     end_axis = 22 * 60
+    empty_block_html = '<div class="empty-inline">当天暂无时间块</div>'
     rows = []
     for day in daily_plan:
         blocks = []
@@ -209,7 +210,7 @@ def _gantt(daily_plan: list[dict]) -> str:
         rows.append(
             "<div class='gantt-row'>"
             f"<div class='gantt-label'><strong>D{int(day.get('day_index', 0) or 0)}</strong><span>{_esc(day.get('theme', ''))}</span></div>"
-            f"<div class='gantt-track'>{''.join(blocks) or '<div class=\"empty-inline\">当天暂无时间块</div>'}</div>"
+            f"<div class='gantt-track'>{''.join(blocks) or empty_block_html}</div>"
             "</div>"
         )
     return "".join(rows)
@@ -234,6 +235,7 @@ def _day_cards(daily_plan: list[dict]) -> str:
 def _detail_days(daily_plan: list[dict]) -> str:
     if not daily_plan:
         return "<section class='panel'><div class='empty'>暂无日程明细。</div></section>"
+    empty_item_html = '<div class="empty">当天没有项目。</div>'
     days = []
     for day in daily_plan:
         items = []
@@ -274,7 +276,7 @@ def _detail_days(daily_plan: list[dict]) -> str:
             f"<div><span>快进替代</span><strong>{_esc(day.get('fallback_if_fast', '') or '灵活补点')}</strong></div>"
             f"<div><span>疲劳替代</span><strong>{_esc(day.get('fallback_if_tired', '') or '压缩外围活动')}</strong></div>"
             "</div>"
-            f"<div class='timeline'>{''.join(items) or '<div class=\"empty\">当天没有项目。</div>'}</div>"
+            f"<div class='timeline'>{''.join(items) or empty_item_html}</div>"
             "</section>"
         )
     return "".join(days)

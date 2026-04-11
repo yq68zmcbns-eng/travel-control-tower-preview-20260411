@@ -1,0 +1,13 @@
+*
+!.gitignore
+!Dockerfile
+!Procfile
+!render.yaml
+!run_web_local.py
+!travel_control_tower/
+!travel_control_tower/**
+
+travel_control_tower/examples/
+travel_control_tower/**/__pycache__/
+travel_control_tower/**/*.pyc
+travel_control_tower/.runtime-data/

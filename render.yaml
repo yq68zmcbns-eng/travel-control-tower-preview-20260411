@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: travel-control-tower-preview
+    runtime: python
+    rootDir: .
+    buildCommand: pip install -r travel_control_tower/requirements-web.txt
+    startCommand: python -m travel_control_tower.run_web
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: TRAVEL_WEB_DATA_DIR
+        value: .runtime-data
+      - key: TRAVEL_PREVIEW_ACCESS_TOKEN
+        sync: false
+      - key: AMAP_WEB_KEY
+        sync: false
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: TRAVEL_PLANNER_MODE
+        value: auto
+      - key: TRAVEL_PLANNER_MODEL
+        value: gpt-4.1-mini

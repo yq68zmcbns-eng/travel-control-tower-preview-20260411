@@ -1,0 +1,341 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TripPlan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "overview",
+    "input_snapshot",
+    "assumptions",
+    "daily_plan",
+    "budget",
+    "booking_items",
+    "provider_statuses",
+    "hotel_candidates",
+    "transport_candidates",
+    "poi_candidates"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready_for_enrichment",
+        "ready_for_export"
+      ]
+    },
+    "overview": {
+      "type": "object",
+      "required": [
+        "title",
+        "summary"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        }
+      }
+    },
+    "input_snapshot": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "daily_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "day_index",
+          "date",
+          "theme",
+          "items"
+        ],
+        "properties": {
+          "day_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "theme": {
+            "type": "string"
+          },
+          "why_this_day": {
+            "type": "string"
+          },
+          "transport_strategy": {
+            "type": "string"
+          },
+          "meal_strategy": {
+            "type": "string"
+          },
+          "fallback_if_fast": {
+            "type": "string"
+          },
+          "fallback_if_tired": {
+            "type": "string"
+          },
+          "estimated_cost_total": {
+            "type": "number"
+          },
+          "estimated_cost_notes": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "label",
+                "category"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "start_time": {
+                  "type": "string"
+                },
+                "end_time": {
+                  "type": "string"
+                },
+                "duration_minutes": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "notes": {
+                  "type": "string"
+                },
+                "is_buffer": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "properties": {
+        "fixed_cost_total": {
+          "type": "number"
+        },
+        "per_person_cost": {
+          "type": "number"
+        },
+        "optional_upgrade_total": {
+          "type": "number"
+        },
+        "breakdown": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "category",
+              "total",
+              "per_person"
+            ],
+            "properties": {
+              "category": {
+                "type": "string"
+              },
+              "total": {
+                "type": "number"
+              },
+              "per_person": {
+                "type": "number"
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "booking_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "category"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "required",
+              "recommended",
+              "optional"
+            ]
+          },
+          "timing": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "why_now": {
+            "type": "string"
+          },
+          "risk_if_wait": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "planning_trace": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "engine": { "type": "string" },
+        "mode": { "type": "string" },
+        "model": { "type": "string" },
+        "used_fallback": { "type": "boolean" },
+        "details": { "type": "string" }
+      }
+    },
+    "provider_statuses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "selected_hotel": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "name": { "type": "string" },
+        "nightly_price": { "type": "number" },
+        "currency": { "type": "string" },
+        "area": { "type": "string" },
+        "notes": { "type": "string" },
+        "booking_url": { "type": "string" },
+        "provider": { "type": "string" }
+      }
+    },
+    "selected_transport": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "label": { "type": "string" },
+        "category": { "type": "string" },
+        "total_price": { "type": "number" },
+        "currency": { "type": "string" },
+        "depart_at": { "type": "string" },
+        "arrive_at": { "type": "string" },
+        "outbound_arrive_at": { "type": "string" },
+        "return_depart_at": { "type": "string" },
+        "trip_start_date": { "type": "string" },
+        "trip_end_date": { "type": "string" },
+        "booking_url": { "type": "string" },
+        "provider": { "type": "string" }
+      }
+    },
+    "hotel_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "nightly_price": { "type": "number" },
+          "currency": { "type": "string" },
+          "area": { "type": "string" },
+          "notes": { "type": "string" },
+          "booking_url": { "type": "string" },
+          "provider": { "type": "string" }
+        }
+      }
+    },
+    "transport_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string" },
+          "category": { "type": "string" },
+          "total_price": { "type": "number" },
+          "currency": { "type": "string" },
+          "depart_at": { "type": "string" },
+          "arrive_at": { "type": "string" },
+          "outbound_arrive_at": { "type": "string" },
+          "return_depart_at": { "type": "string" },
+          "trip_start_date": { "type": "string" },
+          "trip_end_date": { "type": "string" },
+          "booking_url": { "type": "string" },
+          "provider": { "type": "string" }
+        }
+      }
+    },
+    "poi_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "city_name": { "type": "string" },
+          "category": { "type": "string" },
+          "poi_level": { "type": "string" },
+          "free_status": { "type": "string" },
+          "address": { "type": "string" },
+          "notes": { "type": "string" },
+          "booking_url": { "type": "string" },
+          "provider": { "type": "string" }
+        }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

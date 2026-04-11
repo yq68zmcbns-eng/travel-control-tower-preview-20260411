@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TripRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "departure_city",
+    "destination",
+    "start_date",
+    "end_date",
+    "traveler_count"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string"
+    },
+    "request_mode": {
+      "type": "string",
+      "enum": [
+        "itinerary",
+        "price_scan"
+      ]
+    },
+    "departure_city": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "nights": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "flexible_window_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "flexible_window_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "target_trip_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "target_trip_nights": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "traveler_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "enable_live_search": {
+      "type": "boolean"
+    },
+    "budget_total": {
+      "type": "number",
+      "minimum": 0
+    },
+    "budget_per_person": {
+      "type": "number",
+      "minimum": 0
+    },
+    "price_priority": {
+      "type": "string",
+      "enum": [
+        "balanced",
+        "low"
+      ]
+    },
+    "travel_style": {
+      "type": "string",
+      "enum": [
+        "relaxed",
+        "balanced",
+        "packed"
+      ]
+    },
+    "must_go": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hotel_preferences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transport_preferences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "user_hotel_name": {
+      "type": "string"
+    },
+    "user_hotel_area": {
+      "type": "string"
+    },
+    "user_hotel_nightly_price": {
+      "type": "number",
+      "minimum": 0
+    },
+    "user_hotel_url": {
+      "type": "string"
+    },
+    "user_transport_label": {
+      "type": "string"
+    },
+    "user_transport_category": {
+      "type": "string"
+    },
+    "user_transport_total_price": {
+      "type": "number",
+      "minimum": 0
+    },
+    "user_transport_depart_at": {
+      "type": "string"
+    },
+    "user_transport_arrive_at": {
+      "type": "string"
+    },
+    "user_arrival_at_destination": {
+      "type": "string"
+    },
+    "user_return_depart_at": {
+      "type": "string"
+    },
+    "user_transport_url": {
+      "type": "string"
+    },
+    "needs_exports": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "excel",
+          "word",
+          "ppt",
+          "feishu"
+        ]
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

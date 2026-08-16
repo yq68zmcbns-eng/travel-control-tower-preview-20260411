@@ -232,6 +232,45 @@ def _day_cards(daily_plan: list[dict]) -> str:
     return "".join(cards)
 
 
+def _day_route_map(day: dict) -> str:
+    route_map = day.get("route_map") or {}
+    if not route_map.get("available"):
+        message = _stringify(route_map.get("message") or "地图数据暂未生成。")
+        return f"<div class='empty route-map-empty'>{_esc(message)}</div>"
+
+    segments = "".join(
+        "<div class='route-segment'>"
+        f"<strong>{index}. {_esc(_stringify(item.get('origin')))} 到 {_esc(_stringify(item.get('destination')))}</strong>"
+        f"<span>{_esc(_stringify(item.get('distance_km')))} 公里 · 约 {_esc(_stringify(item.get('minutes')))} 分钟 · {_esc(_stringify(item.get('mode')))}</span>"
+        "</div>"
+        for index, item in enumerate(route_map.get("segments") or [], start=1)
+    )
+    recommended = "、".join(_stringify(item) for item in route_map.get("recommended_order") or [])
+    loop_text = (
+        "终点接近起点，当天路线可以回到出发区域。"
+        if route_map.get("returns_near_start")
+        else f"终点距起点约 {_stringify(route_map.get('return_to_start_km'))} 公里，当天不会自然回到起点。"
+    )
+    map_url = _stringify(route_map.get("map_url") or "").strip()
+    map_html = (
+        f"<img class='route-map-image' src='{_esc(map_url)}' alt='当天地点路线地图' loading='lazy' />"
+        if map_url
+        else "<div class='empty route-map-empty'>打开本次任务结果页后显示高德地图。</div>"
+    )
+    return (
+        "<section class='route-map-card'>"
+        "<div class='route-map-head'>"
+        f"<div><div class='eyebrow'>当天路线</div><h4>{_esc(_stringify(route_map.get('status')))}</h4></div>"
+        f"<div class='route-distance'><strong>{_esc(_stringify(route_map.get('total_distance_km')))} km</strong><span>地点间总距离</span></div>"
+        "</div>"
+        f"<p>{_esc(_stringify(route_map.get('advice')))}</p>"
+        f"<div class='route-map-layout'><div>{map_html}<p class='map-note'>地图按地点顺序连线，用于检查方位和折返；实际道路以高德导航为准。</p></div>"
+        f"<div class='route-segments'>{segments}<div class='route-loop'><strong>是否回到起点</strong><span>{_esc(loop_text)}</span></div>"
+        f"<div class='route-order'><strong>较省路的顺序</strong><span>{_esc(recommended)}</span></div></div></div>"
+        "</section>"
+    )
+
+
 def _detail_days(daily_plan: list[dict]) -> str:
     if not daily_plan:
         return "<section class='panel'><div class='empty'>暂无日程明细。</div></section>"
@@ -276,6 +315,7 @@ def _detail_days(daily_plan: list[dict]) -> str:
             f"<div><span>快进替代</span><strong>{_esc(day.get('fallback_if_fast', '') or '灵活补点')}</strong></div>"
             f"<div><span>疲劳替代</span><strong>{_esc(day.get('fallback_if_tired', '') or '压缩外围活动')}</strong></div>"
             "</div>"
+            f"{_day_route_map(day)}"
             f"<div class='timeline'>{''.join(items) or empty_item_html}</div>"
             "</section>"
         )
@@ -417,9 +457,10 @@ def render_plan_html(plan: dict | object) -> str:
     .gantt-row{{display:grid;grid-template-columns:210px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid #efe7dc}} .gantt-row:first-child,.timeline-item:first-child{{border-top:0;padding-top:0}} .gantt-label strong{{display:block}} .gantt-track{{position:relative;min-height:48px;border-radius:16px;background:#f8f2e8;border:1px solid var(--line);overflow:hidden}} .gantt-block{{position:absolute;top:8px;bottom:8px;border-radius:12px;padding:0 10px;display:flex;align-items:center;font-size:12px;font-weight:700;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}} .empty-inline{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}}
     .budget-top{{display:flex;justify-content:space-between;gap:12px;align-items:end}} .budget-table{{width:100%;border-collapse:collapse;font-size:13px}} .budget-table th,.budget-table td{{padding:10px 0;text-align:left;border-top:1px solid #efe7dc;vertical-align:top}}
     .timeline-item{{display:grid;grid-template-columns:90px minmax(0,1fr);gap:14px;padding-top:14px;border-top:1px solid #efe7dc}} .time{{font-size:16px;font-weight:800}} .time span{{display:block;margin-top:6px;font-size:12px;color:var(--muted);font-weight:600}} .tag{{margin-bottom:10px}} .route-box{{display:grid;gap:4px;margin-top:10px;padding:12px 14px;border-radius:14px;background:#f8f2e8;border:1px solid var(--line)}} .route-box strong{{font-size:13px;color:var(--brand)}}
+    .route-map-card{{margin:18px 0 22px;padding:18px;border:1px solid #d9e4ed;border-radius:20px;background:linear-gradient(180deg,#f5faff 0%,#fbfdff 100%)}} .route-map-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}} .route-map-head h4{{margin-top:10px}} .route-distance{{display:grid;text-align:right}} .route-distance strong{{font-size:24px;color:#1d5f94}} .route-distance span,.map-note{{font-size:12px;color:var(--muted)}} .route-map-layout{{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:16px;margin-top:14px;align-items:start}} .route-map-image{{display:block;width:100%;min-height:240px;object-fit:cover;border-radius:16px;border:1px solid #d5e1eb;background:#eaf2f8}} .map-note{{margin-top:8px}} .route-segments{{display:grid;gap:8px}} .route-segment,.route-loop,.route-order{{display:grid;gap:4px;padding:11px 12px;border-radius:14px;background:#fff;border:1px solid #dce6ee}} .route-segment strong,.route-loop strong,.route-order strong{{font-size:13px}} .route-segment span,.route-loop span,.route-order span{{font-size:12px;line-height:1.6;color:var(--muted)}} .route-map-empty{{margin:18px 0}}
     details.panel>summary{{cursor:pointer;list-style:none;font-size:20px;font-weight:800}} details.panel>summary::-webkit-details-marker{{display:none}} .booking-top{{display:flex;justify-content:space-between;gap:12px;align-items:center}} .link,.booking-link{{display:inline-flex;margin-top:10px;padding:10px 14px;border-radius:12px;background:var(--brand);color:#fff;text-decoration:none;font-weight:700}} .link-missing{{display:block;margin-top:10px;color:var(--muted);font-size:12px}} .empty{{padding:16px;border-radius:16px;background:#f8f2e8;border:1px dashed #e3d7c8;color:var(--muted)}}
     @media (max-width:1180px){{.hero,.overview,.layout,.day-grid{{grid-template-columns:1fr}} .metrics{{grid-template-columns:repeat(2,minmax(0,1fr))}}}}
-    @media (max-width:820px){{.page{{width:min(100vw - 18px,1320px)}} .metrics,.budget-inline,.meta-grid,.kv-grid,.gantt-row,.timeline-item{{grid-template-columns:1fr}} .budget-top,.booking-top{{align-items:flex-start;flex-direction:column}}}}
+    @media (max-width:820px){{.page{{width:min(100vw - 18px,1320px)}} .metrics,.budget-inline,.meta-grid,.kv-grid,.gantt-row,.timeline-item,.route-map-layout{{grid-template-columns:1fr}} .budget-top,.booking-top,.route-map-head{{align-items:flex-start;flex-direction:column}} .route-distance{{text-align:left}} .route-map-image{{min-height:210px}}}}
   </style>
 </head>
 <body>

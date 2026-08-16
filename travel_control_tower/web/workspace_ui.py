@@ -46,6 +46,21 @@ def render_revise_page(job, plan: dict) -> str:
     return _shell("AI 修改攻略", body, job.job_id)
 
 
+def render_manual_plan_page(values: dict[str, str] | None = None, error: str = "") -> str:
+    values = values or {}
+    notice = f"<section class='card' style='border-color:#ef9a9a;color:#9f1239'>{_e(error)}</section>" if error else ""
+    example = """第1天
+09:00-11:00 西湖
+11:30-12:30 湖滨午餐
+14:00-17:00 灵隐寺
+
+第2天
+09:30-11:30 中国美术学院象山校区
+14:00-17:00 宋城"""
+    body = f"""<section class='hero'><h1>自己制定旅行计划</h1><p>把每天想去的地点按顺序写下来。保存后会生成正式攻略，并用高德地图检查地点距离和折返情况。</p></section>{notice}<section class='card'><form method='post' action='/manual-plan'><label>计划名称<input name='title' value='{_e(values.get('title'))}' placeholder='例如：杭州三日慢游'></label><div class='grid'><label>目的地<input name='destination' value='{_e(values.get('destination'))}' required placeholder='例如：杭州'></label><label>开始日期<input type='date' name='start_date' value='{_e(values.get('start_date'))}' required></label></div><label>每天的安排<textarea name='schedule_text' required style='min-height:300px' placeholder='{_e(example)}'>{_e(values.get('schedule_text'))}</textarea></label><p>写法很简单：先写“第1天”，下面每行写“开始时间-结束时间 地点”。备注可以接在地点后面。暂时不确定时间时，也可以只写地点。</p><div class='actions'><button type='submit'>保存并生成路线图</button><a class='primary secondary' href='/'>改用 AI 生成</a></div></form></section>"""
+    return _shell("自己制定计划", body)
+
+
 def render_orders_page(job_id: str, orders: list[dict]) -> str:
     total = sum(float(item.get("amount") or 0) for item in orders)
     cards = "".join(f"""<article class='card'><div class='grid'><div><strong>{_e(item.get('name'))}</strong><p>{_e(item.get('category'))} · {_e(item.get('date'))}</p></div><div><div class='metric'>¥{float(item.get('amount') or 0):,.0f}</div><div class='muted'>{_e(item.get('confirmation'))}</div></div></div>{f"<a class='primary secondary' href='{_e(item.get('url'))}' target='_blank' rel='noopener noreferrer'>打开订单</a>" if item.get('url') else ''}</article>""" for item in orders)

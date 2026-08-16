@@ -285,6 +285,27 @@ def render_form_page(values: dict[str, str] | None = None, error: str = "") -> s
       background: var(--paper);
       box-shadow: var(--shadow);
     }}
+    .create-modes {{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }}
+    .create-mode {{
+      display: grid;
+      gap: 7px;
+      min-height: 126px;
+      padding: 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 24px;
+      background: rgba(255,255,255,.8);
+      color: var(--ink);
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(47,35,23,.05);
+    }}
+    .create-mode.active {{ border-color: rgba(161,90,50,.42); background: #fff9f2; }}
+    .create-mode strong {{ font-size: 21px; }}
+    .create-mode span {{ color: var(--muted); line-height: 1.65; }}
     .panel-head {{
       display: flex;
       justify-content: space-between;
@@ -518,7 +539,7 @@ def render_form_page(values: dict[str, str] | None = None, error: str = "") -> s
       .page {{ width: min(100vw - 20px, 980px); }}
       .panel-head {{ display: block; }}
       .panel-head p {{ margin-top: 10px; text-align: left; }}
-      .options-row, .constraint-grid, .mini-grid {{
+      .options-row, .constraint-grid, .mini-grid, .create-modes {{
         grid-template-columns: 1fr;
       }}
       .hero {{
@@ -541,6 +562,11 @@ def render_form_page(values: dict[str, str] | None = None, error: str = "") -> s
       <div class="eyebrow">travel planning</div>
       <h1>一句话说需求，系统给你一套可执行旅行方案。</h1>
       <p>首页只负责输入。把出发地、目的地、预算、节奏和硬性约束说清楚，结果页再统一展示总览、甘特图、预算拆分、详细行程和预定事项。</p>
+    </section>
+
+    <section class="create-modes" aria-label="选择制定方式">
+      <div class="create-mode active"><span>方式一</span><strong>AI 帮我生成</strong><span>说清楚目的地、时间和偏好，由 AI 先生成完整攻略，再继续修改。</span></div>
+      <a class="create-mode" href="/manual-plan"><span>方式二</span><strong>我自己制定</strong><span>自己填写每天去哪里和时间，系统负责整理、绘制路线并检查是否绕路。</span></a>
     </section>
 
     <section class="panel">

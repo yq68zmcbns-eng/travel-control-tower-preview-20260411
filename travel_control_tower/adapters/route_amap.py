@@ -28,6 +28,12 @@ class AmapRouteAdapter:
     def is_available(self) -> bool:
         return bool(self.api_key)
 
+    def geocode(self, query: str) -> dict:
+        """Return the first AMap geocode match without exposing the API key."""
+        if not self.api_key:
+            raise RuntimeError("缺少 AMAP_WEB_KEY，无法匹配地点坐标。")
+        return dict(self._geocode(str(query or "").strip()))
+
     def estimate_transfer(self, origin_label: str, destination_label: str, mode: str, departure_time=None) -> RouteEstimate:
         if not self.api_key:
             raise RuntimeError("缺少 AMAP_WEB_KEY，无法查询真实路线。")

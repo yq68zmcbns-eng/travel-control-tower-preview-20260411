@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>杭州出发 新加坡·槟城·巴厘岛·吉隆坡 11天10晚</title>
+  <style>
+:root {
+  --ink: #172b33;
+  --muted: #657178;
+  --line: #d7dfdc;
+  --paper: #f7f5ef;
+  --panel: #ffffff;
+  --panel-strong: #14313a;
+  --blue: #27718a;
+  --green: #517a58;
+  --clay: #b06a45;
+  --gold: #c18f35;
+  --risk: #a34b48;
+  --shadow: 0 18px 42px rgba(23,43,51,.09);
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  font-family: "Aptos", "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+}
+a { color: var(--blue); font-weight: 800; text-decoration: none; }
+.executive {
+  min-height: 100vh;
+  padding: 28px 36px 34px;
+  background:
+    linear-gradient(90deg, rgba(247,245,239,.97) 0%, rgba(247,245,239,.9) 48%, rgba(247,245,239,.74) 72%),
+    var(--hero-image, linear-gradient(135deg, #dfe8dd, #f7f5ef)) right center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+.nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 38px;
+}
+.nav a {
+  color: var(--ink);
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { border-bottom-color: var(--clay); }
+.executive-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 430px;
+  gap: 34px;
+  align-items: end;
+  width: min(1380px, 100%);
+  margin: auto auto 22px;
+}
+.brief { max-width: 780px; }
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--clay);
+  font-weight: 900;
+  letter-spacing: .14em;
+  font-size: 13px;
+}
+.brief h1 {
+  margin: 0 0 18px;
+  font-family: Georgia, "Microsoft YaHei", serif;
+  font-size: 58px;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+.brief-summary {
+  max-width: 700px;
+  margin: 0 0 28px;
+  color: #445057;
+  font-size: 18px;
+}
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.metric {
+  min-width: 0;
+  min-height: 120px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.metric span, .metric small { display: block; color: var(--muted); font-size: 12px; }
+.metric strong {
+  display: block;
+  min-height: 44px;
+  margin: 7px 0;
+  font-size: 17px;
+  line-height: 1.22;
+  overflow-wrap: anywhere;
+}
+.command-panel {
+  background: rgba(255,255,255,.94);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+  color: var(--muted);
+}
+.panel-head strong { color: var(--ink); font-size: 24px; }
+.mini-gantt-wrap {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  padding: 12px;
+}
+.priority-block {
+  margin-top: 0;
+}
+.priority-block h2 { margin: 0 0 12px; font-size: 20px; }
+.overview-gantt-panel {
+  width: min(1380px, 100%);
+  margin: 0 auto;
+  padding: 18px;
+  background: rgba(255,255,255,.95);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+.overview-gantt-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+.overview-gantt-head span {
+  color: var(--clay);
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+.overview-gantt-head strong {
+  font-size: 18px;
+}
+.gantt-mobile-flow { display: none; }
+.priority-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.priority-list li {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf0ed;
+}
+.priority-list li:last-child { border-bottom: 0; }
+.priority-index {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--panel-strong);
+  font-weight: 900;
+}
+.priority-list strong, .priority-list small { display: block; }
+.priority-list small { color: var(--muted); margin-top: 2px; }
+main { max-width: 1240px; margin: 0 auto; padding: 58px 24px 86px; }
+section { margin: 0 0 64px; padding-top: 10px; }
+h2 {
+  font-family: Georgia, "Microsoft YaHei", serif;
+  font-size: 34px;
+  margin: 0 0 22px;
+  letter-spacing: 0;
+}
+h3 { margin: 0 0 10px; font-size: 20px; letter-spacing: 0; }
+.panel, .day-card, .booking-card, .poi-card, .variant-card, .outbound-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 26px rgba(23,43,51,.05);
+}
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+.panel { padding: 20px; }
+.clean-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 11px;
+}
+.clean-list li {
+  padding-left: 14px;
+  border-left: 3px solid var(--clay);
+}
+.clean-list strong { display: block; }
+.clean-list span { color: var(--muted); }
+.decision-stack {
+  display: grid;
+  gap: 12px;
+}
+.decision-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, .85fr);
+  gap: 16px;
+  align-items: stretch;
+}
+.decision-primary, .decision-action {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 26px rgba(23,43,51,.05);
+}
+.decision-primary {
+  padding: 26px 28px;
+  background: #fffdf8;
+}
+.decision-primary h3 {
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+.decision-primary .clean-list {
+  gap: 14px;
+  font-size: 18px;
+}
+.decision-action {
+  padding: 22px;
+  background: var(--panel-strong);
+  color: #fff;
+}
+.decision-action .action-label {
+  margin: 0 0 8px;
+  color: #d9e8e2;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+.decision-action h3 {
+  color: #fff;
+  font-size: 24px;
+}
+.decision-action .clean-list li {
+  border-left-color: var(--gold);
+}
+.decision-action .clean-list span {
+  color: #edf4f1;
+}
+.assumption-note {
+  background: rgba(255,255,255,.62);
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+.assumption-note summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-weight: 900;
+}
+.assumption-note .clean-list {
+  margin-top: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  font-size: 14px;
+}
+.assumption-note .clean-list li {
+  border-left-color: #c7d1cc;
+}
+.priority-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.priority-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 10px 26px rgba(23,43,51,.04);
+}
+.priority-card h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+.priority-card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.priority-card .clean-list {
+  gap: 9px;
+  font-size: 14px;
+}
+.priority-card .clean-list li {
+  border-left-color: var(--blue);
+}
+.priority-extra {
+  margin-top: 14px;
+  background: rgba(255,255,255,.7);
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.priority-extra summary {
+  cursor: pointer;
+  font-weight: 900;
+  color: var(--muted);
+}
+.priority-extra .clean-list {
+  margin-top: 12px;
+  font-size: 14px;
+}
+.detail-section {
+  margin: 0 0 28px;
+  background: rgba(255,255,255,.74);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 18px;
+}
+.detail-section summary {
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+}
+.detail-section summary h2 {
+  margin: 0;
+  font-size: 26px;
+}
+.detail-section summary span {
+  color: var(--muted);
+  font-size: 13px;
+}
+.detail-section[open] {
+  padding-bottom: 18px;
+}
+.day-card { margin-bottom: 18px; overflow: hidden; }
+.day-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  background: #e9f0ec;
+}
+.day-index { color: var(--clay); font-weight: 900; }
+.date { color: var(--muted); font-weight: 700; }
+.timeline { padding: 18px 20px 22px; display: grid; gap: 14px; }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+.time {
+  color: var(--ink);
+  font-weight: 900;
+  border-right: 2px solid var(--line);
+  min-height: 74px;
+}
+.time span { display: block; color: var(--muted); font-weight: 700; }
+.item-main { min-width: 0; }
+.item-title { font-size: 18px; font-weight: 900; }
+.item-meta, .item-route { color: var(--muted); font-size: 13px; }
+.item-route { margin-top: 6px; color: var(--blue); }
+.photo { color: var(--green); }
+.gantt { display: grid; gap: 10px; }
+.gantt-scale {
+  position: relative;
+  height: 22px;
+  margin-left: 132px;
+  border-bottom: 1px solid var(--line);
+}
+.gantt-scale span {
+  position: absolute;
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-size: 11px;
+}
+.gantt-row {
+  display: grid;
+  grid-template-columns: 122px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+.gantt-day strong, .gantt-day span { display: block; }
+.gantt-day strong { font-size: 18px; }
+.gantt-day span { color: var(--muted); font-size: 11px; line-height: 1.3; }
+.gantt-track {
+  position: relative;
+  height: 46px;
+  background: #edf2ef;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.gantt-bar {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 34px;
+  padding: 0 8px;
+  color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.gantt-bar span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: 900;
+}
+.gantt-bar em { font-style: normal; font-size: 10px; opacity: .88; }
+.bar-route { background: var(--blue); }
+.bar-hotel { background: var(--green); }
+.bar-poi { background: var(--clay); }
+.bar-meal { background: var(--gold); }
+.bar-activity { background: #6d667f; }
+.gantt-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-left: 132px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.gantt-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.gantt-legend i { width: 10px; height: 10px; border-radius: 2px; }
+.gantt-compact .gantt-scale { margin-left: 60px; }
+.gantt-compact .gantt-row { grid-template-columns: 52px 1fr; }
+.gantt-compact .gantt-day span { display: none; }
+.gantt-compact .gantt-track { height: 40px; }
+.gantt-compact .gantt-bar em { display: none; }
+.gantt-compact .gantt-legend { margin-left: 60px; }
+.route-lane { display: grid; gap: 14px; }
+.route-map-panel {
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+.route-map-panel img {
+  display: block;
+  width: 100%;
+  max-height: 620px;
+  object-fit: contain;
+  background: #fff;
+}
+.route-stop { display: grid; grid-template-columns: 72px 1fr; gap: 14px; align-items: stretch; }
+.route-map-note { margin: 10px 14px 14px; color: var(--muted); font-size: 13px; }
+.route-day {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 3px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 800;
+}
+.route-day span { font-size: 19px; }
+.route-day small { font-size: 11px; opacity: .86; }
+.route-content {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--blue);
+  border-radius: 8px;
+  padding: 16px;
+}
+.route-flight .route-day { background: #b86b45; }
+.route-train .route-day { background: #6e55b8; }
+.route-car .route-day { background: var(--blue); }
+.route-flight .route-content { border-left-color: #b86b45; }
+.route-train .route-content { border-left-color: #6e55b8; }
+.route-car .route-content { border-left-color: var(--blue); }
+.route-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0;
+}
+.route-meta span {
+  color: var(--muted);
+  background: #f2f5f2;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.badge { display: inline-block; border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; color: #fff; background: var(--muted); }
+.badge-confirmed { background: var(--green); }
+.badge-live { background: var(--blue); }
+.badge-estimated { background: var(--gold); }
+.badge-risk { background: var(--risk); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+table { width: 100%; border-collapse: collapse; min-width: 760px; }
+th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { background: var(--panel-strong); color: #fff; }
+.booking-grid, .poi-grid, .variant-grid, .hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.stay-plan {
+  margin-bottom: 18px;
+  padding: 18px;
+  background: #fffdf8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.stay-plan-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+.stay-plan-head span {
+  color: var(--clay);
+  font-size: 13px;
+  font-weight: 900;
+}
+.stay-plan-head strong {
+  font-size: 18px;
+}
+.stay-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.stay-card {
+  border-left: 4px solid var(--blue);
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 138px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.stay-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+.stay-card strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+.stay-card p, .stay-card small {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.stay-card a {
+  margin-top: auto;
+  color: var(--blue);
+  font-weight: 900;
+  text-decoration: none;
+}
+.hotel-groups {
+  display: grid;
+  gap: 22px;
+}
+.hotel-group {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 12px 28px rgba(23,43,51,.04);
+}
+.hotel-group-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, .9fr);
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 12px;
+}
+.hotel-group-head span {
+  color: var(--clay);
+  font-size: 13px;
+  font-weight: 900;
+}
+.hotel-group-head h3 {
+  margin: 4px 0 0;
+  font-size: 24px;
+}
+.hotel-group-head p,
+.hotel-group > p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+.hotel-group-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.15fr) repeat(2, minmax(220px, .85fr));
+  gap: 14px;
+  align-items: stretch;
+}
+.hotel-group-grid .hotel-card:first-child {
+  border-color: rgba(181,103,66,.55);
+  box-shadow: 0 10px 28px rgba(181,103,66,.12);
+}
+.outbound-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.booking-card, .poi-card, .variant-card { padding: 18px; }
+.hotel-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 26px rgba(23,43,51,.05);
+}
+.hotel-featured {
+  border: 2px solid rgba(176,106,69,.55);
+  box-shadow: 0 18px 42px rgba(176,106,69,.14);
+}
+.hotel-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #edf2f4;
+}
+.hotel-image-empty {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-weight: 700;
+}
+.hotel-body { padding: 16px; }
+.hotel-top { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+.hotel-top h3 { margin: 0 0 8px; font-size: 19px; }
+.hotel-rank {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 9px;
+  color: #fff;
+  background: var(--clay);
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.hotel-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: #fff;
+}
+.booking-readiness {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+  color: #fff;
+}
+.readiness-direct { background: var(--green); }
+.readiness-review { background: var(--gold); }
+.readiness-search { background: var(--muted); }
+.outbound-card { padding: 18px; }
+.source-list { margin: 0; padding-left: 18px; }
+.source-list li { margin: 8px 0; }
+.booking-top { display: flex; justify-content: space-between; gap: 10px; align-items: start; }
+.poi-card dl { display: grid; grid-template-columns: 96px 1fr; gap: 8px 12px; }
+.poi-card dt { color: var(--muted); }
+.poi-card dd { margin: 0; }
+.muted { color: var(--muted); }
+.doc-watermark {
+  position: fixed;
+  right: 18px;
+  bottom: 16px;
+  z-index: 20;
+  padding: 7px 11px;
+  border: 1px solid rgba(23, 50, 77, .16);
+  border-radius: 999px;
+  background: rgba(255, 252, 246, .82);
+  color: rgba(23, 50, 77, .54);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+footer { color: var(--muted); border-top: 1px solid var(--line); margin-top: 60px; padding-top: 22px; }
+footer strong { color: var(--ink); }
+@media (max-width: 980px) {
+  .executive { min-height: auto; padding: 22px 18px 34px; }
+  .nav { justify-content: flex-start; overflow-x: auto; padding-bottom: 6px; }
+  .executive-grid { grid-template-columns: 1fr; gap: 22px; margin: 22px auto 16px; }
+  .brief h1 { font-size: 38px; }
+  .brief-summary { font-size: 16px; }
+  .metric-grid { grid-template-columns: 1fr 1fr; }
+  .command-panel { padding: 16px; }
+  .overview-gantt-panel { padding: 16px; }
+  .overview-gantt-head { display: block; }
+  .overview-gantt-head strong { display: block; margin-top: 4px; font-size: 16px; }
+  .overview-gantt-panel > .gantt { display: none; }
+  .gantt-mobile-flow { display: grid; gap: 12px; }
+  .mobile-flow-day {
+    background: #fbfcfa;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .mobile-flow-day h3 { margin: 0 0 10px; font-size: 16px; }
+  .mobile-flow-day ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+  .mobile-flow-day li {
+    display: grid;
+    grid-template-columns: 78px 1fr;
+    gap: 10px;
+    align-items: baseline;
+    padding: 8px 0;
+    border-top: 1px solid rgba(215,223,220,.8);
+  }
+  .mobile-flow-day li:first-child { border-top: 0; }
+  .mobile-flow-day li span { color: var(--muted); font-size: 12px; font-weight: 800; }
+  .mobile-flow-day li strong { font-size: 14px; line-height: 1.35; }
+  main { padding: 38px 18px 70px; }
+  .two-col, .decision-layout, .priority-grid, .stay-grid, .hotel-group-head, .hotel-group-grid, .booking-grid, .poi-grid, .variant-grid, .outbound-grid, .hotel-grid, .assumption-note .clean-list { grid-template-columns: 1fr; }
+  .timeline-item { grid-template-columns: 1fr; }
+  .route-stop { grid-template-columns: 1fr; }
+  .day-head { flex-direction: column; }
+  .gantt-scale, .gantt-legend, .gantt-compact .gantt-scale, .gantt-compact .gantt-legend { margin-left: 0; }
+  .gantt-row, .gantt-compact .gantt-row { grid-template-columns: 1fr; }
+  .gantt-track { height: 54px; }
+  .hotel-featured { grid-row: auto; }
+  .detail-section summary { display: block; }
+  .detail-section summary span { display: block; margin-top: 4px; }
+}
+@media (max-width: 520px) {
+  .metric-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+  <div class="doc-watermark">Skill for 我不知道-bz</div>
+  
+  <header id="overview" class="executive">
+    <nav class="nav">
+      <a href="#priorities">用户重点</a>
+      <a href="#daily">每日行程</a>
+      <a href="#hotels">酒店</a>
+      <a href="#booking">预订</a>
+      <a href="#budget">预算</a>
+      <a href="#evidence">证据</a>
+    </nav>
+    <div class="executive-grid">
+      <div class="brief">
+        <p class="eyebrow">TRAVEL CONTROL TOWER</p>
+        <h1>杭州出发 新加坡·槟城·巴厘岛·吉隆坡 11天10晚</h1>
+        <p class="brief-summary">以美食、老城和当地文化为主，巴厘岛停留4晚。住宿总体控制成本，在新加坡和巴厘岛各安排1晚升级体验。为减少误订，所有2027年航班、酒店和门票均列为候选需复核。</p>
+        <div class="metric-grid"><div class="metric"><span>模式</span><strong>精细执行</strong><small>输出深度</small></div><div class="metric"><span>日期</span><strong>建议 2027年5月10日至5月20日；若选择Scoot红眼直飞，可能需5月9日晚从杭州出发</strong><small>已锁定窗口</small></div><div class="metric"><span>人数</span><strong>2名成人，1间双床房</strong><small>人数/房量</small></div><div class="metric"><span>预算</span><strong>¥31,500</strong><small>人均 ¥15,750</small></div><div class="metric"><span>交通</span><strong>杭州HGH—新加坡SIN直飞</strong><small>下单前复核余票</small></div><div class="metric"><span>酒店</span><strong>Hotel Mi Bencoolen</strong><small>优先可取消房</small></div></div>
+      </div>
+      <aside class="command-panel">
+        <div class="panel-head">
+          <span>先看这里</span>
+          <strong>现在最该订</strong>
+        </div>
+        <div class="priority-block">
+          <ol class="priority-list"><li><span class="priority-index">1</span><div><strong>新加坡SG Arrival Card</strong><small>抵达新加坡前三天内提交。</small></div><a href="https://eservices.ica.gov.sg/sgarrivalcard/">来源</a></li><li><span class="priority-index">2</span><div><strong>马来西亚MDAC两次</strong><small>分别在抵达槟城和抵达吉隆坡前三天内提交。</small></div><a href="https://imigresen-online.imi.gov.my/mdac/main">来源</a></li><li><span class="priority-index">3</span><div><strong>印度尼西亚e-VoA</strong><small>航班和酒店确定后、出发前办理。</small></div><a href="https://evisa.imigrasi.go.id/">来源</a></li><li><span class="priority-index">4</span><div><strong>巴厘岛外国游客税</strong><small>抵达巴厘岛前在线支付。</small></div><a href="https://lovebali.baliprov.go.id/">来源</a></li></ol>
+        </div>
+      </aside>
+    </div>
+    <section class="overview-gantt-panel">
+      <div class="overview-gantt-head">
+        <span>11天总览</span>
+        <strong>从出发、入住、游玩到返程的粗排期</strong>
+      </div>
+      <div class="gantt"><div class="gantt-scale"><span style="left:0.00%">06:00</span><span style="left:18.75%">09:00</span><span style="left:37.50%">12:00</span><span style="left:56.25%">15:00</span><span style="left:75.00%">18:00</span><span style="left:93.75%">21:00</span></div><div class="gantt-row"><div class="gantt-day"><strong>D1</strong><span>2027-05-10</span></div><div class="gantt-track"><div class="gantt-bar bar-activity" style="left:0.00%;width:2.60%"><span>杭州飞新加坡</span><em>6小时</em></div><div class="gantt-bar bar-hotel" style="left:0.00%;width:18.75%"><span>樟宜机场早餐、洗漱与行李处理</span><em>3小时</em></div><div class="gantt-bar bar-meal" style="left:34.38%;width:9.38%"><span>Maxwell熟食中心午餐</span><em>1小时30分</em></div><div class="gantt-bar bar-hotel" style="left:50.00%;width:18.75%"><span>酒店入住与午休</span><em>3小时</em></div><div class="gantt-bar bar-poi" style="left:75.00%;width:15.62%"><span>牛车水—Ann Siang Hill夜走</span><em>2小时30分</em></div></div></div><div class="gantt-row"><div class="gantt-day"><strong>D2</strong><span>2027-05-11</span></div><div class="gantt-track"><div class="gantt-bar bar-hotel" style="left:15.62%;width:6.25%"><span>退房、行李转存升级酒店</span><em>1小时</em></div><div class="gantt-bar bar-poi" style="left:23.44%;width:12.50%"><span>福康宁公园与国家博物馆外圈</span><em>2小时</em></div><div class="gantt-bar bar-poi" style="left:37.50%;width:15.62%"><span>市政区与海南/娘惹风味午餐</span><em>2小时30分</em></div><div class="gantt-bar bar-poi" style="left:56.25%;width:12.50%"><span>滨海湾步行与休息</span><em>2小时</em></div><div class="gantt-bar bar-poi" style="left:70.31%;width:20.31%"><span>Cloud Forest与Supertree夜景</span><em>3小时15分</em></div><div class="gantt-bar bar-hotel" style="left:93.75%;width:9.38%"><span>升级酒店入住</span><em>1小时30分</em></div></div></div><div class="gantt-row"><div class="gantt-day"><strong>D3</strong><span>2027-05-12</span></div><div class="gantt-track"><div class="gantt-bar bar-hotel" style="left:9.38%;width:15.62%"><span>酒店早餐与泳池</span><em>2小时30分</em></div><div class="gantt-bar bar-activity" style="left:28.12%;width:9.38%"><span>退房并前往樟宜机场</span><em>1小时30分</em></div><div class="gantt-bar bar-activity" style="left:53.12%;width:9.38%"><span>新加坡飞槟城</span><em>1小时30分</em></div><div class="gantt-bar bar-hotel" style="left:68.75%;width:9.38%"><span>机场到乔治市、入住</span><em>1小时30分</em></div><div class="gantt-bar bar-poi" style="left:81.25%;width:12.50%"><span>New Lane或汕头街小吃</span><em>2小时</em></div></div></div><div class="gantt-row"><div class="gantt-day"><strong>D4</strong><span>2027-05-13</span></div><div class="gantt-track"><div class="gantt-bar bar-poi" style="left:12.50%;width:9.38%"><span>姓氏桥与码头老城</span><em>1小时30分</em></div><div class="gantt-bar bar-poi" style="left:23.44%;width:17.19%"><span>亚美尼亚街—邱公司—和谐街</span><em>2小时45分</em></div><div class="gantt-bar bar-hotel" style="left:40.62%;width:12.50%"><span>娘惹午餐与午休</span><em>2小时</em></div><div class="gantt-bar bar-poi" style="left:53.12%;width:9.38%"><span>Pinang Peranakan Mansion</span><em>1小时30分</em></div><div class="gantt-bar bar-poi" style="left:68.75%;width:21.88%"><span>槟城升旗山日落</span><em>3小时30分</em></div></div></div><div class="gantt-row"><div class="gantt-day"><strong>D5</strong><span>2027-05-14</span></div><div class="gantt-track"><div class="gantt-bar bar-activity" style="left:6.25%;width:9.38%"><span>酒店早餐、退房去机场</span><em>1小时30分</em></div><div class="gantt-bar bar-activity" style="left:28.12%;width:43.75%"><span>槟城经吉隆坡飞巴厘岛</span><em>7小时</em></div><div class="gantt-bar bar-activity" style="left:71.88%;width:9.38%"><span>印尼入境、e-VoA与游客税检查</span><em>1小时30分</em></div><div class="gantt-bar bar-activity" style="left:81.25%;width:12.50%"><span>机场到乌布酒店</span><em>2小时</em></div><div class="gantt-bar bar-poi" style="left:93.75%;width:2.60%"><span>乌布酒店庭院适应性短走</span><em>20分钟</em></div><div class="gantt-bar bar-hotel" style="left:95.83%;width:7.29%"><span>入住与休息</span><em>1小时10分</em></div></div></div><div class="gantt-row"><div class="gantt-day"><strong>D6</strong><span>2027-05-15</span></div><div class="gantt-track"><div class="gantt-bar bar-poi" style="left:12.50%;width:12.50%"><span>乌布皇宫与Saraswati Temple外圈</span><em>2小时</em></div><div class="gantt-bar bar-poi" style="left:25.00%;width:9.38%"><span>乌布传统市场与咖啡</span><em>1小时30分</em></div><div class="gantt-bar bar-hotel" style="left:37.50%;width:15.62%"><span>印尼菜午餐与酒店休息</span><em>2小时30分</em></div><div class="gantt-bar bar-poi" style="left:56.25%;width:12.50%"><span>ARMA或Neka Art Museum</span><em>2小时</em></div><div class="gantt-bar bar-poi" style="left:70.31%;width:10.94%"><span>Campuhan Ridge Walk日落</span><em>1小时45分</em></div><div class="gantt-bar bar-meal" style="left:84.38%;width:9.38%"><span>乌布晚餐</span><em>1小时30分</em></div></div></div><div class="gantt-row"><div class="gantt-day"><strong>D7</strong><span>2027-05-16</span></div><div class="gantt-track"><div class="gantt-bar bar-activity" style="left:12.50%;width:6.25%"><span>退房并包车出发</span><em>1小时</em></div><div class="gantt-bar bar-poi" style="left:18.75%;width:12.50%"><span>Tirta Empul圣泉寺</span><em>2小时</em></div><div class="gantt-bar bar-poi" style="left:34.38%;width:9.38%"><span>Tegallalang稻田边缘短走</span><em>1小时30分</em></div><div class="gantt-bar bar-hotel" style="left:45.31%;width:10.94%"><span>乡村午餐与咖啡</span><em>1小时45分</em></div><div class="gantt-bar bar-hotel" style="left:56.25%;width:15.62%"><span>前往Sanur并入住</span><em>2小时30分</em></div><div class="gantt-bar bar-meal" style="left:75.00%;width:12.50%"><span>Sanur海边晚餐</span><em>2小时</em></div></div></div><div class="gantt-row"><div class="gantt-day"><strong>D8</strong><span>2027-05-17</span></div><div class="gantt-track"><div class="gantt-bar bar-meal" style="left:3.12%;width:15.62%"><span>Sanur日出与早餐</span><em>2小时30分</em></div><div class="gantt-bar bar-hotel" style="left:28.12%;width:9.38%"><span>退房前往Nusa Dua升级酒店</span><em>1小时30分</em></div><div class="gantt-bar bar-hotel" style="left:37.50%;width:25.00%"><span>酒店午餐与泳池/海滩</span><em>4小时</em></div><div class="gantt-bar bar-poi" style="left:65.62%;width:10.94%"><span>Nusa Dua海岸与Waterblow外圈</span><em>1小时45分</em></div><div class="gantt-bar bar-hotel" style="left:81.25%;width:15.62%"><span>酒店周边晚餐与休息</span><em>2小时30分</em></div></div></div><div class="gantt-row"><div class="gantt-day"><strong>D9</strong><span>2027-05-18</span></div><div class="gantt-track"><div class="gantt-bar bar-hotel" style="left:9.38%;width:25.00%"><span>酒店早餐、泳池与退房</span><em>4小时</em></div><div class="gantt-bar bar-activity" style="left:34.38%;width:15.62%"><span>前往DPS并办理离境</span><em>2小时30分</em></div><div class="gantt-bar bar-activity" style="left:56.25%;width:19.27%"><span>巴厘岛直飞吉隆坡</span><em>3小时5分</em></div><div class="gantt-bar bar-activity" style="left:75.52%;width:15.10%"><span>第二次马来西亚入境与进城</span><em>2小时25分</em></div><div class="gantt-bar bar-poi" style="left:90.62%;width:3.12%"><span>武吉免登夜间短走</span><em>30分钟</em></div><div class="gantt-bar bar-meal" style="left:93.75%;width:6.25%"><span>酒店附近夜宵</span><em>1小时</em></div></div></div><div class="gantt-row"><div class="gantt-day"><strong>D10</strong><span>2027-05-19</span></div><div class="gantt-track"><div class="gantt-bar bar-poi" style="left:9.38%;width:15.62%"><span>黑风洞</span><em>2小时30分</em></div><div class="gantt-bar bar-poi" style="left:29.69%;width:9.38%"><span>独立广场与苏丹阿都沙末大厦外观</span><em>1小时30分</em></div><div class="gantt-bar bar-meal" style="left:40.62%;width:12.50%"><span>中央市场与南洋午餐</span><em>2小时</em></div><div class="gantt-bar bar-poi" style="left:56.25%;width:12.50%"><span>伊斯兰艺术博物馆或国家清真寺外圈</span><em>2小时</em></div><div class="gantt-bar bar-poi" style="left:75.00%;width:15.62%"><span>KLCC公园与双子塔夜景</span><em>2小时30分</em></div></div></div><div class="gantt-row"><div class="gantt-day"><strong>D11</strong><span>2027-05-20</span></div><div class="gantt-track"><div class="gantt-bar bar-hotel" style="left:12.50%;width:12.50%"><span>酒店早餐与退房</span><em>2小时</em></div><div class="gantt-bar bar-poi" style="left:25.00%;width:9.38%"><span>Kampung Baru短走或咖啡</span><em>1小时30分</em></div><div class="gantt-bar bar-activity" style="left:37.50%;width:9.38%"><span>前往KUL</span><em>1小时30分</em></div><div class="gantt-bar bar-activity" style="left:65.62%;width:34.38%"><span>吉隆坡直飞杭州</span><em>5小时30分</em></div><div class="gantt-bar bar-activity" style="left:100.00%;width:9.38%"><span>杭州落地与回家</span><em>1小时30分</em></div></div></div><div class="gantt-legend"><span><i class="bar-route"></i>交通</span><span><i class="bar-hotel"></i>酒店/休息</span><span><i class="bar-poi"></i>景点</span><span><i class="bar-meal"></i>餐饮</span><span><i class="bar-activity"></i>体验</span></div></div>
+      <div class="gantt-mobile-flow"><article class="mobile-flow-day"><h3>D1 · 抵达新加坡，先恢复体力，再用老城和熟食中心进入状态</h3><ul><li><span>00:00-06:00</span><strong>杭州飞新加坡</strong></li><li><span>06:00-09:00</span><strong>樟宜机场早餐、洗漱与行李处理</strong></li><li><span>11:30-13:00</span><strong>Maxwell熟食中心午餐</strong></li><li><span>14:00-17:00</span><strong>酒店入住与午休</strong></li><li><span>18:00-20:30</span><strong>牛车水—Ann Siang Hill夜走</strong></li></ul></article><article class="mobile-flow-day"><h3>D2 · 新加坡文化城市线，傍晚进入滨海湾并完成一晚酒店升级</h3><ul><li><span>08:30-09:30</span><strong>退房、行李转存升级酒店</strong></li><li><span>09:45-11:45</span><strong>福康宁公园与国家博物馆外圈</strong></li><li><span>12:00-14:30</span><strong>市政区与海南/娘惹风味午餐</strong></li><li><span>15:00-17:00</span><strong>滨海湾步行与休息</strong></li><li><span>17:15-20:30</span><strong>Cloud Forest与Supertree夜景</strong></li><li><span>21:00-22:30</span><strong>升级酒店入住</strong></li></ul></article><article class="mobile-flow-day"><h3>D3 · 上午享用升级酒店，下午直飞槟城，晚上用小吃认识乔治市</h3><ul><li><span>07:30-10:00</span><strong>酒店早餐与泳池</strong></li><li><span>10:30-12:00</span><strong>退房并前往樟宜机场</strong></li><li><span>14:30-16:00</span><strong>新加坡飞槟城</strong></li><li><span>17:00-18:30</span><strong>机场到乔治市、入住</strong></li><li><span>19:00-21:00</span><strong>New Lane或汕头街小吃</strong></li></ul></article><article class="mobile-flow-day"><h3>D4 · 乔治市完整文化日，从港口移民史走到娘惹生活，再上山看城市夜景</h3><ul><li><span>08:00-09:30</span><strong>姓氏桥与码头老城</strong></li><li><span>09:45-12:30</span><strong>亚美尼亚街—邱公司—和谐街</strong></li><li><span>12:30-14:30</span><strong>娘惹午餐与午休</strong></li><li><span>14:30-16:00</span><strong>Pinang Peranakan Mansion</strong></li><li><span>17:00-20:30</span><strong>槟城升旗山日落</strong></li></ul></article><article class="mobile-flow-day"><h3>D5 · 槟城经吉隆坡转机到巴厘岛，晚上只处理入住和恢复</h3><ul><li><span>07:00-08:30</span><strong>酒店早餐、退房去机场</strong></li><li><span>10:30-17:30</span><strong>槟城经吉隆坡飞巴厘岛</strong></li><li><span>17:30-19:00</span><strong>印尼入境、e-VoA与游客税检查</strong></li><li><span>19:00-21:00</span><strong>机场到乌布酒店</strong></li><li><span>21:00-21:20</span><strong>乌布酒店庭院适应性短走</strong></li><li><span>21:20-22:30</span><strong>入住与休息</strong></li></ul></article><article class="mobile-flow-day"><h3>D6 · 乌布慢文化日，宫殿、市场、艺术馆与山脊步道不跨区折返</h3><ul><li><span>08:00-10:00</span><strong>乌布皇宫与Saraswati Temple外圈</strong></li><li><span>10:00-11:30</span><strong>乌布传统市场与咖啡</strong></li><li><span>12:00-14:30</span><strong>印尼菜午餐与酒店休息</strong></li><li><span>15:00-17:00</span><strong>ARMA或Neka Art Museum</strong></li><li><span>17:15-19:00</span><strong>Campuhan Ridge Walk日落</strong></li><li><span>19:30-21:00</span><strong>乌布晚餐</strong></li></ul></article><article class="mobile-flow-day"><h3>D7 · 包车串联圣泉、稻田与乡村午餐，傍晚换到Sanur降低第二天移动压力</h3><ul><li><span>08:00-09:00</span><strong>退房并包车出发</strong></li><li><span>09:00-11:00</span><strong>Tirta Empul圣泉寺</strong></li><li><span>11:30-13:00</span><strong>Tegallalang稻田边缘短走</strong></li><li><span>13:15-15:00</span><strong>乡村午餐与咖啡</strong></li><li><span>15:00-17:30</span><strong>前往Sanur并入住</strong></li><li><span>18:00-20:00</span><strong>Sanur海边晚餐</strong></li></ul></article><article class="mobile-flow-day"><h3>D8 · 把升级酒店当作当天主项目，减少景点奔波</h3><ul><li><span>06:30-09:00</span><strong>Sanur日出与早餐</strong></li><li><span>10:30-12:00</span><strong>退房前往Nusa Dua升级酒店</strong></li><li><span>12:00-16:00</span><strong>酒店午餐与泳池/海滩</strong></li><li><span>16:30-18:15</span><strong>Nusa Dua海岸与Waterblow外圈</strong></li><li><span>19:00-21:30</span><strong>酒店周边晚餐与休息</strong></li></ul></article><article class="mobile-flow-day"><h3>D9 · 上午继续使用豪华酒店，下午直飞吉隆坡，晚上只做低强度夜宵</h3><ul><li><span>07:30-11:30</span><strong>酒店早餐、泳池与退房</strong></li><li><span>11:30-14:00</span><strong>前往DPS并办理离境</strong></li><li><span>15:00-18:05</span><strong>巴厘岛直飞吉隆坡</strong></li><li><span>18:05-20:30</span><strong>第二次马来西亚入境与进城</strong></li><li><span>20:30-21:00</span><strong>武吉免登夜间短走</strong></li><li><span>21:00-22:00</span><strong>酒店附近夜宵</strong></li></ul></article><article class="mobile-flow-day"><h3>D10 · 吉隆坡文化纵线，从黑风洞到独立广场，晚上看双子塔</h3><ul><li><span>07:30-10:00</span><strong>黑风洞</strong></li><li><span>10:45-12:15</span><strong>独立广场与苏丹阿都沙末大厦外观</strong></li><li><span>12:30-14:30</span><strong>中央市场与南洋午餐</strong></li><li><span>15:00-17:00</span><strong>伊斯兰艺术博物馆或国家清真寺外圈</strong></li><li><span>18:00-20:30</span><strong>KLCC公园与双子塔夜景</strong></li></ul></article><article class="mobile-flow-day"><h3>D11 · 轻松收尾，预留完整机场时间返回杭州</h3><ul><li><span>08:00-10:00</span><strong>酒店早餐与退房</strong></li><li><span>10:00-11:30</span><strong>Kampung Baru短走或咖啡</strong></li><li><span>12:00-13:30</span><strong>前往KUL</strong></li><li><span>16:30-22:00</span><strong>吉隆坡直飞杭州</strong></li><li><span>22:00-23:30</span><strong>杭州落地与回家</strong></li></ul></article></div>
+    </section>
+  </header>
+
+  <main>
+    <section id="decision"><h2>关键判断</h2><div class="decision-stack">
+<div class="decision-layout">
+<article class="decision-primary">
+<h3>这版计划的判断</h3>
+<ul class="clean-list">
+<li><span>日期选择2027年5月中旬：避开五一，进入巴厘岛旱季初段，通常低于七八月旺季。</span></li>
+<li><span>停留分配采用2+2+4+2晚，保持用户选择的海岛优先。</span></li>
+<li><span>槟城至巴厘岛按吉隆坡中转而非直飞，原因是当前搜索结果与旧航线宣传存在冲突。</span></li>
+<li><span>豪华住宿设价格上限，超过阈值自动切换备选，不为了品牌突破总预算。</span></li>
+<li><span>吉隆坡安排在最后，有利于接KUL-HGH直飞候选并降低返程复杂度。</span></li>
+</ul>
+</article>
+<aside class="decision-action">
+<p class="action-label">下单前必须看</p>
+<h3>仍需复核</h3>
+<ul class="clean-list">
+<li><span>付款前确认2027-05-09/10 HGH-SIN与2027-05-20 KUL-HGH具体直飞班期。</span></li>
+<li><span>确认两人是否各有托运行李，或共享1件20公斤。</span></li>
+<li><span>确认升级酒店是否坚持一城一晚，还是接受减少换酒店的替代方案。</span></li>
+</ul>
+</aside>
+</div>
+<details class="assumption-note">
+<summary>当前假设和适用边界</summary>
+<p class="muted">暂无数据。</p>
+</details>
+</div></section>
+<section id="priorities"><h2>用户重点</h2><div class="priority-grid"><article class="priority-card"><h3>必去/想去</h3><p>这些点优先保护，不轻易被备选方案替换。</p><ul class="clean-list">
+<li><span>新加坡熟食中心与滨海湾</span></li>
+<li><span>槟城乔治市老城和娘惹文化</span></li>
+<li><span>巴厘岛乌布文化与两晚海边体验</span></li>
+<li><span>吉隆坡老城与双子塔夜景</span></li>
+</ul></article>
+<article class="priority-card"><h3>避开/不喜欢</h3><p>这些限制会影响路线密度、时间安排和餐饮选择。</p><ul class="clean-list">
+<li><span>不安排重购物</span></li>
+<li><span>不把四地写成纯打卡清单</span></li>
+<li><span>不为一晚豪华酒店牺牲过多转场时间</span></li>
+</ul></article>
+<article class="priority-card"><h3>习惯与舒适规则</h3><p>作息、交通、酒店、步行和排队偏好。</p><ul class="clean-list">
+<li><span>接受廉航</span></li>
+<li><span>接受红眼航班</span></li>
+<li><span>城市内以公共交通和网约车结合</span></li>
+<li><span>跨境日预留充足值机和入境缓冲</span></li>
+<li><span>双床房</span></li>
+<li><span>经济型酒店要干净且交通方便</span></li>
+<li><span>升级住宿优先促销价和实际体验，不追求最贵房型</span></li>
+</ul></article>
+<article class="priority-card"><h3>特殊需求</h3><p>纪念日、亲子、老人、摄影、饮食或无障碍等需求。</p><ul class="clean-list">
+<li><span>低预算模块</span></li>
+<li><span>适度豪华模块</span></li>
+<li><span>多国入境与支付检查</span></li>
+<li><span>用11天完成四地串联</span></li>
+<li><span>把钱花在文化、美食和一两晚明显升级的住宿上</span></li>
+</ul></article></div><details class="priority-extra" open><summary>补充说明/未归档信息</summary><ul class="clean-list">
+<li><span>新加坡和巴厘岛各升级1晚会增加两次换酒店；若临近出发发现两晚连住促销更划算，可减少搬运行李。</span></li>
+</ul></details></section>
+<section id="outbound"><h2>出境游检查</h2><div class="outbound-grid"><div class="outbound-card"><h3>旅客假设</h3><p>中华人民共和国普通护照，常住中国大陆</p></div>
+<div class="outbound-card"><h3>签证与入境</h3><p>新加坡：普通护照持有人可免签停留不超过30天；入境前三天内免费提交SG Arrival Card。；马来西亚：普通护照社交访问每次可免签不超过30天；本路线先入境槟城、从巴厘岛再次入境吉隆坡，建议分别为两次到达提交MDAC。；印度尼西亚：按当前规则中国普通护照可办理VoA/e-VoA，通常停留30天；建议使用官方e-Visa入口，费用和资格在付款前复核。；巴厘岛：另有外国游客税，当前为每人150,000印尼盾，建议通过Love Bali官方渠道支付。</p></div>
+<div class="outbound-card"><h3>护照有效期</h3><p>三国均按至少6个月有效期准备；印尼还应准备返程或后续行程凭证。最终以出发前官方页面为准。</p></div>
+<div class="outbound-card"><h3>停留限制</h3><p>本计划各国停留均远低于30天；实际准许停留期以入境机关签发记录为准。</p></div>
+<div class="outbound-card"><h3>保险与健康</h3><p>建议购买覆盖航班延误、行李、门急诊和巴厘岛摩托车排除条款的境外保险；不建议无相应驾照和保险自行骑摩托。</p></div>
+<div class="outbound-card"><h3>紧急联系</h3><p>新加坡：警察999，救护/消防995。；马来西亚：综合紧急电话999。；印度尼西亚：综合紧急电话112，警察110；不同地区接通情况可能不同。；中国外交部全球领事保护与服务应急热线：+86-10-12308。</p></div>
+<div class="outbound-card"><h3>安全提示</h3><p>巴厘岛不把手机、证件和现金放在临街一侧；夜间叫车核对车牌。；乔治市和吉隆坡老城注意高温、补水和随身物品。；跨境廉航分开出票时不受联程保护；槟城经吉隆坡去巴厘岛优先买同一订单的受保护中转。</p></div>
+<div class="outbound-card"><h3>货币与支付</h3><p>新加坡使用SGD，马来西亚使用MYR，印度尼西亚使用IDR。；准备一张Visa或Mastercard实体卡和少量现金；街边小店、夜市和部分QR支付不一定支持中国钱包。；ATM取现选择银行自营设备，遇到动态货币转换时优先按当地货币结算。</p></div>
+<div class="outbound-card"><h3>通信</h3><p>建议购买覆盖新加坡、马来西亚、印度尼西亚的东南亚eSIM；另保留中国手机号接收银行短信。</p></div>
+<div class="outbound-card"><h3>礼仪</h3><p>进入清真寺或印度教寺庙按要求遮肩遮膝并脱鞋。；巴厘岛寺庙使用纱笼时遵守现场要求，不跨越供品。；乔治市姓氏桥为居民区，避免清晨或深夜喧哗拍摄。</p></div>
+<div class="outbound-card"><h3>机场与中断</h3><p>出发前7天、48小时和当天分别检查HGH、SIN、PEN、DPS、KUL航班及雷暴影响。</p></div></div><div class="two-col"><div class="panel"><h3>官方来源</h3><ul class="source-list"><li>https://www.ica.gov.sg/news-and-publications/newsroom/media-release/mutual-30-day-visa-exemption-arrangement-between-singapore-and-the-people-s-republic-of-china</li>
+<li>https://www.ica.gov.sg/enter-transit-depart/entering-singapore</li>
+<li>https://eservices.ica.gov.sg/sgarrivalcard/</li>
+<li>https://malaysiavisa.imi.gov.my/faq/</li>
+<li>https://imigresen-online.imi.gov.my/mdac/main</li>
+<li>https://evisa.imigrasi.go.id/</li>
+<li>https://lovebali.baliprov.go.id/</li></ul></div><div class="panel"><h3>待复核</h3><ul class="clean-list">
+<li><span>2027年入境政策可能变化，须在付款前和出发前30天各复核一次。</span></li>
+<li><span>确认护照有效期、双床房容量、廉航托运行李和所有分段是否为同一订单。</span></li>
+</ul></div></div></section>
+<section id="daily"><h2>每日行程</h2><article class="day-card">
+<div class="day-head"><div><span class="day-index">D1</span><h3>抵达新加坡，先恢复体力，再用老城和熟食中心进入状态</h3></div><div class="date">2027-05-10</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">00:00<span>06:00</span></div><div class="item-main"><div class="item-title">杭州飞新加坡</div><div class="item-meta">transport · HGH→SIN</div><div class="item-route">杭州萧山国际机场 至 新加坡樟宜机场 · flight · 约 330 分钟 · 缓冲 180 分钟</div><p>优先直飞；若只有Scoot红眼，可于5月9日晚出发。</p></div></div>
+<div class="timeline-item"><div class="time">06:00<span>09:00</span></div><div class="item-main"><div class="item-title">樟宜机场早餐、洗漱与行李处理</div><div class="item-meta">休息 · 樟宜机场</div><div class="item-route">樟宜机场 至 市中心酒店 · MRT/taxi · 约 45 分钟 · 缓冲 30 分钟</div><p>不强行早到酒店入住，先恢复体力。</p></div></div>
+<div class="timeline-item"><div class="time">11:30<span>13:00</span></div><div class="item-main"><div class="item-title">Maxwell熟食中心午餐</div><div class="item-meta">餐饮 · 牛车水</div><div class="item-route">酒店 至 Maxwell Food Centre · MRT/walk · 约 25 分钟 · 缓冲 20 分钟</div><p>首餐以海南鸡饭、鱼丸面或粿汁为主，避开最长队伍。</p><p class="photo">熟食中心环境适合街头记录。</p></div></div>
+<div class="timeline-item"><div class="time">14:00<span>17:00</span></div><div class="item-main"><div class="item-title">酒店入住与午休</div><div class="item-meta">酒店 / 休息 · Bencoolen/市中心</div><div class="item-route">Maxwell Food Centre 至 经济型酒店 · MRT/taxi · 约 20 分钟 · 缓冲 20 分钟</div><p>红眼后必须保留2小时休息。</p></div></div>
+<div class="timeline-item"><div class="time">18:00<span>20:30</span></div><div class="item-main"><div class="item-title">牛车水—Ann Siang Hill夜走</div><div class="item-meta">景点 · Chinatown</div><div class="item-route">酒店 至 Chinatown · MRT/walk · 约 20 分钟 · 缓冲 20 分钟</div><p>低成本老城主线，晚餐和街区合并。</p><p class="photo">蓝调时刻拍骑楼与街灯，手机广角即可。</p></div></div>
+</div></article>
+<article class="day-card">
+<div class="day-head"><div><span class="day-index">D2</span><h3>新加坡文化城市线，傍晚进入滨海湾并完成一晚酒店升级</h3></div><div class="date">2027-05-11</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">08:30<span>09:30</span></div><div class="item-main"><div class="item-title">退房、行李转存升级酒店</div><div class="item-meta">酒店 · 市中心</div><div class="item-route">经济型酒店 至 PARKROYAL COLLECTION Pickering · taxi · 约 15 分钟 · 缓冲 20 分钟</div><p>把行李寄存在PARKROYAL COLLECTION Pickering，晚上再正式入住。</p></div></div>
+<div class="timeline-item"><div class="time">09:45<span>11:45</span></div><div class="item-main"><div class="item-title">福康宁公园与国家博物馆外圈</div><div class="item-meta">景点 · Fort Canning</div><div class="item-route">酒店 至 Fort Canning · MRT/walk · 约 20 分钟 · 缓冲 20 分钟</div><p>先走树洞和香料园，炎热时直接进入国家博物馆。</p><p class="photo">树洞需排队时改拍坡道与绿荫，避免把时间耗在单一机位。</p></div></div>
+<div class="timeline-item"><div class="time">12:00<span>14:30</span></div><div class="item-main"><div class="item-title">市政区与海南/娘惹风味午餐</div><div class="item-meta">景点 · City Hall</div><div class="item-route">Fort Canning 至 City Hall · walk/MRT · 约 20 分钟 · 缓冲 20 分钟</div><p>沿国家美术馆、旧国会、河岸形成连续步行线。</p><p class="photo">国家美术馆台阶与河岸适合建筑构图。</p></div></div>
+<div class="timeline-item"><div class="time">15:00<span>17:00</span></div><div class="item-main"><div class="item-title">滨海湾步行与休息</div><div class="item-meta">景点 · Marina Bay</div><div class="item-route">City Hall 至 Marina Bay · MRT/walk · 约 20 分钟 · 缓冲 30 分钟</div><p>避开正午高温，沿鱼尾狮—滨海艺术中心—金沙外圈。</p><p class="photo">金沙倒影与滨海湾曲线适合广角。</p></div></div>
+<div class="timeline-item"><div class="time">17:15<span>20:30</span></div><div class="item-main"><div class="item-title">Cloud Forest与Supertree夜景</div><div class="item-meta">景点 · Gardens by the Bay</div><div class="item-route">Marina Bay 至 Gardens by the Bay · walk · 约 20 分钟 · 缓冲 25 分钟</div><p>Cloud Forest官方常规开放9:00-21:00，但2027维护日需复核。</p><p class="photo">18点喷雾时段与蓝调适合瀑布逆光，园区禁止三脚架处遵守规则。</p></div></div>
+<div class="timeline-item"><div class="time">21:00<span>22:30</span></div><div class="item-main"><div class="item-title">升级酒店入住</div><div class="item-meta">酒店 / 休息 · PARKROYAL COLLECTION Pickering</div><div class="item-route">Gardens by the Bay 至 升级酒店 · MRT/taxi · 约 25 分钟 · 缓冲 20 分钟</div><p>升级价值在建筑、泳池和早餐，不加行政酒廊。</p></div></div>
+</div></article>
+<article class="day-card">
+<div class="day-head"><div><span class="day-index">D3</span><h3>上午享用升级酒店，下午直飞槟城，晚上用小吃认识乔治市</h3></div><div class="date">2027-05-12</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">07:30<span>10:00</span></div><div class="item-main"><div class="item-title">酒店早餐与泳池</div><div class="item-meta">休息 · 升级酒店</div><div class="item-route">酒店 至 酒店 · walk · 约  分钟 · 缓冲 15 分钟</div><p>把升级价值用足，不另排远景点。</p><p class="photo">建筑层叠绿化适合手机广角。</p></div></div>
+<div class="timeline-item"><div class="time">10:30<span>12:00</span></div><div class="item-main"><div class="item-title">退房并前往樟宜机场</div><div class="item-meta">transport · 市中心→SIN</div><div class="item-route">升级酒店 至 樟宜机场 · MRT/taxi · 约 45 分钟 · 缓冲 150 分钟</div><p>按国际航班提前约3小时到机场。</p></div></div>
+<div class="timeline-item"><div class="time">14:30<span>16:00</span></div><div class="item-main"><div class="item-title">新加坡飞槟城</div><div class="item-meta">transport · SIN→PEN</div><div class="item-route">樟宜机场 至 槟城国际机场 · flight · 约 90 分钟 · 缓冲 60 分钟</div><p>Scoot/AirAsia直飞约1小时15至30分钟；具体班次待2027时刻表。</p></div></div>
+<div class="timeline-item"><div class="time">17:00<span>18:30</span></div><div class="item-main"><div class="item-title">机场到乔治市、入住</div><div class="item-meta">酒店 · PEN→George Town</div><div class="item-route">槟城国际机场 至 Areca Hotel Penang · taxi · 约 40 分钟 · 缓冲 30 分钟</div><p>Grab通常比多次换公交省时。</p></div></div>
+<div class="timeline-item"><div class="time">19:00<span>21:00</span></div><div class="item-main"><div class="item-title">New Lane或汕头街小吃</div><div class="item-meta">景点 · George Town</div><div class="item-route">酒店 至 New Lane/汕头街 · walk/taxi · 约 15 分钟 · 缓冲 20 分钟</div><p>以炒粿条、福建面、蚝煎和煎蕊为主。</p><p class="photo">夜市摊位适合近景，不拍陌生人正脸。</p></div></div>
+</div></article>
+<article class="day-card">
+<div class="day-head"><div><span class="day-index">D4</span><h3>乔治市完整文化日，从港口移民史走到娘惹生活，再上山看城市夜景</h3></div><div class="date">2027-05-13</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">08:00<span>09:30</span></div><div class="item-main"><div class="item-title">姓氏桥与码头老城</div><div class="item-meta">景点 · Chew Jetty</div><div class="item-route">酒店 至 Chew Jetty · walk/taxi · 约 15 分钟 · 缓冲 20 分钟</div><p>趁居民区尚未拥挤，控制音量。</p><p class="photo">早晨侧光拍木屋纵深，避免堵住通道。</p></div></div>
+<div class="timeline-item"><div class="time">09:45<span>12:30</span></div><div class="item-main"><div class="item-title">亚美尼亚街—邱公司—和谐街</div><div class="item-meta">景点 · George Town UNESCO Core</div><div class="item-route">Chew Jetty 至 Armenian Street · walk · 约 15 分钟 · 缓冲 20 分钟</div><p>老城核心区面积紧凑，步行串联比来回打车更顺。</p><p class="photo">壁画前排队超过15分钟就跳过；重点拍骑楼和宗教建筑并置。</p></div></div>
+<div class="timeline-item"><div class="time">12:30<span>14:30</span></div><div class="item-main"><div class="item-title">娘惹午餐与午休</div><div class="item-meta">餐饮 / 休息 · Little India/Beach Street</div><div class="item-route">Armenian Street 至 Beach Street · walk · 约 15 分钟 · 缓冲 20 分钟</div><p>高温时段用午餐和咖啡休息。</p></div></div>
+<div class="timeline-item"><div class="time">14:30<span>16:00</span></div><div class="item-main"><div class="item-title">Pinang Peranakan Mansion</div><div class="item-meta">景点 · Church Street</div><div class="item-route">Beach Street 至 Pinang Peranakan Mansion · walk · 约 10 分钟 · 缓冲 20 分钟</div><p>用室内展陈补足乔治市多元移民史。</p><p class="photo">室内遵守拍摄规定，利用门框和瓷砖做细节构图。</p></div></div>
+<div class="timeline-item"><div class="time">17:00<span>20:30</span></div><div class="item-main"><div class="item-title">槟城升旗山日落</div><div class="item-meta">景点 · Penang Hill</div><div class="item-route">Peranakan Mansion 至 Penang Hill Lower Station · taxi · 约 35 分钟 · 缓冲 45 分钟</div><p>如果缆车排队或下雨，改Gurney Bay与夜市。</p><p class="photo">日落前后各拍一组，长焦压缩乔治市天际线。</p></div></div>
+</div></article>
+<article class="day-card">
+<div class="day-head"><div><span class="day-index">D5</span><h3>槟城经吉隆坡转机到巴厘岛，晚上只处理入住和恢复</h3></div><div class="date">2027-05-14</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">07:00<span>08:30</span></div><div class="item-main"><div class="item-title">酒店早餐、退房去机场</div><div class="item-meta">transport · George Town→PEN</div><div class="item-route">George Town酒店 至 槟城国际机场 · taxi · 约 40 分钟 · 缓冲 150 分钟</div><p>预留早高峰和行李缓冲。</p></div></div>
+<div class="timeline-item"><div class="time">10:30<span>17:30</span></div><div class="item-main"><div class="item-title">槟城经吉隆坡飞巴厘岛</div><div class="item-meta">transport · PEN→KUL→DPS</div><div class="item-route">槟城国际机场 至 伍拉·赖国际机场 · flight · 约 420 分钟 · 缓冲 120 分钟</div><p>优先买同一订单的受保护中转，避免自助转机。</p></div></div>
+<div class="timeline-item"><div class="time">17:30<span>19:00</span></div><div class="item-main"><div class="item-title">印尼入境、e-VoA与游客税检查</div><div class="item-meta">缓冲 · DPS</div><div class="item-route">飞机 至 DPS到达大厅 · walk · 约  分钟 · 缓冲 90 分钟</div><p>提前办e-VoA并保存PDF；Love Bali税保存二维码。</p></div></div>
+<div class="timeline-item"><div class="time">19:00<span>21:00</span></div><div class="item-main"><div class="item-title">机场到乌布酒店</div><div class="item-meta">transport · DPS→Ubud</div><div class="item-route">伍拉·赖国际机场 至 乌布酒店 · taxi/private_car · 约 120 分钟 · 缓冲 30 分钟</div><p>晚高峰可能超过2小时，使用正规网约车或酒店接机。</p></div></div>
+<div class="timeline-item"><div class="time">21:00<span>21:20</span></div><div class="item-main"><div class="item-title">乌布酒店庭院适应性短走</div><div class="item-meta">景点 · Ubud酒店庭院</div><div class="item-route">酒店大堂 至 酒店庭院 · walk · 约 3 分钟 · 缓冲 10 分钟</div><p>只在酒店内部熟悉环境，若航班延误则直接取消。</p><p class="photo">有体力时拍庭院夜景，不使用闪光灯。</p></div></div>
+<div class="timeline-item"><div class="time">21:20<span>22:30</span></div><div class="item-main"><div class="item-title">入住与休息</div><div class="item-meta">酒店 / 休息 · Ubud</div><div class="item-route">酒店门口 至 酒店房间 · walk · 约  分钟 · 缓冲 15 分钟</div><p>只处理洗漱、补水和第二天司机确认。</p></div></div>
+</div></article>
+<article class="day-card">
+<div class="day-head"><div><span class="day-index">D6</span><h3>乌布慢文化日，宫殿、市场、艺术馆与山脊步道不跨区折返</h3></div><div class="date">2027-05-15</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">08:00<span>10:00</span></div><div class="item-main"><div class="item-title">乌布皇宫与Saraswati Temple外圈</div><div class="item-meta">景点 · Ubud Center</div><div class="item-route">乌布酒店 至 Ubud Palace · walk/taxi · 约 20 分钟 · 缓冲 20 分钟</div><p>早上先看建筑与水景，避开团队高峰。</p><p class="photo">莲花池用长焦压缩，寺庙门框做人像背景。</p></div></div>
+<div class="timeline-item"><div class="time">10:00<span>11:30</span></div><div class="item-main"><div class="item-title">乌布传统市场与咖啡</div><div class="item-meta">景点 / shopping · Ubud Market</div><div class="item-route">Ubud Palace 至 Ubud Market · walk · 约 5 分钟 · 缓冲 15 分钟</div><p>只看手工艺和香料，不安排重购物。</p><p class="photo">拍摊位色彩时先征得摊主同意。</p></div></div>
+<div class="timeline-item"><div class="time">12:00<span>14:30</span></div><div class="item-main"><div class="item-title">印尼菜午餐与酒店休息</div><div class="item-meta">餐饮 / 休息 · Ubud Center</div><div class="item-route">Ubud Market 至 酒店 · walk/taxi · 约 20 分钟 · 缓冲 20 分钟</div><p>正午高温和阵雨时段回酒店休息。</p></div></div>
+<div class="timeline-item"><div class="time">15:00<span>17:00</span></div><div class="item-main"><div class="item-title">ARMA或Neka Art Museum</div><div class="item-meta">景点 · Ubud</div><div class="item-route">酒店 至 艺术博物馆 · taxi · 约 20 分钟 · 缓冲 20 分钟</div><p>二选一，不追两个馆。</p><p class="photo">室内依规定拍摄，重点记录建筑与庭院。</p></div></div>
+<div class="timeline-item"><div class="time">17:15<span>19:00</span></div><div class="item-main"><div class="item-title">Campuhan Ridge Walk日落</div><div class="item-meta">景点 · Campuhan Ridge</div><div class="item-route">艺术博物馆 至 Campuhan Ridge Walk · taxi/walk · 约 20 分钟 · 缓冲 25 分钟</div><p>天气闷热或雨后湿滑就改酒店泳池。</p><p class="photo">日落前用广角拍草坡和人物剪影。</p></div></div>
+<div class="timeline-item"><div class="time">19:30<span>21:00</span></div><div class="item-main"><div class="item-title">乌布晚餐</div><div class="item-meta">餐饮 · Ubud Center</div><div class="item-route">Campuhan Ridge Walk 至 酒店附近餐厅 · taxi/walk · 约 20 分钟 · 缓冲 20 分钟</div><p>选离酒店近的印尼菜，避免夜间长距离回程。</p></div></div>
+</div></article>
+<article class="day-card">
+<div class="day-head"><div><span class="day-index">D7</span><h3>包车串联圣泉、稻田与乡村午餐，傍晚换到Sanur降低第二天移动压力</h3></div><div class="date">2027-05-16</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">08:00<span>09:00</span></div><div class="item-main"><div class="item-title">退房并包车出发</div><div class="item-meta">transport · Ubud</div><div class="item-route">乌布酒店 至 Tirta Empul · private_car · 约 50 分钟 · 缓冲 25 分钟</div><p>行李全程放车内，贵重物品随身。</p></div></div>
+<div class="timeline-item"><div class="time">09:00<span>11:00</span></div><div class="item-main"><div class="item-title">Tirta Empul圣泉寺</div><div class="item-meta">景点 · Tampaksiring</div><div class="item-route">乌布酒店 至 Tirta Empul · private_car · 约 50 分钟 · 缓冲 25 分钟</div><p>以观察寺庙空间和仪式为主，不把净身池当摆拍场。</p><p class="photo">拍摄仪式保持距离，用中焦而非贴近。</p></div></div>
+<div class="timeline-item"><div class="time">11:30<span>13:00</span></div><div class="item-main"><div class="item-title">Tegallalang稻田边缘短走</div><div class="item-meta">景点 · Tegallalang</div><div class="item-route">Tirta Empul 至 Tegallalang · private_car · 约 30 分钟 · 缓冲 20 分钟</div><p>不下最深谷底，控制上下坡。</p><p class="photo">正午光硬，主要拍层次与人物环境照。</p></div></div>
+<div class="timeline-item"><div class="time">13:15<span>15:00</span></div><div class="item-main"><div class="item-title">乡村午餐与咖啡</div><div class="item-meta">餐饮 / 休息 · Tegallalang/Ubud北部</div><div class="item-route">Tegallalang 至 午餐餐厅 · private_car · 约 15 分钟 · 缓冲 20 分钟</div><p>午餐同时恢复体力。</p></div></div>
+<div class="timeline-item"><div class="time">15:00<span>17:30</span></div><div class="item-main"><div class="item-title">前往Sanur并入住</div><div class="item-meta">transport / 酒店 · Ubud北部→Sanur</div><div class="item-route">午餐餐厅 至 Sanur酒店 · private_car · 约 90 分钟 · 缓冲 30 分钟</div><p>避开在库塔中转，直接到Sanur。</p><p class="photo">傍晚Sanur海岸适合柔和人像。</p></div></div>
+<div class="timeline-item"><div class="time">18:00<span>20:00</span></div><div class="item-main"><div class="item-title">Sanur海边晚餐</div><div class="item-meta">餐饮 / 景点 · Sanur Beach</div><div class="item-route">Sanur酒店 至 Sanur Beach · walk · 约 15 分钟 · 缓冲 20 分钟</div><p>选步行可达餐厅，减少夜间叫车。</p><p class="photo">蓝调海岸用手机夜景模式。</p></div></div>
+</div></article>
+<article class="day-card">
+<div class="day-head"><div><span class="day-index">D8</span><h3>把升级酒店当作当天主项目，减少景点奔波</h3></div><div class="date">2027-05-17</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">06:30<span>09:00</span></div><div class="item-main"><div class="item-title">Sanur日出与早餐</div><div class="item-meta">景点 / 餐饮 · Sanur Beach</div><div class="item-route">Sanur酒店 至 Sanur Beach · walk · 约 10 分钟 · 缓冲 15 分钟</div><p>早起自愿，若前晚疲劳可睡到8点。</p><p class="photo">朝东海岸日出用广角；云多也可拍低饱和海面。</p></div></div>
+<div class="timeline-item"><div class="time">10:30<span>12:00</span></div><div class="item-main"><div class="item-title">退房前往Nusa Dua升级酒店</div><div class="item-meta">transport / 酒店 · Sanur→Nusa Dua</div><div class="item-route">Sanur酒店 至 The Apurva Kempinski Bali · taxi · 约 45 分钟 · 缓冲 25 分钟</div><p>提前询问能否12点寄存并使用公共设施。</p></div></div>
+<div class="timeline-item"><div class="time">12:00<span>16:00</span></div><div class="item-main"><div class="item-title">酒店午餐与泳池/海滩</div><div class="item-meta">休息 / experience · Nusa Dua</div><div class="item-route">酒店大堂 至 酒店海滩 · walk · 约 10 分钟 · 缓冲 20 分钟</div><p>升级价值主要来自建筑、泳池、海滩和早餐。</p><p class="photo">大厅中轴、阶梯水景和海岸适合广角；注意住客隐私。</p></div></div>
+<div class="timeline-item"><div class="time">16:30<span>18:15</span></div><div class="item-main"><div class="item-title">Nusa Dua海岸与Waterblow外圈</div><div class="item-meta">景点 · Nusa Dua</div><div class="item-route">升级酒店 至 Nusa Dua海岸 · walk/taxi · 约 20 分钟 · 缓冲 20 分钟</div><p>潮浪大时不靠近湿滑边缘。</p><p class="photo">傍晚逆光拍海岸线，保护镜头防盐雾。</p></div></div>
+<div class="timeline-item"><div class="time">19:00<span>21:30</span></div><div class="item-main"><div class="item-title">酒店周边晚餐与休息</div><div class="item-meta">餐饮 / 休息 · Nusa Dua</div><div class="item-route">Nusa Dua海岸 至 升级酒店 · taxi/walk · 约 20 分钟 · 缓冲 20 分钟</div><p>不做高价套餐，把预算留给房晚本身。</p></div></div>
+</div></article>
+<article class="day-card">
+<div class="day-head"><div><span class="day-index">D9</span><h3>上午继续使用豪华酒店，下午直飞吉隆坡，晚上只做低强度夜宵</h3></div><div class="date">2027-05-18</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">07:30<span>11:30</span></div><div class="item-main"><div class="item-title">酒店早餐、泳池与退房</div><div class="item-meta">休息 · Nusa Dua</div><div class="item-route">升级酒店 至 升级酒店 · walk · 约  分钟 · 缓冲 20 分钟</div><p>完整使用早餐和泳池，11点前整理行李。</p><p class="photo">晨光下拍酒店建筑与海面。</p></div></div>
+<div class="timeline-item"><div class="time">11:30<span>14:00</span></div><div class="item-main"><div class="item-title">前往DPS并办理离境</div><div class="item-meta">transport · Nusa Dua→DPS</div><div class="item-route">Nusa Dua酒店 至 伍拉·赖国际机场 · taxi · 约 40 分钟 · 缓冲 150 分钟</div><p>国际航班提前约3小时抵达。</p></div></div>
+<div class="timeline-item"><div class="time">15:00<span>18:05</span></div><div class="item-main"><div class="item-title">巴厘岛直飞吉隆坡</div><div class="item-meta">transport · DPS→KUL</div><div class="item-route">伍拉·赖国际机场 至 吉隆坡国际机场 · flight · 约 185 分钟 · 缓冲 60 分钟</div><p>AirAsia等有约3小时直飞候选，具体时刻待复核。</p></div></div>
+<div class="timeline-item"><div class="time">18:05<span>20:30</span></div><div class="item-main"><div class="item-title">第二次马来西亚入境与进城</div><div class="item-meta">transport / 缓冲 · KUL→Bukit Bintang</div><div class="item-route">KUL 至 吉隆坡酒店 · train/taxi · 约 70 分钟 · 缓冲 60 分钟</div><p>为第二次入境单独准备MDAC；KLIA Ekspres到KL Sentral后转Grab。</p></div></div>
+<div class="timeline-item"><div class="time">20:30<span>21:00</span></div><div class="item-main"><div class="item-title">武吉免登夜间短走</div><div class="item-meta">景点 · Bukit Bintang</div><div class="item-route">吉隆坡酒店 至 亚罗街入口 · walk · 约 10 分钟 · 缓冲 10 分钟</div><p>只走酒店周边亮灯主街，用来活动身体，不跨街区赶景点。</p><p class="photo">拍街灯和店招，注意看管手机。</p></div></div>
+<div class="timeline-item"><div class="time">21:00<span>22:00</span></div><div class="item-main"><div class="item-title">酒店附近夜宵</div><div class="item-meta">餐饮 · Bukit Bintang</div><div class="item-route">酒店 至 晚餐区 · walk · 约 15 分钟 · 缓冲 20 分钟</div><p>不跨城追餐厅。</p></div></div>
+</div></article>
+<article class="day-card">
+<div class="day-head"><div><span class="day-index">D10</span><h3>吉隆坡文化纵线，从黑风洞到独立广场，晚上看双子塔</h3></div><div class="date">2027-05-19</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">07:30<span>10:00</span></div><div class="item-main"><div class="item-title">黑风洞</div><div class="item-meta">景点 · Batu Caves</div><div class="item-route">吉隆坡酒店 至 Batu Caves · train/taxi · 约 35 分钟 · 缓冲 30 分钟</div><p>早到避开高温和人群，注意台阶与猴子。</p><p class="photo">上午顺光拍阶梯纵深，手机长焦避免人物拥挤。</p></div></div>
+<div class="timeline-item"><div class="time">10:45<span>12:15</span></div><div class="item-main"><div class="item-title">独立广场与苏丹阿都沙末大厦外观</div><div class="item-meta">景点 · Merdeka Square</div><div class="item-route">Batu Caves 至 Merdeka Square · train/taxi · 约 40 分钟 · 缓冲 25 分钟</div><p>回到市中心后走殖民建筑线。</p><p class="photo">广场用广角拍钟楼与草坪。</p></div></div>
+<div class="timeline-item"><div class="time">12:30<span>14:30</span></div><div class="item-main"><div class="item-title">中央市场与南洋午餐</div><div class="item-meta">餐饮 / 景点 · Central Market</div><div class="item-route">Merdeka Square 至 Central Market · walk · 约 15 分钟 · 缓冲 20 分钟</div><p>午餐、空调休息和少量伴手礼一次完成。</p></div></div>
+<div class="timeline-item"><div class="time">15:00<span>17:00</span></div><div class="item-main"><div class="item-title">伊斯兰艺术博物馆或国家清真寺外圈</div><div class="item-meta">景点 · Islamic Arts Museum Malaysia</div><div class="item-route">Central Market 至 Islamic Arts Museum · taxi · 约 15 分钟 · 缓冲 20 分钟</div><p>优先室内博物馆；闭馆或无兴趣则改国家清真寺参观。</p><p class="photo">中庭穹顶与几何纹样适合细节拍摄，遵守宗教场所服装要求。</p></div></div>
+<div class="timeline-item"><div class="time">18:00<span>20:30</span></div><div class="item-main"><div class="item-title">KLCC公园与双子塔夜景</div><div class="item-meta">景点 · KLCC</div><div class="item-route">Islamic Arts Museum 至 KLCC · taxi · 约 20 分钟 · 缓冲 30 分钟</div><p>登塔门票需要定时；预算优先可只看外观。</p><p class="photo">公园水池边用广角，夜景注意控制高光。</p></div></div>
+</div></article>
+<article class="day-card">
+<div class="day-head"><div><span class="day-index">D11</span><h3>轻松收尾，预留完整机场时间返回杭州</h3></div><div class="date">2027-05-20</div></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time">08:00<span>10:00</span></div><div class="item-main"><div class="item-title">酒店早餐与退房</div><div class="item-meta">餐饮 / 酒店 · 吉隆坡酒店</div><div class="item-route">酒店 至 酒店 · walk · 约  分钟 · 缓冲 20 分钟</div><p>检查护照、退税物品、充电器和行李重量。</p></div></div>
+<div class="timeline-item"><div class="time">10:00<span>11:30</span></div><div class="item-main"><div class="item-title">Kampung Baru短走或咖啡</div><div class="item-meta">景点 · Kampung Baru</div><div class="item-route">酒店 至 Kampung Baru · train/taxi · 约 20 分钟 · 缓冲 20 分钟</div><p>仅在返程为下午或晚班时保留。</p><p class="photo">传统房屋与双子塔同框适合中长焦。</p></div></div>
+<div class="timeline-item"><div class="time">12:00<span>13:30</span></div><div class="item-main"><div class="item-title">前往KUL</div><div class="item-meta">transport · 市中心→KUL</div><div class="item-route">Kampung Baru 至 吉隆坡国际机场 · train/taxi · 约 70 分钟 · 缓冲 180 分钟</div><p>优先KLIA Ekspres或提前预约车辆。</p></div></div>
+<div class="timeline-item"><div class="time">16:30<span>22:00</span></div><div class="item-main"><div class="item-title">吉隆坡直飞杭州</div><div class="item-meta">transport · KUL→HGH</div><div class="item-route">吉隆坡国际机场 至 杭州萧山国际机场 · flight · 约 330 分钟 · 缓冲 60 分钟</div><p>AirAsia X等有直飞候选，约5小时30分钟；最终按2027班期复核。</p></div></div>
+<div class="timeline-item"><div class="time">22:00<span>23:30</span></div><div class="item-main"><div class="item-title">杭州落地与回家</div><div class="item-meta">transport · HGH→杭州市区</div><div class="item-route">杭州萧山国际机场 至 杭州市区 · taxi/metro · 约 45 分钟 · 缓冲 30 分钟</div><p>晚到优先网约车，不再安排其他事项。</p></div></div>
+</div></article></section>
+<section id="hotels"><h2>酒店候选</h2><div class="hotel-groups"><section class="hotel-group"><div class="hotel-group-head"><div><span>2027-05-10 · 1晚</span><h3>新加坡 · 多选一</h3></div><p>Bencoolen或Lavender，降低交通成本。</p></div><p>第一晚只承担红眼后的休息，不为景观溢价。</p><div class="hotel-group-grid"><article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Hotel Mi Bencoolen</h3><span class="hotel-rank">推荐</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">新加坡 · manual_estimate</p><p><b>价格：</b>约750-1050元/晚</p><p>地铁近、房间小但适合一晚过渡。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Hotel%20Mi%20Bencoolen%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>V Hotel Lavender</h3><span class="hotel-rank">备选</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">新加坡 · manual_estimate</p><p><b>价格：</b>约700-1000元/晚</p><p>机场与市区之间交通直接。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=V%20Hotel%20Lavender%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>lyf Bugis Singapore</h3><span class="hotel-rank">备选2</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">新加坡 · manual_estimate</p><p><b>价格：</b>约800-1200元/晚</p><p>公共空间和位置较好。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=lyf%20Bugis%20Singapore%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article></div><p class="muted"><b>备选规则：</b>含税价超过1100元时转Lavender或Bugis。</p></section>
+<section class="hotel-group"><div class="hotel-group-head"><div><span>2027-05-11 · 1晚</span><h3>新加坡 · 多选一</h3></div><p>市中心建筑型酒店，一晚体验升级。</p></div><p>不追最贵套房，购买基础双床房和早餐即可。</p><div class="hotel-group-grid"><article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>PARKROYAL COLLECTION Pickering</h3><span class="hotel-rank">推荐</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">新加坡 · manual_estimate</p><p><b>价格：</b>约1900-2600元/晚</p><p>建筑、泳池和早餐体验明显，且与牛车水路线相连。</p><p class="muted">若双床含早超过2600元，不值得只住一晚。</p><a class="hotel-link" href="https://www.google.com/search?q=PARKROYAL%20COLLECTION%20Pickering%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Mondrian Singapore Duxton</h3><span class="hotel-rank">备选</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">新加坡 · manual_estimate</p><p><b>价格：</b>约1500-2200元/晚</p><p>设计感强，通常比传统奢华酒店便宜。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Mondrian%20Singapore%20Duxton%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>The Clan Hotel Singapore</h3><span class="hotel-rank">备选2</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">新加坡 · manual_estimate</p><p><b>价格：</b>约1700-2400元/晚</p><p>位置好，适合文化与美食路线。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=The%20Clan%20Hotel%20Singapore%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article></div><p class="muted"><b>备选规则：</b>超过2600元时切Mondrian；若换酒店太麻烦，经济酒店连住并把预算留给巴厘岛。</p></section>
+<section class="hotel-group"><div class="hotel-group-head"><div><span>2027-05-12至05-14 · 2晚</span><h3>槟城 · 多选一</h3></div><p>住乔治市老城边缘，步行方便且夜间较安静。</p></div><p>优先双床、安静和可取消，不追海景。</p><div class="hotel-group-grid"><article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Areca Hotel Penang</h3><span class="hotel-rank">推荐</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">槟城 · manual_estimate</p><p><b>价格：</b>约380-600元/晚</p><p>传统建筑氛围与老城路线匹配。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Areca%20Hotel%20Penang%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>JEN Penang Georgetown by Shangri-La</h3><span class="hotel-rank">备选</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">槟城 · manual_estimate</p><p><b>价格：</b>约500-800元/晚</p><p>房间稳定、交通方便。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=JEN%20Penang%20Georgetown%20by%20Shangri-La%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Loop On Leith George Town Penang Hotel</h3><span class="hotel-rank">备选2</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">槟城 · manual_estimate</p><p><b>价格：</b>约300-500元/晚</p><p>价格低、靠近老城。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Loop%20On%20Leith%20George%20Town%20Penang%20Hotel%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article></div><p class="muted"><b>备选规则：</b>老城酒店无房时住Komtar附近。</p></section>
+<section class="hotel-group"><div class="hotel-group-head"><div><span>2027-05-14至05-16 · 2晚</span><h3>巴厘岛 · 多选一</h3></div><p>乌布中心边缘，步行与叫车兼顾。</p></div><p>乌布不升级，预算留给最后一晚海边酒店。</p><div class="hotel-group-grid"><article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Artini Bisma Ubud Hotel</h3><span class="hotel-rank">推荐</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">巴厘岛 · manual_estimate</p><p><b>价格：</b>约450-750元/晚</p><p>绿意、泳池和位置平衡。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Artini%20Bisma%20Ubud%20Hotel%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Anumana Ubud Bali</h3><span class="hotel-rank">备选</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">巴厘岛 · manual_estimate</p><p><b>价格：</b>约550-850元/晚</p><p>服务较稳定，靠近猴林。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Anumana%20Ubud%20Bali%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Sri Aksata Ubud Resort</h3><span class="hotel-rank">备选2</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">巴厘岛 · manual_estimate</p><p><b>价格：</b>约350-600元/晚</p><p>更经济，适合两晚。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Sri%20Aksata%20Ubud%20Resort%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article></div><p class="muted"><b>备选规则：</b>含税超过800元时转Sri Aksata。</p></section>
+<section class="hotel-group"><div class="hotel-group-head"><div><span>2027-05-16 · 1晚</span><h3>巴厘岛 · 多选一</h3></div><p>Sanur海边步行区，便于第二天去Nusa Dua。</p></div><p>只住一晚，不为海景房加价。</p><div class="hotel-group-grid"><article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Akana Boutique Hotel Sanur</h3><span class="hotel-rank">推荐</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">巴厘岛 · manual_estimate</p><p><b>价格：</b>约400-650元/晚</p><p>一晚过渡，餐饮和海边步行方便。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Akana%20Boutique%20Hotel%20Sanur%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Grand Palace Hotel Sanur</h3><span class="hotel-rank">备选</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">巴厘岛 · manual_estimate</p><p><b>价格：</b>约350-550元/晚</p><p>价格更低，房间面积通常更实用。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Grand%20Palace%20Hotel%20Sanur%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article></div><p class="muted"><b>备选规则：</b>优先可取消双床房。</p></section>
+<section class="hotel-group"><div class="hotel-group-head"><div><span>2027-05-17 · 1晚</span><h3>巴厘岛 · 多选一</h3></div><p>Nusa Dua/Bukit海边度假村，一晚集中使用设施。</p></div><p>促销价低于3200元才选Apurva，否则切Renaissance或MERUSAKA。</p><div class="hotel-group-grid"><article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>The Apurva Kempinski Bali</h3><span class="hotel-rank">推荐</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">巴厘岛 · manual_estimate</p><p><b>价格：</b>约2200-3200元/晚</p><p>建筑和度假设施足够形成一次明显升级。</p><p class="muted">只买基础房；超过3200元就切换备选。</p><a class="hotel-link" href="https://www.google.com/search?q=The%20Apurva%20Kempinski%20Bali%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Renaissance Bali Nusa Dua Resort</h3><span class="hotel-rank">备选</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">巴厘岛 · manual_estimate</p><p><b>价格：</b>约1200-1900元/晚</p><p>升级感较温和但性价比高。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Renaissance%20Bali%20Nusa%20Dua%20Resort%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>MERUSAKA Nusa Dua</h3><span class="hotel-rank">备选2</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">巴厘岛 · manual_estimate</p><p><b>价格：</b>约1100-1800元/晚</p><p>海滩位置好，适合控制预算。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=MERUSAKA%20Nusa%20Dua%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article></div><p class="muted"><b>备选规则：</b>不为一晚购买不可取消房；价格过高时改住两晚同一家Sanur酒店。</p></section>
+<section class="hotel-group"><div class="hotel-group-head"><div><span>2027-05-18至05-20 · 2晚</span><h3>吉隆坡 · 多选一</h3></div><p>Bukit Bintang或KLCC轨道交通附近。</p></div><p>双床房优先于品牌；无双床就换酒店。</p><div class="hotel-group-grid"><article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>citizenM Kuala Lumpur Bukit Bintang</h3><span class="hotel-rank">推荐</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">吉隆坡 · manual_estimate</p><p><b>价格：</b>约420-650元/晚</p><p>位置、设计和价格平衡；需确认双床房是否供应。</p><p class="muted">若无双床房直接切换备选。</p><a class="hotel-link" href="https://www.google.com/search?q=citizenM%20Kuala%20Lumpur%20Bukit%20Bintang%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>Santa Grand Signature Kuala Lumpur</h3><span class="hotel-rank">备选</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">吉隆坡 · manual_estimate</p><p><b>价格：</b>约400-650元/晚</p><p>泳池与房间舒适度较好。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=Santa%20Grand%20Signature%20Kuala%20Lumpur%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article>
+<article class="hotel-card"><div class="hotel-image hotel-image-empty">暂无预览图</div><div class="hotel-body"><div class="hotel-top"><h3>JOURNAL Hotel Bukit Bintang</h3><span class="hotel-rank">备选2</span><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><p class="item-meta">吉隆坡 · manual_estimate</p><p><b>价格：</b>约450-700元/晚</p><p>餐饮和夜间步行方便。</p><p class="muted">价格、双床房、税费和取消条款需按最终日期复核。</p><a class="hotel-link" href="https://www.google.com/search?q=JOURNAL%20Hotel%20Bukit%20Bintang%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2">搜索/来源</a></div></article></div><p class="muted"><b>备选规则：</b>含税超过700元时转KL Sentral或Chow Kit。</p></section></div></section>
+<section id="booking"><h2>预订清单</h2><div class="booking-grid"><div class="booking-card"><div class="booking-top"><strong>五段航班与共享托运行李</strong><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><div class="item-meta">transport · 必订</div><p><b>建议时间：</b>2027年班表可售后先锁可退改或价格合适的跨境段。</p><p><b>价格：</b>两人约10,500元</p><p><b>风险：</b>分开出票、行李额度和中转保护需逐段核对。</p><a href="https://www.google.com/travel/flights">airline_search预订/来源</a></div>
+<div class="booking-card"><div class="booking-top"><strong>新加坡SG Arrival Card</strong><span class="booking-readiness readiness-direct">可直接办理</span><span class="badge badge-confirmed">已确认</span></div><div class="item-meta">entry · 必订</div><p><b>建议时间：</b>抵达新加坡前三天内提交。</p><p><b>价格：</b>官方免费</p><p><b>风险：</b>SGAC不是签证，不要使用收费代办网站。</p><a href="https://eservices.ica.gov.sg/sgarrivalcard/">official_site预订/来源</a></div>
+<div class="booking-card"><div class="booking-top"><strong>马来西亚MDAC两次</strong><span class="booking-readiness readiness-direct">可直接办理</span><span class="badge badge-confirmed">已确认</span></div><div class="item-meta">entry · 必订</div><p><b>建议时间：</b>分别在抵达槟城和抵达吉隆坡前三天内提交。</p><p><b>价格：</b>官方申报</p><p><b>风险：</b>第二次入境需重新检查并提交对应行程。</p><a href="https://imigresen-online.imi.gov.my/mdac/main">official_site预订/来源</a></div>
+<div class="booking-card"><div class="booking-top"><strong>印度尼西亚e-VoA</strong><span class="booking-readiness readiness-review">候选需复核</span><span class="badge badge-confirmed">已确认</span></div><div class="item-meta">entry · 必订</div><p><b>建议时间：</b>航班和酒店确定后、出发前办理。</p><p><b>价格：</b>当前500,000 IDR/人，待复核</p><p><b>风险：</b>资料填错通常不可修改或退款；只用官方域名。</p><a href="https://evisa.imigrasi.go.id/">official_site预订/来源</a></div>
+<div class="booking-card"><div class="booking-top"><strong>巴厘岛外国游客税</strong><span class="booking-readiness readiness-direct">可直接办理</span><span class="badge badge-confirmed">已确认</span></div><div class="item-meta">entry · 必订</div><p><b>建议时间：</b>抵达巴厘岛前在线支付。</p><p><b>价格：</b>当前150,000 IDR/人</p><p><b>风险：</b>保存邮件二维码；只使用Love Bali官方渠道。</p><a href="https://lovebali.baliprov.go.id/">official_site预订/来源</a></div>
+<div class="booking-card"><div class="booking-top"><strong>新加坡Cloud Forest</strong><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><div class="item-meta">门票 · 可选</div><p><b>建议时间：</b>确认2027维护日后购买。</p><p><b>价格：</b>待官方页面复核</p><p><b>风险：</b>每月可能有维护闭馆日。</p><a href="https://www.gardensbythebay.com.sg/en/plan-your-visit/opening-hours.html">official_site预订/来源</a></div>
+<div class="booking-card"><div class="booking-top"><strong>槟城升旗山缆车</strong><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><div class="item-meta">门票 · 可选</div><p><b>建议时间：</b>出发前查看天气与官方时段。</p><p><b>价格：</b>待复核</p><p><b>风险：</b>日落时段排队和雷雨可能影响体验。</p><a href="https://www.google.com/search?q=Penang%20Hill%20official%20ticket">official_site预订/来源</a></div>
+<div class="booking-card"><div class="booking-top"><strong>吉隆坡双子塔登塔</strong><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><div class="item-meta">门票 · 可选</div><p><b>建议时间：</b>若决定登塔，开放日期后购买定时票。</p><p><b>价格：</b>待官方页面复核</p><p><b>风险：</b>定时票可能售罄；外观和KLCC公园免费。</p><a href="https://eticket.petronastwintowers.com.my/?lang=en">official_site预订/来源</a></div>
+<div class="booking-card"><div class="booking-top"><strong>10晚酒店双床房</strong><span class="booking-readiness readiness-search">仅搜索入口</span><span class="badge badge-estimated">估算</span></div><div class="item-meta">酒店 · 必订</div><p><b>建议时间：</b>航班日期锁定后优先订可取消房。</p><p><b>价格：</b>两人约9,500元</p><p><b>风险：</b>双床、税费、早餐、押金和取消时间需逐家确认。</p><a href="https://www.google.com/travel/hotels">provider_search预订/来源</a></div></div></section>
+<section id="budget"><h2>预算</h2><div class="table-wrap"><table><thead><tr><th>分类</th><th>总额</th><th>人均</th><th>可信度</th><th>说明</th></tr></thead><tbody><tr><td>跨境机票与托运行李</td><td>¥10,500</td><td>¥5,250</td><td><span class="badge badge-estimated">估算</span></td><td>5段航班；按2人共享1件20公斤托运行李估算。</td></tr>
+<tr><td>住宿10晚</td><td>¥9,500</td><td>¥4,750</td><td><span class="badge badge-estimated">估算</span></td><td>含新加坡和巴厘岛各1晚升级；所有价格需按双床含税复核。</td></tr>
+<tr><td>当地交通</td><td>¥2,300</td><td>¥1,150</td><td><span class="badge badge-estimated">估算</span></td><td>地铁、Grab、机场快线与巴厘岛1天包车。</td></tr>
+<tr><td>餐饮</td><td>¥3,600</td><td>¥1,800</td><td><span class="badge badge-estimated">估算</span></td><td>以熟食中心、本地餐馆为主，升级酒店日不吃高价套餐。</td></tr>
+<tr><td>门票与活动</td><td>¥2,000</td><td>¥1,000</td><td><span class="badge badge-estimated">估算</span></td><td>Cloud Forest、槟城升旗山、博物馆和寺庙等。</td></tr>
+<tr><td>印尼签证与巴厘岛游客税</td><td>¥700</td><td>¥350</td><td><span class="badge badge-estimated">估算</span></td><td>VoA/e-VoA 500,000 IDR/人，加游客税150,000 IDR/人，按汇率估算。</td></tr>
+<tr><td>保险与通信</td><td>¥900</td><td>¥450</td><td><span class="badge badge-estimated">估算</span></td><td>境外保险和东南亚eSIM。</td></tr>
+<tr><td>机动资金</td><td>¥2,000</td><td>¥1,000</td><td><span class="badge badge-estimated">估算</span></td><td>航班变动、行李、临时交通和价格波动。</td></tr></tbody></table></div></section>
+<details class="detail-section" id="route"><summary><h2>路线时间轴</h2><span>每日行程里已包含路线，这里用于复核交通和缓冲。</span></summary><div class="route-map-panel"><img src="/featured/map" alt="路线图" loading="lazy"><p class="route-map-note">地图来源：svg · 状态：rendered_svg</p></div>
+<div class="route-lane">
+<div class="route-stop route-flight"><div class="route-day"><span>D1</span><small>航班</small></div><div class="route-content"><strong>杭州HGH 至 新加坡SIN</strong><div class="route-meta"><span>航班</span><span>地图约 330 分钟</span><span>缓冲 180 分钟</span><span class="badge badge-live">实时候选</span></div><p>直飞航线存在；2027具体班期与票价需复核。</p></div></div>
+<div class="route-stop route-flight"><div class="route-day"><span>D3</span><small>航班</small></div><div class="route-content"><strong>新加坡SIN 至 槟城PEN</strong><div class="route-meta"><span>航班</span><span>地图约 90 分钟</span><span>缓冲 210 分钟</span><span class="badge badge-live">实时候选</span></div><p>Scoot/AirAsia有直飞候选。</p></div></div>
+<div class="route-stop route-flight"><div class="route-day"><span>D5</span><small>航班</small></div><div class="route-content"><strong>槟城PEN 至 巴厘岛DPS</strong><div class="route-meta"><span>航班</span><span>地图约 420 分钟</span><span>缓冲 270 分钟</span><span class="badge badge-estimated">估算</span></div><p>经KUL一次中转；优先同一订单受保护中转。</p></div></div>
+<div class="route-stop route-car"><div class="route-day"><span>D5</span><small>包车</small></div><div class="route-content"><strong>巴厘岛DPS 至 乌布</strong><div class="route-meta"><span>包车</span><span>地图约 120 分钟</span><span>缓冲 30 分钟</span><span class="badge badge-estimated">估算</span></div><p>晚高峰保守估算。</p></div></div>
+<div class="route-stop route-car"><div class="route-day"><span>D7</span><small>包车</small></div><div class="route-content"><strong>乌布 至 Tirta Empul</strong><div class="route-meta"><span>包车</span><span>地图约 50 分钟</span><span>缓冲 25 分钟</span><span class="badge badge-estimated">估算</span></div><p>包车日。</p></div></div>
+<div class="route-stop route-car"><div class="route-day"><span>D7</span><small>包车</small></div><div class="route-content"><strong>Tegallalang 至 Sanur</strong><div class="route-meta"><span>包车</span><span>地图约 90 分钟</span><span>缓冲 30 分钟</span><span class="badge badge-estimated">估算</span></div><p>交通受拥堵影响明显。</p></div></div>
+<div class="route-stop route-car"><div class="route-day"><span>D8</span><small>打车</small></div><div class="route-content"><strong>Sanur 至 Nusa Dua</strong><div class="route-meta"><span>打车</span><span>地图约 45 分钟</span><span>缓冲 25 分钟</span><span class="badge badge-estimated">估算</span></div><p>换至升级酒店。</p></div></div>
+<div class="route-stop route-flight"><div class="route-day"><span>D9</span><small>航班</small></div><div class="route-content"><strong>巴厘岛DPS 至 吉隆坡KUL</strong><div class="route-meta"><span>航班</span><span>地图约 185 分钟</span><span>缓冲 270 分钟</span><span class="badge badge-live">实时候选</span></div><p>AirAsia等有直飞候选。</p></div></div>
+<div class="route-stop route-train"><div class="route-day"><span>D9</span><small>火车/动车</small></div><div class="route-content"><strong>吉隆坡KUL 至 Bukit Bintang</strong><div class="route-meta"><span>火车/动车</span><span>地图约 70 分钟</span><span>缓冲 60 分钟</span><span class="badge badge-estimated">估算</span></div><p>包含第二次马来西亚入境缓冲。</p></div></div>
+<div class="route-stop route-flight"><div class="route-day"><span>D11</span><small>航班</small></div><div class="route-content"><strong>吉隆坡KUL 至 杭州HGH</strong><div class="route-meta"><span>航班</span><span>地图约 330 分钟</span><span>缓冲 240 分钟</span><span class="badge badge-live">实时候选</span></div><p>直飞候选存在，具体班期需复核。</p></div></div>
+</div></details>
+<details class="detail-section" id="poi"><summary><h2>景点玩法</h2><span>需要细看每个点怎么取舍时展开。</span></summary><div class="poi-grid"><div class="poi-card"><h3>Gardens by the Bay</h3><p>把新加坡城市天际线和室内植物体验放在同一晚。</p><dl><dt>到达窗口</dt><dd>17:15-20:30</dd><dt>建议停留</dt><dd>150-195 分钟</dd><dt>玩法顺序</dt><dd>Cloud Forest→简餐→Supertree Grove</dd><dt>拍照点</dt><dd>瀑布逆光 · Supertree蓝调</dd><dt>人流策略</dt><dd>避开周末；维护日提前复核。</dd><dt>删减逻辑</dt><dd>预算不足时只保留免费Supertree外场。</dd></dl></div>
+<div class="poi-card"><h3>乔治市UNESCO核心区</h3><p>本次槟城段的文化主轴，建筑、宗教和饮食高度集中。</p><dl><dt>到达窗口</dt><dd>08:00-16:00</dd><dt>建议停留</dt><dd>300-420 分钟</dd><dt>玩法顺序</dt><dd>姓氏桥→亚美尼亚街→邱公司→和谐街→娘惹博物馆</dd><dt>拍照点</dt><dd>姓氏桥木栈道 · 骑楼透视</dd><dt>人流策略</dt><dd>壁画排队超过15分钟就跳过。</dd><dt>删减逻辑</dt><dd>高温时删街头壁画，保留室内馆和午休。</dd></dl></div>
+<div class="poi-card"><h3>Tirta Empul</h3><p>补足巴厘岛宗教与生活文化，不只看海滩。</p><dl><dt>到达窗口</dt><dd>09:00-11:00</dd><dt>建议停留</dt><dd>90-120 分钟</dd><dt>玩法顺序</dt><dd>换纱笼→外院→泉池→内院</dd><dt>拍照点</dt><dd>外院门框 · 中焦记录仪式</dd><dt>人流策略</dt><dd>早到并避免贴近仪式参与者。</dd><dt>删减逻辑</dt><dd>人流过密时只看外院和泉池边缘。</dd></dl></div>
+<div class="poi-card"><h3>乌布中心</h3><p>用宫殿、市场、艺术馆和山脊步道形成完整文化日。</p><dl><dt>到达窗口</dt><dd>08:00-19:00</dd><dt>建议停留</dt><dd>360-540 分钟</dd><dt>玩法顺序</dt><dd>皇宫/Saraswati→市场→午休→艺术馆→Campuhan</dd><dt>拍照点</dt><dd>莲花池 · Campuhan剪影</dd><dt>人流策略</dt><dd>早上先逛中心，正午回酒店。</dd><dt>删减逻辑</dt><dd>下雨删山脊步道。</dd></dl></div>
+<div class="poi-card"><h3>黑风洞与吉隆坡文化纵线</h3><p>用半天连接宗教空间、殖民建筑和现代城市。</p><dl><dt>到达窗口</dt><dd>07:30-20:30</dd><dt>建议停留</dt><dd>420-600 分钟</dd><dt>玩法顺序</dt><dd>黑风洞→独立广场→中央市场→伊斯兰艺术馆→KLCC</dd><dt>拍照点</dt><dd>阶梯纵深 · KLCC公园倒影</dd><dt>人流策略</dt><dd>黑风洞早到，KLCC日落前到。</dd><dt>删减逻辑</dt><dd>体力不足时取消登塔，只看外观。</dd></dl></div></div></details>
+<details class="detail-section" id="photo"><summary><h2>摄影计划</h2><span>拍照视角和备选场景。</span></summary><div class="table-wrap"><table><thead><tr><th>点位</th><th>优先级</th><th>最佳时间</th><th>器材</th><th>镜头清单</th><th>备选场景</th></tr></thead><tbody><tr><td>新加坡滨海湾</td><td>高</td><td>17:00至20:30</td><td>手机广角/相机24-70mm</td><td>鱼尾狮与金沙 · Supertree蓝调 · Cloud Forest瀑布</td><td>金沙室内与滨海艺术中心连廊</td></tr>
+<tr><td>乔治市</td><td>高</td><td>08:00至11:00</td><td>手机或35mm定焦</td><td>姓氏桥纵深 · 骑楼门窗 · 和谐街宗教建筑</td><td>娘惹博物馆室内细节</td></tr>
+<tr><td>Campuhan Ridge</td><td>中</td><td>17:15至18:45</td><td>广角或24-70mm</td><td>草坡曲线 · 人物剪影</td><td>乌布酒店庭院</td></tr>
+<tr><td>Apurva/Nusa Dua</td><td>高</td><td>清晨与17:00后</td><td>手机广角/24mm</td><td>酒店中轴 · 阶梯水景 · 海岸人像</td><td>室内大堂与连廊</td></tr>
+<tr><td>吉隆坡KLCC</td><td>高</td><td>18:30至20:00</td><td>手机超广角或16-35mm</td><td>公园水池倒影 · 双子塔仰拍</td><td>Suria KLCC室内</td></tr></tbody></table></div></details>
+<details class="detail-section" id="weather"><summary><h2>天气与执行变体</h2><span>雨天、体力不足或时间变化时使用。</span></summary><div class="panel"><h3>天气与季节</h3><p></p><p><b>衣物：</b></p><p><b>雨天：</b></p><ul class="clean-list">
+<li><span>推荐5月中旬的主要原因是巴厘岛进入旱季但尚未到7至8月高峰。</span></li>
+<li><span>若2027年5月航班显著高于预算，可整体平移至2027年9月中旬，路线结构不变。</span></li>
+<li><span>新加坡和马来西亚没有绝对干季保证，轻便雨衣与防水鞋袋比雨伞更实用。</span></li>
+</ul></div><div class="variant-grid"><div class="variant-card"><h3>省钱版</h3><p><b>适用：</b>两人总价超过35,000元</p><p>[&#x27;取消新加坡升级酒店，原酒店连住2晚&#x27;, &#x27;巴厘岛升级改Renaissance或MERUSAKA&#x27;, &#x27;双子塔只看外观&#x27;]</p><span>减少一次换酒店 · 预计节省2500-4500元</span></div>
+<div class="variant-card"><h3>舒适版</h3><p><b>适用：</b>机票低于预期且预算有余</p><p>[&#x27;PEN-KUL-DPS购买更长受保护中转&#x27;, &#x27;巴厘岛机场与包车均使用酒店合作车辆&#x27;, &#x27;升级房都含早餐&#x27;]</p><span>转场更稳 · 增加1500-2500元</span></div>
+<div class="variant-card"><h3>雨天版</h3><p><b>适用：</b>午后雷雨或巴厘岛连续降雨</p><p>[&#x27;新加坡改博物馆与商场&#x27;, &#x27;槟城删升旗山&#x27;, &#x27;乌布删山脊步道&#x27;, &#x27;KL保留室内馆&#x27;]</p><span>户外步行减少 · 增加少量馆票和打车</span></div>
+<div class="variant-card"><h3>航班延误版</h3><p><b>适用：</b>跨境航班延误超过2小时</p><p>[&#x27;D3取消槟城夜市，酒店附近吃&#x27;, &#x27;D5只保留机场到乌布&#x27;, &#x27;D9取消亚罗街夜宵&#x27;]</p><span>不影响后续固定主线 · 可能增加机场餐与交通</span></div></div></details>
+<details class="detail-section" id="evidence"><summary><h2>证据与可信度</h2><span>来源、状态和仍需复核的信息。</span></summary><div class="table-wrap"><table><thead><tr><th>来源</th><th>状态</th><th>可信度</th><th>时间</th><th>说明</th></tr></thead><tbody><tr><td>Singapore ICA</td><td><span class="badge badge-confirmed">已确认</span></td><td>高</td><td>2026-08-16</td><td>中国普通护照赴新加坡30天免签；SGAC在入境前三天内提交，护照通常需至少6个月有效期。</td></tr>
+<tr><td>Malaysia Immigration</td><td><span class="badge badge-confirmed">已确认</span></td><td>高</td><td>2026-08-16</td><td>中国普通护照短期社交访问免签规则与MDAC官方入口；本路线有两次入境。</td></tr>
+<tr><td>Indonesia official tourism/immigration</td><td><span class="badge badge-confirmed">已确认</span></td><td>高</td><td>2026-08-16</td><td>中国护照在VoA/e-VoA适用名单；当前费用500,000 IDR，需护照和后续行程。</td></tr>
+<tr><td>Love Bali</td><td><span class="badge badge-confirmed">已确认</span></td><td>高</td><td>2026-08-16</td><td>外国游客税当前为150,000 IDR/人。</td></tr>
+<tr><td>Scoot</td><td><span class="badge badge-live">实时候选</span></td><td>中</td><td>2026-08-16</td><td>HGH-SIN与SIN-PEN航线存在；2027具体班期需搜索确认。</td></tr>
+<tr><td>AirAsia MOVE</td><td><span class="badge badge-live">实时候选</span></td><td>中</td><td>2026-08-16</td><td>DPS-KUL和KUL-HGH直飞候选存在；PEN-DPS当前更适合按KUL中转。</td></tr>
+<tr><td>Gardens by the Bay official</td><td><span class="badge badge-confirmed">已确认</span></td><td>高</td><td>2026-08-16</td><td>Cloud Forest常规开放9:00-21:00且有月度维护日；2027日期需复核。</td></tr>
+<tr><td>myPenang/UNESCO</td><td><span class="badge badge-confirmed">已确认</span></td><td>高</td><td>2026-08-16</td><td>乔治市世界遗产核心区适合步行串联。</td></tr>
+<tr><td>Bali seasonal source</td><td><span class="badge badge-estimated">估算</span></td><td>中</td><td>2026-08-16</td><td>5月处于巴厘岛旱季初段，通常比7至8月游客高峰价格友好。</td></tr>
+<tr><td>PETRONAS official ticketing</td><td><span class="badge badge-confirmed">已确认</span></td><td>高</td><td>2026-08-16</td><td>双子塔登塔使用官方定时票系统。</td></tr>
+<tr><td>FlyAI</td><td><span class="badge badge-risk">不可用</span></td><td>低</td><td>2026-08-16</td><td>本机未检测到FlyAI CLI或API配置，因此没有保留FlyAI直达商品链接。</td></tr>
+<tr><td>Map providers</td><td><span class="badge badge-risk">不可用</span></td><td>低</td><td>2026-08-16</td><td>未检测到Google Maps/Amap API key，路线时间采用保守估算并生成SVG示意图。</td></tr></tbody></table></div></details>
+    <footer>
+      <strong>Skill for 我不知道-bz</strong> ·
+      由旅行控制塔计划数据生成，生成时间 2026-08-16 23:52。最终下单前仍需复核实时价格、余量、证件信息和取消政策。
+    </footer>
+  </main>
+</body>
+</html>

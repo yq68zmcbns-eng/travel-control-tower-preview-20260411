@@ -187,6 +187,10 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("启用实时机酒搜索", text)
         self.assertIn("必须去的点", text)
         self.assertIn("template.replaceAll('{departure}', departureValue)", text)
+        self.assertIn('href="/trips"', text)
+        self.assertIn('href="/featured"', text)
+        self.assertIn('href="/featured/excel"', text)
+        self.assertIn("杭州出发，新加坡、槟城、巴厘岛和吉隆坡 11 天", text)
 
     def test_parse_trip_request_requires_departure_for_nearby_city_prompt(self) -> None:
         with self.assertRaises(ValueError):

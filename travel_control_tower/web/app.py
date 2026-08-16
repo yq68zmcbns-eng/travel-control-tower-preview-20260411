@@ -32,6 +32,11 @@ from .route_maps import enrich_plan_route_maps, static_map_params
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 STATIC_EXAMPLES_DIR = BASE_DIR / "examples"
+FEATURED_PLAN_DIR = BASE_DIR / "featured"
+FEATURED_PLAN_PATH = FEATURED_PLAN_DIR / "hangzhou-southeast-asia.plan.json"
+FEATURED_HTML_PATH = FEATURED_PLAN_DIR / "hangzhou-southeast-asia.html"
+FEATURED_XLSX_PATH = FEATURED_PLAN_DIR / "hangzhou-southeast-asia.xlsx"
+FEATURED_ROUTE_PATH = FEATURED_PLAN_DIR / "hangzhou-southeast-asia-route.svg"
 
 
 def _resolve_data_dir() -> Path:
@@ -1037,6 +1042,35 @@ class TravelControlTowerHandler(BaseHTTPRequestHandler):
             return
         if path in {"/", ""}:
             self._write_html(render_form_page())
+            return
+        if path in {"/featured", "/featured/"}:
+            if not FEATURED_HTML_PATH.exists():
+                self._write_html("<h1>featured plan not found</h1>", status=HTTPStatus.NOT_FOUND)
+            else:
+                self._write_html(FEATURED_HTML_PATH.read_text(encoding="utf-8"))
+            return
+        if path == "/featured/plan":
+            payload = _load_plan_payload(FEATURED_PLAN_PATH)
+            if payload is None:
+                self._write_json({"error": "featured plan not found"}, status=HTTPStatus.NOT_FOUND)
+            else:
+                self._write_json(payload)
+            return
+        if path == "/featured/excel":
+            if not FEATURED_XLSX_PATH.exists():
+                self._write_html("<h1>featured excel not found</h1>", status=HTTPStatus.NOT_FOUND)
+            else:
+                self._write_file(
+                    FEATURED_XLSX_PATH.read_bytes(),
+                    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    download_name="hangzhou-southeast-asia-2027.xlsx",
+                )
+            return
+        if path == "/featured/map":
+            if not FEATURED_ROUTE_PATH.exists():
+                self._write_html("<h1>featured map not found</h1>", status=HTTPStatus.NOT_FOUND)
+            else:
+                self._write_file(FEATURED_ROUTE_PATH.read_bytes(), "image/svg+xml")
             return
         if path == "/manual-plan":
             self._write_html(workspace_ui.render_manual_plan_page())

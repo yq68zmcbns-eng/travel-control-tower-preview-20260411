@@ -1,0 +1,2844 @@
+{
+  "author_watermark": "Skill for 我不知道-bz",
+  "planning_mode": "precision_execution",
+  "destination": "新加坡—槟城—巴厘岛—吉隆坡",
+  "overview": {
+    "title": "杭州出发 新加坡·槟城·巴厘岛·吉隆坡 11天10晚",
+    "dates": "建议 2027年5月10日至5月20日；若选择Scoot红眼直飞，可能需5月9日晚从杭州出发",
+    "travelers": "2名成人，1间双床房",
+    "route": "杭州HGH → 新加坡SIN → 槟城PEN → 吉隆坡KUL中转 → 巴厘岛DPS → 吉隆坡KUL → 杭州HGH",
+    "summary": "以美食、老城和当地文化为主，巴厘岛停留4晚。住宿总体控制成本，在新加坡和巴厘岛各安排1晚升级体验。为减少误订，所有2027年航班、酒店和门票均列为候选需复核。",
+    "budget_summary": "两人预计约31,500元；建议准备35,000元上限。去掉两晚升级后可压至约26,000元。",
+    "booking_readiness": "当前均为候选需复核或仅搜索入口，尚无已确认预订。"
+  },
+  "intake": {
+    "status": "confirmed",
+    "mode": "outbound_plan",
+    "can_generate_full_deliverable": true,
+    "confirmed_fields": {
+      "departure": "杭州/杭州萧山国际机场",
+      "route": "新加坡—槟城—巴厘岛—吉隆坡—杭州",
+      "dates": "授权按价格与天气推荐；暂定2027-05-10至2027-05-20",
+      "travelers": "2名成人，1间双床房",
+      "budget": "总体经济，允许少量酒店升级",
+      "pace": "海岛优先，美食和老城文化优先，减少购物",
+      "transport": "接受廉航和红眼航班",
+      "passport": "中国大陆普通护照",
+      "bookings": "无固定预订",
+      "references": "没有，按推荐"
+    },
+    "blocking_missing_fields": [],
+    "scoped_authorizations": [
+      "日期由规划者结合天气与价格推荐",
+      "酒店升级控制价格"
+    ],
+    "questions_asked": [
+      "日期和天数",
+      "人数与房间",
+      "停留节奏",
+      "酒店升级",
+      "必去避开",
+      "护照、交通和固定预订",
+      "参考资料"
+    ],
+    "reference_material_prompted": true,
+    "assumptions": [
+      "护照在每次入境时剩余有效期不少于6个月且有足够空白页。",
+      "两人各有1件登机行李，跨境廉航另买1件20公斤共享托运行李。",
+      "2027年5月不在天气预报窗口内，天气内容为季节性预期。",
+      "最终航班时刻表尚未锁定，按当前航线结构设计，付款前必须重新搜索。"
+    ]
+  },
+  "traveler_priorities": {
+    "trip_intent": [
+      "用11天完成四地串联",
+      "把钱花在文化、美食和一两晚明显升级的住宿上"
+    ],
+    "must_include": [
+      "新加坡熟食中心与滨海湾",
+      "槟城乔治市老城和娘惹文化",
+      "巴厘岛乌布文化与两晚海边体验",
+      "吉隆坡老城与双子塔夜景"
+    ],
+    "must_avoid": [
+      "不安排重购物",
+      "不把四地写成纯打卡清单",
+      "不为一晚豪华酒店牺牲过多转场时间"
+    ],
+    "travel_habits": [
+      "接受廉航",
+      "接受红眼航班",
+      "城市内以公共交通和网约车结合",
+      "跨境日预留充足值机和入境缓冲"
+    ],
+    "comfort_rules": [
+      "双床房",
+      "经济型酒店要干净且交通方便",
+      "升级住宿优先促销价和实际体验，不追求最贵房型"
+    ],
+    "special_requirements": [
+      "低预算模块",
+      "适度豪华模块",
+      "多国入境与支付检查"
+    ],
+    "reference_materials": [],
+    "unplaced_notes": [
+      "新加坡和巴厘岛各升级1晚会增加两次换酒店；若临近出发发现两晚连住促销更划算，可减少搬运行李。"
+    ]
+  },
+  "outbound_travel_brief": {
+    "refreshed_at": "2026-08-16",
+    "traveler_nationality_assumption": "中华人民共和国普通护照，常住中国大陆",
+    "visa_and_entry": [
+      "新加坡：普通护照持有人可免签停留不超过30天；入境前三天内免费提交SG Arrival Card。",
+      "马来西亚：普通护照社交访问每次可免签不超过30天；本路线先入境槟城、从巴厘岛再次入境吉隆坡，建议分别为两次到达提交MDAC。",
+      "印度尼西亚：按当前规则中国普通护照可办理VoA/e-VoA，通常停留30天；建议使用官方e-Visa入口，费用和资格在付款前复核。",
+      "巴厘岛：另有外国游客税，当前为每人150,000印尼盾，建议通过Love Bali官方渠道支付。"
+    ],
+    "passport_validity": "三国均按至少6个月有效期准备；印尼还应准备返程或后续行程凭证。最终以出发前官方页面为准。",
+    "stay_limit": "本计划各国停留均远低于30天；实际准许停留期以入境机关签发记录为准。",
+    "insurance_and_health": "建议购买覆盖航班延误、行李、门急诊和巴厘岛摩托车排除条款的境外保险；不建议无相应驾照和保险自行骑摩托。",
+    "emergency_contacts": [
+      "新加坡：警察999，救护/消防995。",
+      "马来西亚：综合紧急电话999。",
+      "印度尼西亚：综合紧急电话112，警察110；不同地区接通情况可能不同。",
+      "中国外交部全球领事保护与服务应急热线：+86-10-12308。"
+    ],
+    "safety_notes": [
+      "巴厘岛不把手机、证件和现金放在临街一侧；夜间叫车核对车牌。",
+      "乔治市和吉隆坡老城注意高温、补水和随身物品。",
+      "跨境廉航分开出票时不受联程保护；槟城经吉隆坡去巴厘岛优先买同一订单的受保护中转。"
+    ],
+    "currency_payment": [
+      "新加坡使用SGD，马来西亚使用MYR，印度尼西亚使用IDR。",
+      "准备一张Visa或Mastercard实体卡和少量现金；街边小店、夜市和部分QR支付不一定支持中国钱包。",
+      "ATM取现选择银行自营设备，遇到动态货币转换时优先按当地货币结算。"
+    ],
+    "connectivity": "建议购买覆盖新加坡、马来西亚、印度尼西亚的东南亚eSIM；另保留中国手机号接收银行短信。",
+    "etiquette": [
+      "进入清真寺或印度教寺庙按要求遮肩遮膝并脱鞋。",
+      "巴厘岛寺庙使用纱笼时遵守现场要求，不跨越供品。",
+      "乔治市姓氏桥为居民区，避免清晨或深夜喧哗拍摄。"
+    ],
+    "airport_disruption_watch": "出发前7天、48小时和当天分别检查HGH、SIN、PEN、DPS、KUL航班及雷暴影响。",
+    "official_sources": [
+      "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/mutual-30-day-visa-exemption-arrangement-between-singapore-and-the-people-s-republic-of-china",
+      "https://www.ica.gov.sg/enter-transit-depart/entering-singapore",
+      "https://eservices.ica.gov.sg/sgarrivalcard/",
+      "https://malaysiavisa.imi.gov.my/faq/",
+      "https://imigresen-online.imi.gov.my/mdac/main",
+      "https://evisa.imigrasi.go.id/",
+      "https://lovebali.baliprov.go.id/"
+    ],
+    "open_items": [
+      "2027年入境政策可能变化，须在付款前和出发前30天各复核一次。",
+      "确认护照有效期、双床房容量、廉航托运行李和所有分段是否为同一订单。"
+    ]
+  },
+  "daily_plan": [
+    {
+      "day_index": 1,
+      "date": "2027-05-10",
+      "theme": "抵达新加坡，先恢复体力，再用老城和熟食中心进入状态",
+      "day_type": "arrival",
+      "pace": "relaxed",
+      "single_anchor_reason": "杭州直飞可能为红眼班次，首日不安排付费重景点。",
+      "optional_filler_blocks": [
+        "如体力好，加佛牙寺屋顶花园",
+        "如需补觉，取消牛车水晚间散步"
+      ],
+      "items": [
+        {
+          "label": "杭州飞新加坡",
+          "category": "transport",
+          "start_time": "00:00",
+          "end_time": "06:00",
+          "duration_minutes": null,
+          "location": "HGH→SIN",
+          "notes": "优先直飞；若只有Scoot红眼，可于5月9日晚出发。",
+          "play_method": "值机前复核航站楼、20公斤托运行李和座位。",
+          "photo_notes": "",
+          "meal_notes": "机上餐按需预购。",
+          "route_origin": "杭州萧山国际机场",
+          "route_destination": "新加坡樟宜机场",
+          "route_mode": "flight",
+          "route_provider": "manual",
+          "route_duration_minutes": 330,
+          "buffer_minutes": 180,
+          "cost": "约1200-1800元/人",
+          "confidence": "estimated"
+        },
+        {
+          "label": "樟宜机场早餐、洗漱与行李处理",
+          "category": "rest",
+          "start_time": "06:00",
+          "end_time": "09:00",
+          "duration_minutes": null,
+          "location": "樟宜机场",
+          "notes": "不强行早到酒店入住，先恢复体力。",
+          "play_method": "使用机场行李寄存或把行李送到酒店；Jewel商户开放时间需临近复核。",
+          "photo_notes": "",
+          "meal_notes": "早餐控制在15-25新元/两人。",
+          "route_origin": "樟宜机场",
+          "route_destination": "市中心酒店",
+          "route_mode": "MRT/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 45,
+          "buffer_minutes": 30,
+          "cost": "约15-35新元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "Maxwell熟食中心午餐",
+          "category": "meal",
+          "start_time": "11:30",
+          "end_time": "13:00",
+          "duration_minutes": null,
+          "location": "牛车水",
+          "notes": "首餐以海南鸡饭、鱼丸面或粿汁为主，避开最长队伍。",
+          "play_method": "两人分食2-3样，不追单一网红摊。",
+          "photo_notes": "熟食中心环境适合街头记录。",
+          "meal_notes": "预算25-40新元/两人。",
+          "route_origin": "酒店",
+          "route_destination": "Maxwell Food Centre",
+          "route_mode": "MRT/walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 25,
+          "buffer_minutes": 20,
+          "cost": "约140-220元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "酒店入住与午休",
+          "category": "hotel rest",
+          "start_time": "14:00",
+          "end_time": "17:00",
+          "duration_minutes": null,
+          "location": "Bencoolen/市中心",
+          "notes": "红眼后必须保留2小时休息。",
+          "play_method": "先洗澡睡觉，不把下午排满。",
+          "photo_notes": "",
+          "meal_notes": "",
+          "route_origin": "Maxwell Food Centre",
+          "route_destination": "经济型酒店",
+          "route_mode": "MRT/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "已计入酒店",
+          "confidence": "estimated"
+        },
+        {
+          "label": "牛车水—Ann Siang Hill夜走",
+          "category": "sightseeing",
+          "start_time": "18:00",
+          "end_time": "20:30",
+          "duration_minutes": null,
+          "location": "Chinatown",
+          "notes": "低成本老城主线，晚餐和街区合并。",
+          "play_method": "佛牙寺外观→South Bridge Road→Ann Siang Hill；累了就只走前半段。",
+          "photo_notes": "蓝调时刻拍骑楼与街灯，手机广角即可。",
+          "meal_notes": "晚餐可在Chinatown Complex，预算30-50新元/两人。",
+          "route_origin": "酒店",
+          "route_destination": "Chinatown",
+          "route_mode": "MRT/walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "约170-280元",
+          "confidence": "estimated"
+        }
+      ]
+    },
+    {
+      "day_index": 2,
+      "date": "2027-05-11",
+      "theme": "新加坡文化城市线，傍晚进入滨海湾并完成一晚酒店升级",
+      "day_type": "full_sightseeing",
+      "pace": "balanced",
+      "optional_filler_blocks": [
+        "国家美术馆只看重点展",
+        "如天气太热，福康宁缩短为30分钟"
+      ],
+      "items": [
+        {
+          "label": "退房、行李转存升级酒店",
+          "category": "hotel",
+          "start_time": "08:30",
+          "end_time": "09:30",
+          "duration_minutes": null,
+          "location": "市中心",
+          "notes": "把行李寄存在PARKROYAL COLLECTION Pickering，晚上再正式入住。",
+          "play_method": "避免中午专门返回办理入住。",
+          "photo_notes": "",
+          "meal_notes": "早餐选咖椰吐司与咖啡，约15-25新元/两人。",
+          "route_origin": "经济型酒店",
+          "route_destination": "PARKROYAL COLLECTION Pickering",
+          "route_mode": "taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 15,
+          "buffer_minutes": 20,
+          "cost": "约15新元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "福康宁公园与国家博物馆外圈",
+          "category": "sightseeing",
+          "start_time": "09:45",
+          "end_time": "11:45",
+          "duration_minutes": null,
+          "location": "Fort Canning",
+          "notes": "先走树洞和香料园，炎热时直接进入国家博物馆。",
+          "play_method": "公园控制60分钟；博物馆是否入内按当期展览和票价决定。",
+          "photo_notes": "树洞需排队时改拍坡道与绿荫，避免把时间耗在单一机位。",
+          "meal_notes": "",
+          "route_origin": "酒店",
+          "route_destination": "Fort Canning",
+          "route_mode": "MRT/walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "公园免费；博物馆待复核",
+          "confidence": "estimated"
+        },
+        {
+          "label": "市政区与海南/娘惹风味午餐",
+      "category": "sightseeing",
+          "start_time": "12:00",
+          "end_time": "14:30",
+          "duration_minutes": null,
+          "location": "City Hall",
+          "notes": "沿国家美术馆、旧国会、河岸形成连续步行线。",
+          "play_method": "只选一座室内馆深看，其余看建筑外观。",
+          "photo_notes": "国家美术馆台阶与河岸适合建筑构图。",
+          "meal_notes": "午餐预算40-70新元/两人。",
+          "route_origin": "Fort Canning",
+          "route_destination": "City Hall",
+          "route_mode": "walk/MRT",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "约230-400元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "滨海湾步行与休息",
+          "category": "sightseeing",
+          "start_time": "15:00",
+          "end_time": "17:00",
+          "duration_minutes": null,
+          "location": "Marina Bay",
+          "notes": "避开正午高温，沿鱼尾狮—滨海艺术中心—金沙外圈。",
+          "play_method": "下午雷雨时改在金沙商场和ArtScience Museum外圈。",
+          "photo_notes": "金沙倒影与滨海湾曲线适合广角。",
+          "meal_notes": "",
+          "route_origin": "City Hall",
+          "route_destination": "Marina Bay",
+          "route_mode": "MRT/walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 30,
+          "cost": "免费",
+          "confidence": "estimated"
+        },
+        {
+          "label": "Cloud Forest与Supertree夜景",
+          "category": "sightseeing",
+          "start_time": "17:15",
+          "end_time": "20:30",
+          "duration_minutes": null,
+          "location": "Gardens by the Bay",
+          "notes": "Cloud Forest官方常规开放9:00-21:00，但2027维护日需复核。",
+          "play_method": "先Cloud Forest约1小时，再吃简餐，最后看Supertree灯光；不强求Flower Dome。",
+          "photo_notes": "18点喷雾时段与蓝调适合瀑布逆光，园区禁止三脚架处遵守规则。",
+          "meal_notes": "园区简餐预算35-60新元/两人。",
+          "route_origin": "Marina Bay",
+          "route_destination": "Gardens by the Bay",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 25,
+          "cost": "付费馆约需500-800元/两人，待复核",
+          "confidence": "estimated"
+        },
+        {
+          "label": "升级酒店入住",
+          "category": "hotel rest",
+          "start_time": "21:00",
+          "end_time": "22:30",
+          "duration_minutes": null,
+          "location": "PARKROYAL COLLECTION Pickering",
+          "notes": "升级价值在建筑、泳池和早餐，不加行政酒廊。",
+          "play_method": "若含早餐价超过2600元，切换Mondrian Singapore Duxton。",
+          "photo_notes": "",
+          "meal_notes": "",
+          "route_origin": "Gardens by the Bay",
+          "route_destination": "升级酒店",
+          "route_mode": "MRT/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 25,
+          "buffer_minutes": 20,
+          "cost": "约1900-2600元/晚",
+          "confidence": "estimated"
+        }
+      ]
+    },
+    {
+      "day_index": 3,
+      "date": "2027-05-12",
+      "theme": "上午享用升级酒店，下午直飞槟城，晚上用小吃认识乔治市",
+      "day_type": "transfer",
+      "pace": "balanced",
+      "single_anchor_reason": "中午前后退房并完成国际航班转场。",
+      "optional_filler_blocks": [
+        "航班较晚可加克拉码头河岸",
+        "抵达晚则只保留酒店附近夜宵"
+      ],
+      "items": [
+        {
+          "label": "酒店早餐与泳池",
+          "category": "rest",
+          "start_time": "07:30",
+          "end_time": "10:00",
+          "duration_minutes": null,
+          "location": "升级酒店",
+          "notes": "把升级价值用足，不另排远景点。",
+          "play_method": "早餐后泳池或空中花园停留45分钟。",
+          "photo_notes": "建筑层叠绿化适合手机广角。",
+          "meal_notes": "含早优先。",
+          "route_origin": "酒店",
+          "route_destination": "酒店",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 0,
+          "buffer_minutes": 15,
+          "cost": "已计入酒店",
+          "confidence": "estimated"
+        },
+        {
+          "label": "退房并前往樟宜机场",
+          "category": "transport",
+          "start_time": "10:30",
+          "end_time": "12:00",
+          "duration_minutes": null,
+          "location": "市中心→SIN",
+          "notes": "按国际航班提前约3小时到机场。",
+          "play_method": "优先MRT；如行李多改打车。",
+          "photo_notes": "",
+          "meal_notes": "午餐在机场解决，约30-50新元/两人。",
+          "route_origin": "升级酒店",
+          "route_destination": "樟宜机场",
+          "route_mode": "MRT/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 45,
+          "buffer_minutes": 150,
+          "cost": "约15-35新元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "新加坡飞槟城",
+          "category": "transport",
+          "start_time": "14:30",
+          "end_time": "16:00",
+          "duration_minutes": null,
+          "location": "SIN→PEN",
+          "notes": "Scoot/AirAsia直飞约1小时15至30分钟；具体班次待2027时刻表。",
+          "play_method": "优先下午直飞，避免凌晨抵达。",
+          "photo_notes": "",
+          "meal_notes": "机上不买餐。",
+          "route_origin": "樟宜机场",
+          "route_destination": "槟城国际机场",
+          "route_mode": "flight",
+          "route_provider": "manual",
+          "route_duration_minutes": 90,
+          "buffer_minutes": 60,
+          "cost": "约350-650元/人",
+          "confidence": "estimated"
+        },
+        {
+          "label": "机场到乔治市、入住",
+          "category": "hotel",
+          "start_time": "17:00",
+          "end_time": "18:30",
+          "duration_minutes": null,
+          "location": "PEN→George Town",
+          "notes": "Grab通常比多次换公交省时。",
+          "play_method": "住老城边缘，避免拖行李走石板路。",
+          "photo_notes": "",
+          "meal_notes": "",
+          "route_origin": "槟城国际机场",
+          "route_destination": "Areca Hotel Penang",
+          "route_mode": "taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 40,
+          "buffer_minutes": 30,
+          "cost": "约50-80元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "New Lane或汕头街小吃",
+          "category": "sightseeing",
+          "start_time": "19:00",
+          "end_time": "21:00",
+          "duration_minutes": null,
+          "location": "George Town",
+          "notes": "以炒粿条、福建面、蚝煎和煎蕊为主。",
+          "play_method": "两人分食，看到长队就换邻近摊位。",
+          "photo_notes": "夜市摊位适合近景，不拍陌生人正脸。",
+          "meal_notes": "预算60-100马币/两人。",
+          "route_origin": "酒店",
+          "route_destination": "New Lane/汕头街",
+          "route_mode": "walk/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 15,
+          "buffer_minutes": 20,
+          "cost": "约100-170元",
+          "confidence": "estimated"
+        }
+      ]
+    },
+    {
+      "day_index": 4,
+      "date": "2027-05-13",
+      "theme": "乔治市完整文化日，从港口移民史走到娘惹生活，再上山看城市夜景",
+      "day_type": "full_sightseeing",
+      "pace": "balanced",
+      "optional_filler_blocks": [
+        "蓝屋导览替代娘惹博物馆",
+        "下雨时加Hin Bus Depot或商场休息"
+      ],
+      "items": [
+        {
+          "label": "姓氏桥与码头老城",
+          "category": "sightseeing",
+          "start_time": "08:00",
+          "end_time": "09:30",
+          "duration_minutes": null,
+          "location": "Chew Jetty",
+          "notes": "趁居民区尚未拥挤，控制音量。",
+          "play_method": "码头入口→木栈道→外侧海面，不进入私人住宅区域。",
+          "photo_notes": "早晨侧光拍木屋纵深，避免堵住通道。",
+          "meal_notes": "早餐先吃咖椰吐司或云吞面，约25-40马币/两人。",
+          "route_origin": "酒店",
+          "route_destination": "Chew Jetty",
+          "route_mode": "walk/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 15,
+          "buffer_minutes": 20,
+          "cost": "免费",
+          "confidence": "estimated"
+        },
+        {
+          "label": "亚美尼亚街—邱公司—和谐街",
+          "category": "sightseeing",
+          "start_time": "09:45",
+          "end_time": "12:30",
+          "duration_minutes": null,
+          "location": "George Town UNESCO Core",
+          "notes": "老城核心区面积紧凑，步行串联比来回打车更顺。",
+          "play_method": "壁画只选顺路机位→邱公司→甲必丹吉宁清真寺外观→小印度。",
+          "photo_notes": "壁画前排队超过15分钟就跳过；重点拍骑楼和宗教建筑并置。",
+          "meal_notes": "",
+          "route_origin": "Chew Jetty",
+          "route_destination": "Armenian Street",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 15,
+          "buffer_minutes": 20,
+          "cost": "邱公司门票待复核",
+          "confidence": "estimated"
+        },
+        {
+          "label": "娘惹午餐与午休",
+          "category": "meal rest",
+          "start_time": "12:30",
+          "end_time": "14:30",
+          "duration_minutes": null,
+          "location": "Little India/Beach Street",
+          "notes": "高温时段用午餐和咖啡休息。",
+          "play_method": "选一间有空调的娘惹餐馆，不追需要排队的网红店。",
+          "photo_notes": "",
+          "meal_notes": "尝试娘惹咖喱、蓝花饭或娘惹糕，预算80-140马币/两人。",
+          "route_origin": "Armenian Street",
+          "route_destination": "Beach Street",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 15,
+          "buffer_minutes": 20,
+          "cost": "约140-240元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "Pinang Peranakan Mansion",
+          "category": "sightseeing",
+          "start_time": "14:30",
+          "end_time": "16:00",
+          "duration_minutes": null,
+          "location": "Church Street",
+          "notes": "用室内展陈补足乔治市多元移民史。",
+          "play_method": "先主厅与珠宝/婚俗展，再看后院；疲劳时不追每个房间。",
+          "photo_notes": "室内遵守拍摄规定，利用门框和瓷砖做细节构图。",
+          "meal_notes": "",
+          "route_origin": "Beach Street",
+          "route_destination": "Pinang Peranakan Mansion",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 10,
+          "buffer_minutes": 20,
+          "cost": "门票待官方复核",
+          "confidence": "estimated"
+        },
+        {
+          "label": "槟城升旗山日落",
+          "category": "sightseeing",
+          "start_time": "17:00",
+          "end_time": "20:30",
+          "duration_minutes": null,
+          "location": "Penang Hill",
+          "notes": "如果缆车排队或下雨，改Gurney Bay与夜市。",
+          "play_method": "Grab到山脚→缆车→观景台→日落后下山。",
+          "photo_notes": "日落前后各拍一组，长焦压缩乔治市天际线。",
+          "meal_notes": "晚餐在山下或回老城吃，预算60-100马币/两人。",
+          "route_origin": "Peranakan Mansion",
+          "route_destination": "Penang Hill Lower Station",
+          "route_mode": "taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 35,
+          "buffer_minutes": 45,
+          "cost": "缆车和交通约250-400元/两人",
+          "confidence": "estimated"
+        }
+      ]
+    },
+    {
+      "day_index": 5,
+      "date": "2027-05-14",
+      "theme": "槟城经吉隆坡转机到巴厘岛，晚上只处理入住和恢复",
+      "day_type": "transfer",
+      "pace": "relaxed",
+      "single_anchor_reason": "现行稳定方案通常需经KUL一次中转，全天以跨境转场为主。",
+      "optional_filler_blocks": [
+        "若抵达早，在乌布酒店附近吃晚餐",
+        "航班延误则取消一切夜间安排"
+      ],
+      "items": [
+        {
+          "label": "酒店早餐、退房去机场",
+          "category": "transport",
+          "start_time": "07:00",
+          "end_time": "08:30",
+          "duration_minutes": null,
+          "location": "George Town→PEN",
+          "notes": "预留早高峰和行李缓冲。",
+          "play_method": "叫Grab，机场至少提前2.5小时到。",
+          "photo_notes": "",
+          "meal_notes": "早餐酒店或打包。",
+          "route_origin": "George Town酒店",
+          "route_destination": "槟城国际机场",
+          "route_mode": "taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 40,
+          "buffer_minutes": 150,
+          "cost": "约50-80元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "槟城经吉隆坡飞巴厘岛",
+          "category": "transport",
+          "start_time": "10:30",
+          "end_time": "17:30",
+          "duration_minutes": null,
+          "location": "PEN→KUL→DPS",
+          "notes": "优先买同一订单的受保护中转，避免自助转机。",
+          "play_method": "中转至少2小时；重新托运行李的方案至少3小时。",
+          "photo_notes": "",
+          "meal_notes": "中转午餐约80-120马币/两人。",
+          "route_origin": "槟城国际机场",
+          "route_destination": "伍拉·赖国际机场",
+          "route_mode": "flight",
+          "route_provider": "manual",
+          "route_duration_minutes": 420,
+          "buffer_minutes": 120,
+          "cost": "约800-1200元/人",
+          "confidence": "estimated"
+        },
+        {
+          "label": "印尼入境、e-VoA与游客税检查",
+          "category": "buffer",
+          "start_time": "17:30",
+          "end_time": "19:00",
+          "duration_minutes": null,
+          "location": "DPS",
+          "notes": "提前办e-VoA并保存PDF；Love Bali税保存二维码。",
+          "play_method": "落地后先办入境和取行李，不安排固定晚餐预约。",
+          "photo_notes": "",
+          "meal_notes": "",
+          "route_origin": "飞机",
+          "route_destination": "DPS到达大厅",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 0,
+          "buffer_minutes": 90,
+          "cost": "两人签证及游客税约700元，待汇率复核",
+          "confidence": "estimated"
+        },
+        {
+          "label": "机场到乌布酒店",
+          "category": "transport",
+          "start_time": "19:00",
+          "end_time": "21:00",
+          "duration_minutes": null,
+          "location": "DPS→Ubud",
+          "notes": "晚高峰可能超过2小时，使用正规网约车或酒店接机。",
+          "play_method": "司机和车牌提前确认；不骑摩托带行李。",
+          "photo_notes": "",
+          "meal_notes": "晚餐使用酒店或附近简餐。",
+          "route_origin": "伍拉·赖国际机场",
+          "route_destination": "乌布酒店",
+          "route_mode": "taxi/private_car",
+          "route_provider": "manual",
+          "route_duration_minutes": 120,
+          "buffer_minutes": 30,
+          "cost": "约180-300元",
+          "confidence": "estimated"
+        },
+      {
+        "label": "乌布酒店庭院适应性短走",
+        "category": "sightseeing",
+        "start_time": "21:00",
+        "end_time": "21:20",
+        "duration_minutes": 20,
+        "location": "Ubud酒店庭院",
+        "notes": "只在酒店内部熟悉环境，若航班延误则直接取消。",
+        "play_method": "确认早餐位置、前台联系方式和次日上车点，不离开酒店。",
+        "photo_notes": "有体力时拍庭院夜景，不使用闪光灯。",
+        "meal_notes": "",
+        "route_origin": "酒店大堂",
+        "route_destination": "酒店庭院",
+        "route_mode": "walk",
+        "route_provider": "manual",
+        "route_duration_minutes": 3,
+        "buffer_minutes": 10,
+        "cost": "免费",
+        "confidence": "estimated"
+      },
+      {
+        "label": "入住与休息",
+        "category": "hotel rest",
+        "start_time": "21:20",
+          "end_time": "22:30",
+          "duration_minutes": null,
+          "location": "Ubud",
+          "notes": "只处理洗漱、补水和第二天司机确认。",
+          "play_method": "不再外出。",
+          "photo_notes": "",
+          "meal_notes": "晚餐预算150-250元/两人。",
+          "route_origin": "酒店门口",
+          "route_destination": "酒店房间",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 0,
+          "buffer_minutes": 15,
+          "cost": "已计入酒店",
+          "confidence": "estimated"
+        }
+      ]
+    },
+    {
+      "day_index": 6,
+      "date": "2027-05-15",
+      "theme": "乌布慢文化日，宫殿、市场、艺术馆与山脊步道不跨区折返",
+      "day_type": "full_sightseeing",
+      "pace": "balanced",
+      "optional_filler_blocks": [
+        "猴林只作为体力好的加项",
+        "下雨改ARMA/Blanco Museum与咖啡馆"
+      ],
+      "items": [
+        {
+          "label": "乌布皇宫与Saraswati Temple外圈",
+          "category": "sightseeing",
+          "start_time": "08:00",
+          "end_time": "10:00",
+          "duration_minutes": null,
+          "location": "Ubud Center",
+          "notes": "早上先看建筑与水景，避开团队高峰。",
+          "play_method": "皇宫外圈→Saraswati莲花池→街巷；现场有仪式时保持距离。",
+          "photo_notes": "莲花池用长焦压缩，寺庙门框做人像背景。",
+          "meal_notes": "早餐在酒店。",
+          "route_origin": "乌布酒店",
+          "route_destination": "Ubud Palace",
+          "route_mode": "walk/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "免费或小额捐赠",
+          "confidence": "estimated"
+        },
+        {
+          "label": "乌布传统市场与咖啡",
+          "category": "sightseeing shopping",
+          "start_time": "10:00",
+          "end_time": "11:30",
+          "duration_minutes": null,
+          "location": "Ubud Market",
+          "notes": "只看手工艺和香料，不安排重购物。",
+          "play_method": "先比价再购买，小件纪念品控制在一个袋子内。",
+          "photo_notes": "拍摊位色彩时先征得摊主同意。",
+          "meal_notes": "咖啡约80-150元/两人。",
+          "route_origin": "Ubud Palace",
+          "route_destination": "Ubud Market",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 5,
+          "buffer_minutes": 15,
+          "cost": "约100-250元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "印尼菜午餐与酒店休息",
+          "category": "meal rest",
+          "start_time": "12:00",
+          "end_time": "14:30",
+          "duration_minutes": null,
+          "location": "Ubud Center",
+          "notes": "正午高温和阵雨时段回酒店休息。",
+          "play_method": "午餐后至少休息60分钟。",
+          "photo_notes": "",
+          "meal_notes": "点烤猪饭或印尼拼盘；两人约200-350元。",
+          "route_origin": "Ubud Market",
+          "route_destination": "酒店",
+          "route_mode": "walk/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "约200-350元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "ARMA或Neka Art Museum",
+          "category": "sightseeing",
+          "start_time": "15:00",
+          "end_time": "17:00",
+          "duration_minutes": null,
+          "location": "Ubud",
+          "notes": "二选一，不追两个馆。",
+          "play_method": "重点看巴厘传统绘画与现代演变，控制2小时。",
+          "photo_notes": "室内依规定拍摄，重点记录建筑与庭院。",
+          "meal_notes": "",
+          "route_origin": "酒店",
+          "route_destination": "艺术博物馆",
+          "route_mode": "taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "约150-250元/两人",
+          "confidence": "estimated"
+        },
+        {
+          "label": "Campuhan Ridge Walk日落",
+          "category": "sightseeing",
+          "start_time": "17:15",
+          "end_time": "19:00",
+          "duration_minutes": null,
+          "location": "Campuhan Ridge",
+          "notes": "天气闷热或雨后湿滑就改酒店泳池。",
+          "play_method": "从南端进入，走到开阔脊线后原路返回，不摸黑走远。",
+          "photo_notes": "日落前用广角拍草坡和人物剪影。",
+          "meal_notes": "",
+          "route_origin": "艺术博物馆",
+          "route_destination": "Campuhan Ridge Walk",
+          "route_mode": "taxi/walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 25,
+          "cost": "免费",
+          "confidence": "estimated"
+        },
+        {
+          "label": "乌布晚餐",
+          "category": "meal",
+          "start_time": "19:30",
+          "end_time": "21:00",
+          "duration_minutes": null,
+          "location": "Ubud Center",
+          "notes": "选离酒店近的印尼菜，避免夜间长距离回程。",
+          "play_method": "如果白天太累，就直接酒店用餐。",
+          "photo_notes": "",
+          "meal_notes": "预算220-400元/两人。",
+          "route_origin": "Campuhan Ridge Walk",
+          "route_destination": "酒店附近餐厅",
+          "route_mode": "taxi/walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "约220-400元",
+          "confidence": "estimated"
+        }
+      ]
+    },
+    {
+      "day_index": 7,
+      "date": "2027-05-16",
+      "theme": "包车串联圣泉、稻田与乡村午餐，傍晚换到Sanur降低第二天移动压力",
+      "day_type": "full_sightseeing",
+      "pace": "balanced",
+      "optional_filler_blocks": [
+        "雨天删Tegallalang，改Mas木雕村室内店",
+        "如寺庙拥挤，缩短拍照直接午餐"
+      ],
+      "items": [
+        {
+          "label": "退房并包车出发",
+          "category": "transport",
+          "start_time": "08:00",
+          "end_time": "09:00",
+          "duration_minutes": null,
+          "location": "Ubud",
+          "notes": "行李全程放车内，贵重物品随身。",
+          "play_method": "提前确认司机、车辆和是否含停车费。",
+          "photo_notes": "",
+          "meal_notes": "早餐酒店。",
+          "route_origin": "乌布酒店",
+          "route_destination": "Tirta Empul",
+          "route_mode": "private_car",
+          "route_provider": "manual",
+          "route_duration_minutes": 50,
+          "buffer_minutes": 25,
+          "cost": "全天包车约450-650元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "Tirta Empul圣泉寺",
+          "category": "sightseeing",
+          "start_time": "09:00",
+          "end_time": "11:00",
+          "duration_minutes": null,
+          "location": "Tampaksiring",
+          "notes": "以观察寺庙空间和仪式为主，不把净身池当摆拍场。",
+          "play_method": "入口换纱笼→外院→泉池→内院；是否下水按现场规定和个人意愿。",
+          "photo_notes": "拍摄仪式保持距离，用中焦而非贴近。",
+          "meal_notes": "",
+          "route_origin": "乌布酒店",
+          "route_destination": "Tirta Empul",
+          "route_mode": "private_car",
+          "route_provider": "manual",
+          "route_duration_minutes": 50,
+          "buffer_minutes": 25,
+          "cost": "门票待复核",
+          "confidence": "estimated"
+        },
+        {
+          "label": "Tegallalang稻田边缘短走",
+          "category": "sightseeing",
+          "start_time": "11:30",
+          "end_time": "13:00",
+          "duration_minutes": null,
+          "location": "Tegallalang",
+          "notes": "不下最深谷底，控制上下坡。",
+          "play_method": "选正规观景入口，走一段田埂即可；雨后取消。",
+          "photo_notes": "正午光硬，主要拍层次与人物环境照。",
+          "meal_notes": "",
+          "route_origin": "Tirta Empul",
+          "route_destination": "Tegallalang",
+          "route_mode": "private_car",
+          "route_provider": "manual",
+          "route_duration_minutes": 30,
+          "buffer_minutes": 20,
+          "cost": "约100-200元/两人",
+          "confidence": "estimated"
+        },
+        {
+          "label": "乡村午餐与咖啡",
+          "category": "meal rest",
+          "start_time": "13:15",
+          "end_time": "15:00",
+          "duration_minutes": null,
+          "location": "Tegallalang/Ubud北部",
+          "notes": "午餐同时恢复体力。",
+          "play_method": "优先有稻田视野、评价稳定的印尼餐馆。",
+          "photo_notes": "",
+          "meal_notes": "两人预算250-400元。",
+          "route_origin": "Tegallalang",
+          "route_destination": "午餐餐厅",
+          "route_mode": "private_car",
+          "route_provider": "manual",
+          "route_duration_minutes": 15,
+          "buffer_minutes": 20,
+          "cost": "约250-400元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "前往Sanur并入住",
+          "category": "transport hotel",
+          "start_time": "15:00",
+          "end_time": "17:30",
+          "duration_minutes": null,
+          "location": "Ubud北部→Sanur",
+          "notes": "避开在库塔中转，直接到Sanur。",
+          "play_method": "抵达后只在海边走一小段。",
+          "photo_notes": "傍晚Sanur海岸适合柔和人像。",
+          "meal_notes": "",
+          "route_origin": "午餐餐厅",
+          "route_destination": "Sanur酒店",
+          "route_mode": "private_car",
+          "route_provider": "manual",
+          "route_duration_minutes": 90,
+          "buffer_minutes": 30,
+          "cost": "已含包车",
+          "confidence": "estimated"
+        },
+        {
+          "label": "Sanur海边晚餐",
+          "category": "meal sightseeing",
+          "start_time": "18:00",
+          "end_time": "20:00",
+          "duration_minutes": null,
+          "location": "Sanur Beach",
+          "notes": "选步行可达餐厅，减少夜间叫车。",
+          "play_method": "海边散步30分钟后吃饭。",
+          "photo_notes": "蓝调海岸用手机夜景模式。",
+          "meal_notes": "两人预算250-450元。",
+          "route_origin": "Sanur酒店",
+          "route_destination": "Sanur Beach",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 15,
+          "buffer_minutes": 20,
+          "cost": "约250-450元",
+          "confidence": "estimated"
+        }
+      ]
+    },
+    {
+      "day_index": 8,
+      "date": "2027-05-17",
+      "theme": "把升级酒店当作当天主项目，减少景点奔波",
+      "day_type": "luxury",
+      "pace": "relaxed",
+      "optional_filler_blocks": [
+        "天气好可加Nusa Dua海滩步道",
+        "不安排Uluwatu，避免错过酒店设施"
+      ],
+      "items": [
+        {
+          "label": "Sanur日出与早餐",
+          "category": "sightseeing meal",
+          "start_time": "06:30",
+          "end_time": "09:00",
+          "duration_minutes": null,
+          "location": "Sanur Beach",
+          "notes": "早起自愿，若前晚疲劳可睡到8点。",
+          "play_method": "海边短走30分钟，回酒店早餐。",
+          "photo_notes": "朝东海岸日出用广角；云多也可拍低饱和海面。",
+          "meal_notes": "早餐酒店。",
+          "route_origin": "Sanur酒店",
+          "route_destination": "Sanur Beach",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 10,
+          "buffer_minutes": 15,
+          "cost": "免费",
+          "confidence": "estimated"
+        },
+        {
+          "label": "退房前往Nusa Dua升级酒店",
+          "category": "transport hotel",
+          "start_time": "10:30",
+          "end_time": "12:00",
+          "duration_minutes": null,
+          "location": "Sanur→Nusa Dua",
+          "notes": "提前询问能否12点寄存并使用公共设施。",
+          "play_method": "不购买昂贵接送，用Grab或Bluebird。",
+          "photo_notes": "",
+          "meal_notes": "",
+          "route_origin": "Sanur酒店",
+          "route_destination": "The Apurva Kempinski Bali",
+          "route_mode": "taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 45,
+          "buffer_minutes": 25,
+          "cost": "约100-180元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "酒店午餐与泳池/海滩",
+          "category": "rest experience",
+          "start_time": "12:00",
+          "end_time": "16:00",
+          "duration_minutes": null,
+          "location": "Nusa Dua",
+          "notes": "升级价值主要来自建筑、泳池、海滩和早餐。",
+          "play_method": "先寄存行李→午餐→泳池→15点入住；不额外订高价SPA。",
+          "photo_notes": "大厅中轴、阶梯水景和海岸适合广角；注意住客隐私。",
+          "meal_notes": "午餐可在酒店外或简餐，控制300-500元/两人。",
+          "route_origin": "酒店大堂",
+          "route_destination": "酒店海滩",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 10,
+          "buffer_minutes": 20,
+          "cost": "约300-500元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "Nusa Dua海岸与Waterblow外圈",
+          "category": "sightseeing",
+          "start_time": "16:30",
+          "end_time": "18:15",
+          "duration_minutes": null,
+          "location": "Nusa Dua",
+          "notes": "潮浪大时不靠近湿滑边缘。",
+          "play_method": "沿安全步道短走，是否进入Waterblow按开放情况。",
+          "photo_notes": "傍晚逆光拍海岸线，保护镜头防盐雾。",
+          "meal_notes": "",
+          "route_origin": "升级酒店",
+          "route_destination": "Nusa Dua海岸",
+          "route_mode": "walk/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "免费或小额门票",
+          "confidence": "estimated"
+        },
+        {
+          "label": "酒店周边晚餐与休息",
+          "category": "meal rest",
+          "start_time": "19:00",
+          "end_time": "21:30",
+          "duration_minutes": null,
+          "location": "Nusa Dua",
+          "notes": "不做高价套餐，把预算留给房晚本身。",
+          "play_method": "优先Bali Collection或酒店附近评价稳定餐厅。",
+          "photo_notes": "",
+          "meal_notes": "两人预算350-600元。",
+          "route_origin": "Nusa Dua海岸",
+          "route_destination": "升级酒店",
+          "route_mode": "taxi/walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "约350-600元",
+          "confidence": "estimated"
+        }
+      ]
+    },
+    {
+      "day_index": 9,
+      "date": "2027-05-18",
+      "theme": "上午继续使用豪华酒店，下午直飞吉隆坡，晚上只做低强度夜宵",
+      "day_type": "transfer",
+      "pace": "relaxed",
+      "single_anchor_reason": "跨境飞行和第二次马来西亚入境占据下午。",
+      "optional_filler_blocks": [
+        "航班晚时只在酒店休息",
+        "航班早且有体力可加亚罗街短走"
+      ],
+      "items": [
+        {
+          "label": "酒店早餐、泳池与退房",
+          "category": "rest",
+          "start_time": "07:30",
+          "end_time": "11:30",
+          "duration_minutes": null,
+          "location": "Nusa Dua",
+          "notes": "完整使用早餐和泳池，11点前整理行李。",
+          "play_method": "避免早上另跑景点。",
+          "photo_notes": "晨光下拍酒店建筑与海面。",
+          "meal_notes": "含早优先。",
+          "route_origin": "升级酒店",
+          "route_destination": "升级酒店",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 0,
+          "buffer_minutes": 20,
+          "cost": "已计入酒店",
+          "confidence": "estimated"
+        },
+        {
+          "label": "前往DPS并办理离境",
+          "category": "transport",
+          "start_time": "11:30",
+          "end_time": "14:00",
+          "duration_minutes": null,
+          "location": "Nusa Dua→DPS",
+          "notes": "国际航班提前约3小时抵达。",
+          "play_method": "核对KUL到达航站楼和托运行李。",
+          "photo_notes": "",
+          "meal_notes": "机场午餐简餐。",
+          "route_origin": "Nusa Dua酒店",
+          "route_destination": "伍拉·赖国际机场",
+          "route_mode": "taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 40,
+          "buffer_minutes": 150,
+          "cost": "约80-150元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "巴厘岛直飞吉隆坡",
+          "category": "transport",
+          "start_time": "15:00",
+          "end_time": "18:05",
+          "duration_minutes": null,
+          "location": "DPS→KUL",
+          "notes": "AirAsia等有约3小时直飞候选，具体时刻待复核。",
+          "play_method": "避免经新加坡中转增加风险。",
+          "photo_notes": "",
+          "meal_notes": "",
+          "route_origin": "伍拉·赖国际机场",
+          "route_destination": "吉隆坡国际机场",
+          "route_mode": "flight",
+          "route_provider": "manual",
+          "route_duration_minutes": 185,
+          "buffer_minutes": 60,
+          "cost": "约400-700元/人",
+          "confidence": "estimated"
+        },
+        {
+          "label": "第二次马来西亚入境与进城",
+          "category": "transport buffer",
+          "start_time": "18:05",
+          "end_time": "20:30",
+          "duration_minutes": null,
+          "location": "KUL→Bukit Bintang",
+          "notes": "为第二次入境单独准备MDAC；KLIA Ekspres到KL Sentral后转Grab。",
+          "play_method": "若两人打车价格接近快线，可按落地时段选择。",
+          "photo_notes": "",
+          "meal_notes": "",
+          "route_origin": "KUL",
+          "route_destination": "吉隆坡酒店",
+          "route_mode": "train/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 70,
+          "buffer_minutes": 60,
+          "cost": "约150-250元",
+          "confidence": "estimated"
+        },
+      {
+        "label": "武吉免登夜间短走",
+        "category": "sightseeing",
+        "start_time": "20:30",
+        "end_time": "21:00",
+        "duration_minutes": 30,
+        "location": "Bukit Bintang",
+        "notes": "只走酒店周边亮灯主街，用来活动身体，不跨街区赶景点。",
+        "play_method": "从酒店步行至亚罗街入口附近，体力不足就直接取消。",
+        "photo_notes": "拍街灯和店招，注意看管手机。",
+        "meal_notes": "",
+        "route_origin": "吉隆坡酒店",
+        "route_destination": "亚罗街入口",
+        "route_mode": "walk",
+        "route_provider": "manual",
+        "route_duration_minutes": 10,
+        "buffer_minutes": 10,
+        "cost": "免费",
+        "confidence": "estimated"
+      },
+      {
+        "label": "酒店附近夜宵",
+        "category": "meal",
+        "start_time": "21:00",
+          "end_time": "22:00",
+          "duration_minutes": null,
+          "location": "Bukit Bintang",
+          "notes": "不跨城追餐厅。",
+          "play_method": "选择亚罗街外围或酒店附近茶室。",
+          "photo_notes": "",
+          "meal_notes": "两人预算80-140马币。",
+          "route_origin": "酒店",
+          "route_destination": "晚餐区",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 15,
+          "buffer_minutes": 20,
+          "cost": "约140-240元",
+          "confidence": "estimated"
+        }
+      ]
+    },
+    {
+      "day_index": 10,
+      "date": "2027-05-19",
+      "theme": "吉隆坡文化纵线，从黑风洞到独立广场，晚上看双子塔",
+      "day_type": "full_sightseeing",
+      "pace": "balanced",
+      "optional_filler_blocks": [
+        "高温时删黑风洞后半段",
+        "双子塔无票就只看外观与KLCC公园"
+      ],
+      "items": [
+        {
+          "label": "黑风洞",
+          "category": "sightseeing",
+          "start_time": "07:30",
+          "end_time": "10:00",
+          "duration_minutes": null,
+          "location": "Batu Caves",
+          "notes": "早到避开高温和人群，注意台阶与猴子。",
+          "play_method": "先外广场→彩色阶梯→主洞；不携带外露食物。",
+          "photo_notes": "上午顺光拍阶梯纵深，手机长焦避免人物拥挤。",
+          "meal_notes": "早餐提前吃或带水。",
+          "route_origin": "吉隆坡酒店",
+          "route_destination": "Batu Caves",
+          "route_mode": "train/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 35,
+          "buffer_minutes": 30,
+          "cost": "免费；交通约40-80元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "独立广场与苏丹阿都沙末大厦外观",
+          "category": "sightseeing",
+          "start_time": "10:45",
+          "end_time": "12:15",
+          "duration_minutes": null,
+          "location": "Merdeka Square",
+          "notes": "回到市中心后走殖民建筑线。",
+          "play_method": "独立广场→河流交汇处→Masjid Jamek外观。",
+          "photo_notes": "广场用广角拍钟楼与草坪。",
+          "meal_notes": "",
+          "route_origin": "Batu Caves",
+          "route_destination": "Merdeka Square",
+          "route_mode": "train/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 40,
+          "buffer_minutes": 25,
+          "cost": "免费",
+          "confidence": "estimated"
+        },
+        {
+          "label": "中央市场与南洋午餐",
+          "category": "meal sightseeing",
+          "start_time": "12:30",
+          "end_time": "14:30",
+          "duration_minutes": null,
+          "location": "Central Market",
+          "notes": "午餐、空调休息和少量伴手礼一次完成。",
+          "play_method": "只买小件，不安排重购物。",
+          "photo_notes": "",
+          "meal_notes": "尝试椰浆饭、肉骨茶或印度香蕉叶饭，预算80-140马币/两人。",
+          "route_origin": "Merdeka Square",
+          "route_destination": "Central Market",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 15,
+          "buffer_minutes": 20,
+          "cost": "约140-240元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "伊斯兰艺术博物馆或国家清真寺外圈",
+          "category": "sightseeing",
+          "start_time": "15:00",
+          "end_time": "17:00",
+          "duration_minutes": null,
+          "location": "Islamic Arts Museum Malaysia",
+          "notes": "优先室内博物馆；闭馆或无兴趣则改国家清真寺参观。",
+          "play_method": "看建筑、古兰经与纺织展，不追全馆。",
+          "photo_notes": "中庭穹顶与几何纹样适合细节拍摄，遵守宗教场所服装要求。",
+          "meal_notes": "",
+          "route_origin": "Central Market",
+          "route_destination": "Islamic Arts Museum",
+          "route_mode": "taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 15,
+          "buffer_minutes": 20,
+          "cost": "门票待复核",
+          "confidence": "estimated"
+        },
+        {
+          "label": "KLCC公园与双子塔夜景",
+          "category": "sightseeing",
+          "start_time": "18:00",
+          "end_time": "20:30",
+          "duration_minutes": null,
+          "location": "KLCC",
+          "notes": "登塔门票需要定时；预算优先可只看外观。",
+          "play_method": "先公园拍全景→晚餐→灯光后补拍；登塔只在官方票价合适时购买。",
+          "photo_notes": "公园水池边用广角，夜景注意控制高光。",
+          "meal_notes": "晚餐预算100-180马币/两人。",
+          "route_origin": "Islamic Arts Museum",
+          "route_destination": "KLCC",
+          "route_mode": "taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 30,
+          "cost": "外观免费；登塔票待复核",
+          "confidence": "estimated"
+        }
+      ]
+    },
+    {
+      "day_index": 11,
+      "date": "2027-05-20",
+      "theme": "轻松收尾，预留完整机场时间返回杭州",
+      "day_type": "departure",
+      "pace": "relaxed",
+      "single_anchor_reason": "国际返程需预留进城、值机和航班变动缓冲。",
+      "optional_filler_blocks": [
+        "若晚班机可加Kampung Baru早餐",
+        "早班机直接去机场"
+      ],
+      "items": [
+        {
+          "label": "酒店早餐与退房",
+          "category": "meal hotel",
+          "start_time": "08:00",
+          "end_time": "10:00",
+          "duration_minutes": null,
+          "location": "吉隆坡酒店",
+          "notes": "检查护照、退税物品、充电器和行李重量。",
+          "play_method": "把液体和充电宝按航空规定整理。",
+          "photo_notes": "",
+          "meal_notes": "早餐酒店或附近茶室，约40-70马币/两人。",
+          "route_origin": "酒店",
+          "route_destination": "酒店",
+          "route_mode": "walk",
+          "route_provider": "manual",
+          "route_duration_minutes": 0,
+          "buffer_minutes": 20,
+          "cost": "约70-120元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "Kampung Baru短走或咖啡",
+          "category": "sightseeing",
+          "start_time": "10:00",
+          "end_time": "11:30",
+          "duration_minutes": null,
+          "location": "Kampung Baru",
+          "notes": "仅在返程为下午或晚班时保留。",
+          "play_method": "看传统街区与城市天际线，不安排购物。",
+          "photo_notes": "传统房屋与双子塔同框适合中长焦。",
+          "meal_notes": "",
+          "route_origin": "酒店",
+          "route_destination": "Kampung Baru",
+          "route_mode": "train/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 20,
+          "buffer_minutes": 20,
+          "cost": "约50-100元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "前往KUL",
+          "category": "transport",
+          "start_time": "12:00",
+          "end_time": "13:30",
+          "duration_minutes": null,
+          "location": "市中心→KUL",
+          "notes": "优先KLIA Ekspres或提前预约车辆。",
+          "play_method": "国际航班至少提前3小时到机场。",
+          "photo_notes": "",
+          "meal_notes": "午餐机场解决。",
+          "route_origin": "Kampung Baru",
+          "route_destination": "吉隆坡国际机场",
+          "route_mode": "train/taxi",
+          "route_provider": "manual",
+          "route_duration_minutes": 70,
+          "buffer_minutes": 180,
+          "cost": "约150-250元",
+          "confidence": "estimated"
+        },
+        {
+          "label": "吉隆坡直飞杭州",
+          "category": "transport",
+          "start_time": "16:30",
+          "end_time": "22:00",
+          "duration_minutes": null,
+          "location": "KUL→HGH",
+          "notes": "AirAsia X等有直飞候选，约5小时30分钟；最终按2027班期复核。",
+          "play_method": "如直飞价超过1600元/人，再比较厦门/广州一次中转，但不接受隔夜长转。",
+          "photo_notes": "",
+          "meal_notes": "机上餐按需预购。",
+          "route_origin": "吉隆坡国际机场",
+          "route_destination": "杭州萧山国际机场",
+          "route_mode": "flight",
+          "route_provider": "manual",
+          "route_duration_minutes": 330,
+          "buffer_minutes": 60,
+          "cost": "约900-1400元/人",
+          "confidence": "estimated"
+        },
+        {
+          "label": "杭州落地与回家",
+          "category": "transport",
+          "start_time": "22:00",
+          "end_time": "23:30",
+          "duration_minutes": null,
+          "location": "HGH→杭州市区",
+          "notes": "晚到优先网约车，不再安排其他事项。",
+          "play_method": "保留行李延误申报时间。",
+          "photo_notes": "",
+          "meal_notes": "",
+          "route_origin": "杭州萧山国际机场",
+          "route_destination": "杭州市区",
+          "route_mode": "taxi/metro",
+          "route_provider": "manual",
+          "route_duration_minutes": 45,
+          "buffer_minutes": 30,
+          "cost": "约50-150元",
+          "confidence": "estimated"
+        }
+      ]
+    }
+  ],
+  "route_segments": [
+    {
+      "day_index": 1,
+      "start_time": "00:00",
+      "origin": "杭州HGH",
+      "destination": "新加坡SIN",
+      "mode": "flight",
+      "map_minutes": 330,
+      "buffer_minutes": 180,
+      "total_transfer_minutes": 510,
+      "map_provider": "manual",
+      "source_status": "live_candidate",
+      "notes": "直飞航线存在；2027具体班期与票价需复核。"
+    },
+    {
+      "day_index": 3,
+      "start_time": "14:30",
+      "origin": "新加坡SIN",
+      "destination": "槟城PEN",
+      "mode": "flight",
+      "map_minutes": 90,
+      "buffer_minutes": 210,
+      "total_transfer_minutes": 300,
+      "map_provider": "manual",
+      "source_status": "live_candidate",
+      "notes": "Scoot/AirAsia有直飞候选。"
+    },
+    {
+      "day_index": 5,
+      "start_time": "10:30",
+      "origin": "槟城PEN",
+      "destination": "巴厘岛DPS",
+      "mode": "flight",
+      "map_minutes": 420,
+      "buffer_minutes": 270,
+      "total_transfer_minutes": 690,
+      "map_provider": "manual",
+      "source_status": "estimated",
+      "notes": "经KUL一次中转；优先同一订单受保护中转。"
+    },
+    {
+      "day_index": 5,
+      "start_time": "19:00",
+      "origin": "巴厘岛DPS",
+      "destination": "乌布",
+      "mode": "taxi/private_car",
+      "map_minutes": 120,
+      "buffer_minutes": 30,
+      "total_transfer_minutes": 150,
+      "map_provider": "manual",
+      "source_status": "estimated",
+      "notes": "晚高峰保守估算。"
+    },
+    {
+      "day_index": 7,
+      "start_time": "08:00",
+      "origin": "乌布",
+      "destination": "Tirta Empul",
+      "mode": "private_car",
+      "map_minutes": 50,
+      "buffer_minutes": 25,
+      "total_transfer_minutes": 75,
+      "map_provider": "manual",
+      "source_status": "estimated",
+      "notes": "包车日。"
+    },
+    {
+      "day_index": 7,
+      "start_time": "15:00",
+      "origin": "Tegallalang",
+      "destination": "Sanur",
+      "mode": "private_car",
+      "map_minutes": 90,
+      "buffer_minutes": 30,
+      "total_transfer_minutes": 120,
+      "map_provider": "manual",
+      "source_status": "estimated",
+      "notes": "交通受拥堵影响明显。"
+    },
+    {
+      "day_index": 8,
+      "start_time": "10:30",
+      "origin": "Sanur",
+      "destination": "Nusa Dua",
+      "mode": "taxi",
+      "map_minutes": 45,
+      "buffer_minutes": 25,
+      "total_transfer_minutes": 70,
+      "map_provider": "manual",
+      "source_status": "estimated",
+      "notes": "换至升级酒店。"
+    },
+    {
+      "day_index": 9,
+      "start_time": "15:00",
+      "origin": "巴厘岛DPS",
+      "destination": "吉隆坡KUL",
+      "mode": "flight",
+      "map_minutes": 185,
+      "buffer_minutes": 270,
+      "total_transfer_minutes": 455,
+      "map_provider": "manual",
+      "source_status": "live_candidate",
+      "notes": "AirAsia等有直飞候选。"
+    },
+    {
+      "day_index": 9,
+      "start_time": "18:05",
+      "origin": "吉隆坡KUL",
+      "destination": "Bukit Bintang",
+      "mode": "train/taxi",
+      "map_minutes": 70,
+      "buffer_minutes": 60,
+      "total_transfer_minutes": 130,
+      "map_provider": "manual",
+      "source_status": "estimated",
+      "notes": "包含第二次马来西亚入境缓冲。"
+    },
+    {
+      "day_index": 11,
+      "start_time": "16:30",
+      "origin": "吉隆坡KUL",
+      "destination": "杭州HGH",
+      "mode": "flight",
+      "map_minutes": 330,
+      "buffer_minutes": 240,
+      "total_transfer_minutes": 570,
+      "map_provider": "manual",
+      "source_status": "live_candidate",
+      "notes": "直飞候选存在，具体班期需复核。"
+    }
+  ],
+  "transport_candidates": [
+    {
+      "name": "杭州HGH—新加坡SIN直飞",
+      "route": "HGH-SIN",
+      "source": "Scoot/航空公司搜索",
+      "status": "live_candidate",
+      "price": "约1200-1800元/人，含税不含全部附加服务",
+      "duration": "约5小时30分",
+      "link": "https://www.flyscoot.com/flights/en/flights-from-hangzhou-to-singapore",
+      "booking_readiness": "search_only",
+      "risk": "2027时刻与行李费未锁定。"
+    },
+    {
+      "name": "新加坡SIN—槟城PEN直飞",
+      "route": "SIN-PEN",
+      "source": "Scoot/AirAsia",
+      "status": "live_candidate",
+      "price": "约350-650元/人含基础票价与税费估算",
+      "duration": "约1小时15至30分",
+      "link": "https://www.flyscoot.com/flights/en-sg/flights-from-singapore-to-penang",
+      "booking_readiness": "search_only",
+      "risk": "托运行李、选座和支付手续费另计。"
+    },
+    {
+      "name": "槟城PEN—吉隆坡KUL—巴厘岛DPS",
+      "route": "PEN-KUL-DPS",
+      "source": "AirAsia MOVE",
+      "status": "estimated",
+      "price": "约800-1200元/人",
+      "duration": "约6至8小时",
+      "link": "https://www.airasia.com/flights/from-penang-pen-to-bali-dps/",
+      "booking_readiness": "search_only",
+      "risk": "当前搜索显示一站中转；旧直飞宣传不能代替实际班表。"
+    },
+    {
+      "name": "巴厘岛DPS—吉隆坡KUL直飞",
+      "route": "DPS-KUL",
+      "source": "AirAsia MOVE",
+      "status": "live_candidate",
+      "price": "约400-700元/人",
+      "duration": "约3小时",
+      "link": "https://www.airasia.com/flights/from-bali-dps-to-kuala-lumpur-kul/",
+      "booking_readiness": "search_only",
+      "risk": "夜间到达会增加进城成本。"
+    },
+    {
+      "name": "吉隆坡KUL—杭州HGH直飞",
+      "route": "KUL-HGH",
+      "source": "AirAsia X",
+      "status": "live_candidate",
+      "price": "约900-1400元/人",
+      "duration": "约5小时30分",
+      "link": "https://www.airasia.com/flights/from-kuala-lumpur-kul-to-hangzhou-hgh",
+      "booking_readiness": "search_only",
+      "risk": "直飞班期可能非每日。"
+    }
+  ],
+  "hotel_stay_groups": [
+    {
+      "stay_id": "sg-economy",
+      "dates": "2027-05-10",
+      "nights": 1,
+      "city": "新加坡",
+      "area_strategy": "Bencoolen或Lavender，降低交通成本。",
+      "recommended_option": {
+        "name": "Hotel Mi Bencoolen",
+        "city": "新加坡",
+        "area": "Bencoolen",
+        "source": "manual_estimate",
+        "status": "estimated",
+        "booking_readiness": "search_only",
+        "readiness_label": "仅搜索入口",
+        "price_cny_per_night": "约750-1050元/晚",
+        "search_link": "https://www.google.com/search?q=Hotel%20Mi%20Bencoolen%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+        "why_fit": "地铁近、房间小但适合一晚过渡。",
+        "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+      },
+      "backup_options": [
+        {
+          "name": "V Hotel Lavender",
+          "city": "新加坡",
+          "area": "Lavender",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约700-1000元/晚",
+          "search_link": "https://www.google.com/search?q=V%20Hotel%20Lavender%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "机场与市区之间交通直接。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        },
+        {
+          "name": "lyf Bugis Singapore",
+          "city": "新加坡",
+          "area": "Bugis",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约800-1200元/晚",
+          "search_link": "https://www.google.com/search?q=lyf%20Bugis%20Singapore%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "公共空间和位置较好。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        }
+      ],
+      "selection_logic": "第一晚只承担红眼后的休息，不为景观溢价。",
+      "fallback_rule": "含税价超过1100元时转Lavender或Bugis。"
+    },
+    {
+      "stay_id": "sg-upgrade",
+      "dates": "2027-05-11",
+      "nights": 1,
+      "city": "新加坡",
+      "area_strategy": "市中心建筑型酒店，一晚体验升级。",
+      "recommended_option": {
+        "name": "PARKROYAL COLLECTION Pickering",
+        "city": "新加坡",
+        "area": "Chinatown",
+        "source": "manual_estimate",
+        "status": "estimated",
+        "booking_readiness": "search_only",
+        "readiness_label": "仅搜索入口",
+        "price_cny_per_night": "约1900-2600元/晚",
+        "search_link": "https://www.google.com/search?q=PARKROYAL%20COLLECTION%20Pickering%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+        "why_fit": "建筑、泳池和早餐体验明显，且与牛车水路线相连。",
+        "risk": "若双床含早超过2600元，不值得只住一晚。"
+      },
+      "backup_options": [
+        {
+          "name": "Mondrian Singapore Duxton",
+          "city": "新加坡",
+          "area": "Duxton",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约1500-2200元/晚",
+          "search_link": "https://www.google.com/search?q=Mondrian%20Singapore%20Duxton%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "设计感强，通常比传统奢华酒店便宜。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        },
+        {
+          "name": "The Clan Hotel Singapore",
+          "city": "新加坡",
+          "area": "Telok Ayer",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约1700-2400元/晚",
+          "search_link": "https://www.google.com/search?q=The%20Clan%20Hotel%20Singapore%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "位置好，适合文化与美食路线。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        }
+      ],
+      "selection_logic": "不追最贵套房，购买基础双床房和早餐即可。",
+      "fallback_rule": "超过2600元时切Mondrian；若换酒店太麻烦，经济酒店连住并把预算留给巴厘岛。"
+    },
+    {
+      "stay_id": "penang",
+      "dates": "2027-05-12至05-14",
+      "nights": 2,
+      "city": "槟城",
+      "area_strategy": "住乔治市老城边缘，步行方便且夜间较安静。",
+      "recommended_option": {
+        "name": "Areca Hotel Penang",
+        "city": "槟城",
+        "area": "George Town",
+        "source": "manual_estimate",
+        "status": "estimated",
+        "booking_readiness": "search_only",
+        "readiness_label": "仅搜索入口",
+        "price_cny_per_night": "约380-600元/晚",
+        "search_link": "https://www.google.com/search?q=Areca%20Hotel%20Penang%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+        "why_fit": "传统建筑氛围与老城路线匹配。",
+        "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+      },
+      "backup_options": [
+        {
+          "name": "JEN Penang Georgetown by Shangri-La",
+          "city": "槟城",
+          "area": "Komtar",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约500-800元/晚",
+          "search_link": "https://www.google.com/search?q=JEN%20Penang%20Georgetown%20by%20Shangri-La%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "房间稳定、交通方便。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        },
+        {
+          "name": "Loop On Leith George Town Penang Hotel",
+          "city": "槟城",
+          "area": "Leith Street",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约300-500元/晚",
+          "search_link": "https://www.google.com/search?q=Loop%20On%20Leith%20George%20Town%20Penang%20Hotel%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "价格低、靠近老城。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        }
+      ],
+      "selection_logic": "优先双床、安静和可取消，不追海景。",
+      "fallback_rule": "老城酒店无房时住Komtar附近。"
+    },
+    {
+      "stay_id": "bali-ubud",
+      "dates": "2027-05-14至05-16",
+      "nights": 2,
+      "city": "巴厘岛",
+      "area_strategy": "乌布中心边缘，步行与叫车兼顾。",
+      "recommended_option": {
+        "name": "Artini Bisma Ubud Hotel",
+        "city": "巴厘岛",
+        "area": "Ubud",
+        "source": "manual_estimate",
+        "status": "estimated",
+        "booking_readiness": "search_only",
+        "readiness_label": "仅搜索入口",
+        "price_cny_per_night": "约450-750元/晚",
+        "search_link": "https://www.google.com/search?q=Artini%20Bisma%20Ubud%20Hotel%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+        "why_fit": "绿意、泳池和位置平衡。",
+        "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+      },
+      "backup_options": [
+        {
+          "name": "Anumana Ubud Bali",
+          "city": "巴厘岛",
+          "area": "Ubud",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约550-850元/晚",
+          "search_link": "https://www.google.com/search?q=Anumana%20Ubud%20Bali%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "服务较稳定，靠近猴林。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        },
+        {
+          "name": "Sri Aksata Ubud Resort",
+          "city": "巴厘岛",
+          "area": "Ubud",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约350-600元/晚",
+          "search_link": "https://www.google.com/search?q=Sri%20Aksata%20Ubud%20Resort%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "更经济，适合两晚。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        }
+      ],
+      "selection_logic": "乌布不升级，预算留给最后一晚海边酒店。",
+      "fallback_rule": "含税超过800元时转Sri Aksata。"
+    },
+    {
+      "stay_id": "bali-sanur",
+      "dates": "2027-05-16",
+      "nights": 1,
+      "city": "巴厘岛",
+      "area_strategy": "Sanur海边步行区，便于第二天去Nusa Dua。",
+      "recommended_option": {
+        "name": "Akana Boutique Hotel Sanur",
+        "city": "巴厘岛",
+        "area": "Sanur",
+        "source": "manual_estimate",
+        "status": "estimated",
+        "booking_readiness": "search_only",
+        "readiness_label": "仅搜索入口",
+        "price_cny_per_night": "约400-650元/晚",
+        "search_link": "https://www.google.com/search?q=Akana%20Boutique%20Hotel%20Sanur%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+        "why_fit": "一晚过渡，餐饮和海边步行方便。",
+        "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+      },
+      "backup_options": [
+        {
+          "name": "Grand Palace Hotel Sanur",
+          "city": "巴厘岛",
+          "area": "Sanur",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约350-550元/晚",
+          "search_link": "https://www.google.com/search?q=Grand%20Palace%20Hotel%20Sanur%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "价格更低，房间面积通常更实用。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        }
+      ],
+      "selection_logic": "只住一晚，不为海景房加价。",
+      "fallback_rule": "优先可取消双床房。"
+    },
+    {
+      "stay_id": "bali-luxury",
+      "dates": "2027-05-17",
+      "nights": 1,
+      "city": "巴厘岛",
+      "area_strategy": "Nusa Dua/Bukit海边度假村，一晚集中使用设施。",
+      "recommended_option": {
+        "name": "The Apurva Kempinski Bali",
+        "city": "巴厘岛",
+        "area": "Nusa Dua",
+        "source": "manual_estimate",
+        "status": "estimated",
+        "booking_readiness": "search_only",
+        "readiness_label": "仅搜索入口",
+        "price_cny_per_night": "约2200-3200元/晚",
+        "search_link": "https://www.google.com/search?q=The%20Apurva%20Kempinski%20Bali%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+        "why_fit": "建筑和度假设施足够形成一次明显升级。",
+        "risk": "只买基础房；超过3200元就切换备选。"
+      },
+      "backup_options": [
+        {
+          "name": "Renaissance Bali Nusa Dua Resort",
+          "city": "巴厘岛",
+          "area": "Nusa Dua",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约1200-1900元/晚",
+          "search_link": "https://www.google.com/search?q=Renaissance%20Bali%20Nusa%20Dua%20Resort%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "升级感较温和但性价比高。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        },
+        {
+          "name": "MERUSAKA Nusa Dua",
+          "city": "巴厘岛",
+          "area": "Nusa Dua",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约1100-1800元/晚",
+          "search_link": "https://www.google.com/search?q=MERUSAKA%20Nusa%20Dua%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "海滩位置好，适合控制预算。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        }
+      ],
+      "selection_logic": "促销价低于3200元才选Apurva，否则切Renaissance或MERUSAKA。",
+      "fallback_rule": "不为一晚购买不可取消房；价格过高时改住两晚同一家Sanur酒店。"
+    },
+    {
+      "stay_id": "kl",
+      "dates": "2027-05-18至05-20",
+      "nights": 2,
+      "city": "吉隆坡",
+      "area_strategy": "Bukit Bintang或KLCC轨道交通附近。",
+      "recommended_option": {
+        "name": "citizenM Kuala Lumpur Bukit Bintang",
+        "city": "吉隆坡",
+        "area": "Bukit Bintang",
+        "source": "manual_estimate",
+        "status": "estimated",
+        "booking_readiness": "search_only",
+        "readiness_label": "仅搜索入口",
+        "price_cny_per_night": "约420-650元/晚",
+        "search_link": "https://www.google.com/search?q=citizenM%20Kuala%20Lumpur%20Bukit%20Bintang%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+        "why_fit": "位置、设计和价格平衡；需确认双床房是否供应。",
+        "risk": "若无双床房直接切换备选。"
+      },
+      "backup_options": [
+        {
+          "name": "Santa Grand Signature Kuala Lumpur",
+          "city": "吉隆坡",
+          "area": "市中心",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约400-650元/晚",
+          "search_link": "https://www.google.com/search?q=Santa%20Grand%20Signature%20Kuala%20Lumpur%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "泳池与房间舒适度较好。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        },
+        {
+          "name": "JOURNAL Hotel Bukit Bintang",
+          "city": "吉隆坡",
+          "area": "Bukit Bintang",
+          "source": "manual_estimate",
+          "status": "estimated",
+          "booking_readiness": "search_only",
+          "readiness_label": "仅搜索入口",
+          "price_cny_per_night": "约450-700元/晚",
+          "search_link": "https://www.google.com/search?q=JOURNAL%20Hotel%20Bukit%20Bintang%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+          "why_fit": "餐饮和夜间步行方便。",
+          "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
+        }
+      ],
+      "selection_logic": "双床房优先于品牌；无双床就换酒店。",
+      "fallback_rule": "含税超过700元时转KL Sentral或Chow Kit。"
+    }
+  ],
+  "hotel_candidates": [
+    {
+      "name": "Hotel Mi Bencoolen",
+      "city": "新加坡",
+      "area": "Bencoolen",
+      "source": "manual_estimate",
+      "status": "estimated",
+      "price_cny_per_night": "约750-1050元/晚",
+      "why_fit": "首晚过渡，靠近地铁。",
+      "risk": "双床房、含税价和取消条款待复核。",
+      "search_link": "https://www.google.com/search?q=Hotel%20Mi%20Bencoolen%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2"
+    },
+    {
+      "name": "PARKROYAL COLLECTION Pickering",
+      "city": "新加坡",
+      "area": "Chinatown",
+      "source": "manual_estimate",
+      "status": "estimated",
+      "price_cny_per_night": "约1900-2600元/晚",
+      "why_fit": "一晚建筑与泳池体验升级。",
+      "risk": "双床含早超过2600元时改选Mondrian。",
+      "search_link": "https://www.google.com/search?q=PARKROYAL%20COLLECTION%20Pickering%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2"
+    },
+    {
+      "name": "Areca Hotel Penang",
+      "city": "槟城",
+      "area": "George Town",
+      "source": "manual_estimate",
+      "status": "estimated",
+      "price_cny_per_night": "约380-600元/晚",
+      "why_fit": "传统建筑氛围与老城路线匹配。",
+      "risk": "双床房、含税价和取消条款待复核。",
+      "search_link": "https://www.google.com/search?q=Areca%20Hotel%20Penang%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2"
+    },
+    {
+      "name": "Artini Bisma Ubud Hotel",
+      "city": "巴厘岛",
+      "area": "Ubud",
+      "source": "manual_estimate",
+      "status": "estimated",
+      "price_cny_per_night": "约450-750元/晚",
+      "why_fit": "绿意、泳池和位置较平衡。",
+      "risk": "双床房、含税价和取消条款待复核。",
+      "search_link": "https://www.google.com/search?q=Artini%20Bisma%20Ubud%20Hotel%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2"
+    },
+    {
+      "name": "Akana Boutique Hotel Sanur",
+      "city": "巴厘岛",
+      "area": "Sanur",
+      "source": "manual_estimate",
+      "status": "estimated",
+      "price_cny_per_night": "约400-650元/晚",
+      "why_fit": "适合一晚海边过渡。",
+      "risk": "双床房、含税价和取消条款待复核。",
+      "search_link": "https://www.google.com/search?q=Akana%20Boutique%20Hotel%20Sanur%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2"
+    },
+    {
+      "name": "The Apurva Kempinski Bali",
+      "city": "巴厘岛",
+      "area": "Nusa Dua",
+      "source": "manual_estimate",
+      "status": "estimated",
+      "price_cny_per_night": "约2200-3200元/晚",
+      "why_fit": "把一次明显升级集中在最后一晚。",
+      "risk": "超过3200元时改选Renaissance或MERUSAKA。",
+      "search_link": "https://www.google.com/search?q=The%20Apurva%20Kempinski%20Bali%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2"
+    },
+    {
+      "name": "citizenM Kuala Lumpur Bukit Bintang",
+      "city": "吉隆坡",
+      "area": "Bukit Bintang",
+      "source": "manual_estimate",
+      "status": "estimated",
+      "price_cny_per_night": "约420-650元/晚",
+      "why_fit": "位置、设计和价格较平衡。",
+      "risk": "该品牌双床供应可能有限，无双床就换Santa Grand。",
+      "search_link": "https://www.google.com/search?q=citizenM%20Kuala%20Lumpur%20Bukit%20Bintang%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2"
+    }
+  ],
+  "budget": {
+    "currency": "CNY",
+    "fixed_cost_total": 31500,
+    "per_person_cost": 15750,
+    "base_budget_without_upgrades": 26000,
+    "recommended_ceiling": 35000,
+    "confidence": "estimated",
+    "breakdown": [
+      {
+        "category": "跨境机票与托运行李",
+        "amount": 10500,
+        "per_person": 5250,
+        "confidence": "estimated",
+        "source": "manual research + official sources",
+        "notes": "5段航班；按2人共享1件20公斤托运行李估算。"
+      },
+      {
+        "category": "住宿10晚",
+        "amount": 9500,
+        "per_person": 4750,
+        "confidence": "estimated",
+        "source": "manual research + official sources",
+        "notes": "含新加坡和巴厘岛各1晚升级；所有价格需按双床含税复核。"
+      },
+      {
+        "category": "当地交通",
+        "amount": 2300,
+        "per_person": 1150,
+        "confidence": "estimated",
+        "source": "manual research + official sources",
+        "notes": "地铁、Grab、机场快线与巴厘岛1天包车。"
+      },
+      {
+        "category": "餐饮",
+        "amount": 3600,
+        "per_person": 1800,
+        "confidence": "estimated",
+        "source": "manual research + official sources",
+        "notes": "以熟食中心、本地餐馆为主，升级酒店日不吃高价套餐。"
+      },
+      {
+        "category": "门票与活动",
+        "amount": 2000,
+        "per_person": 1000,
+        "confidence": "estimated",
+        "source": "manual research + official sources",
+        "notes": "Cloud Forest、槟城升旗山、博物馆和寺庙等。"
+      },
+      {
+        "category": "印尼签证与巴厘岛游客税",
+        "amount": 700,
+        "per_person": 350,
+        "confidence": "estimated",
+        "source": "official fee basis",
+        "notes": "VoA/e-VoA 500,000 IDR/人，加游客税150,000 IDR/人，按汇率估算。"
+      },
+      {
+        "category": "保险与通信",
+        "amount": 900,
+        "per_person": 450,
+        "confidence": "estimated",
+        "source": "manual research + official sources",
+        "notes": "境外保险和东南亚eSIM。"
+      },
+      {
+        "category": "机动资金",
+        "amount": 2000,
+        "per_person": 1000,
+        "confidence": "estimated",
+        "source": "manual research + official sources",
+        "notes": "航班变动、行李、临时交通和价格波动。"
+      }
+    ]
+  },
+  "booking_items": [
+    {
+      "name": "五段航班与共享托运行李",
+      "category": "transport",
+      "required": true,
+      "recommended_booking_time": "2027年班表可售后先锁可退改或价格合适的跨境段。",
+      "price": "两人约10,500元",
+      "confidence": "estimated",
+      "booking_provider": "airline_search",
+      "booking_readiness": "search_only",
+      "readiness_label": "仅搜索入口",
+      "link": "https://www.google.com/travel/flights",
+      "risk": "分开出票、行李额度和中转保护需逐段核对。"
+    },
+    {
+      "name": "新加坡SG Arrival Card",
+      "category": "entry",
+      "required": true,
+      "recommended_booking_time": "抵达新加坡前三天内提交。",
+      "price": "官方免费",
+      "confidence": "confirmed",
+      "booking_provider": "official_site",
+      "booking_readiness": "direct_bookable",
+      "readiness_label": "可直接办理",
+      "link": "https://eservices.ica.gov.sg/sgarrivalcard/",
+      "risk": "SGAC不是签证，不要使用收费代办网站。"
+    },
+    {
+      "name": "马来西亚MDAC两次",
+      "category": "entry",
+      "required": true,
+      "recommended_booking_time": "分别在抵达槟城和抵达吉隆坡前三天内提交。",
+      "price": "官方申报",
+      "confidence": "confirmed",
+      "booking_provider": "official_site",
+      "booking_readiness": "direct_bookable",
+      "readiness_label": "可直接办理",
+      "link": "https://imigresen-online.imi.gov.my/mdac/main",
+      "risk": "第二次入境需重新检查并提交对应行程。"
+    },
+    {
+      "name": "印度尼西亚e-VoA",
+      "category": "entry",
+      "required": true,
+      "recommended_booking_time": "航班和酒店确定后、出发前办理。",
+      "price": "当前500,000 IDR/人，待复核",
+      "confidence": "confirmed",
+      "booking_provider": "official_site",
+      "booking_readiness": "live_candidate_review",
+      "readiness_label": "候选需复核",
+      "link": "https://evisa.imigrasi.go.id/",
+      "risk": "资料填错通常不可修改或退款；只用官方域名。"
+    },
+    {
+      "name": "巴厘岛外国游客税",
+      "category": "entry",
+      "required": true,
+      "recommended_booking_time": "抵达巴厘岛前在线支付。",
+      "price": "当前150,000 IDR/人",
+      "confidence": "confirmed",
+      "booking_provider": "official_site",
+      "booking_readiness": "direct_bookable",
+      "readiness_label": "可直接办理",
+      "link": "https://lovebali.baliprov.go.id/",
+      "risk": "保存邮件二维码；只使用Love Bali官方渠道。"
+    },
+    {
+      "name": "新加坡Cloud Forest",
+      "category": "ticket",
+      "required": false,
+      "recommended_booking_time": "确认2027维护日后购买。",
+      "price": "待官方页面复核",
+      "confidence": "estimated",
+      "booking_provider": "official_site",
+      "booking_readiness": "search_only",
+      "readiness_label": "仅搜索入口",
+      "link": "https://www.gardensbythebay.com.sg/en/plan-your-visit/opening-hours.html",
+      "risk": "每月可能有维护闭馆日。"
+    },
+    {
+      "name": "槟城升旗山缆车",
+      "category": "ticket",
+      "required": false,
+      "recommended_booking_time": "出发前查看天气与官方时段。",
+      "price": "待复核",
+      "confidence": "estimated",
+      "booking_provider": "official_site",
+      "booking_readiness": "search_only",
+      "readiness_label": "仅搜索入口",
+      "link": "https://www.google.com/search?q=Penang%20Hill%20official%20ticket",
+      "risk": "日落时段排队和雷雨可能影响体验。"
+    },
+    {
+      "name": "吉隆坡双子塔登塔",
+      "category": "ticket",
+      "required": false,
+      "recommended_booking_time": "若决定登塔，开放日期后购买定时票。",
+      "price": "待官方页面复核",
+      "confidence": "estimated",
+      "booking_provider": "official_site",
+      "booking_readiness": "search_only",
+      "readiness_label": "仅搜索入口",
+      "link": "https://eticket.petronastwintowers.com.my/?lang=en",
+      "risk": "定时票可能售罄；外观和KLCC公园免费。"
+    },
+    {
+      "name": "10晚酒店双床房",
+      "category": "hotel",
+      "required": true,
+      "recommended_booking_time": "航班日期锁定后优先订可取消房。",
+      "price": "两人约9,500元",
+      "confidence": "estimated",
+      "booking_provider": "provider_search",
+      "booking_readiness": "search_only",
+      "readiness_label": "仅搜索入口",
+      "link": "https://www.google.com/travel/hotels",
+      "risk": "双床、税费、早餐、押金和取消时间需逐家确认。"
+    }
+  ],
+  "poi_playbook": [
+    {
+      "poi": "Gardens by the Bay",
+      "why_go": "把新加坡城市天际线和室内植物体验放在同一晚。",
+      "arrival_window": "17:15-20:30",
+      "stay_minutes_min": 150,
+      "stay_minutes_ideal": 195,
+      "play_order": "Cloud Forest→简餐→Supertree Grove",
+      "highlights": [
+        "Cloud Forest瀑布",
+        "Supertree夜景"
+      ],
+      "photo_points": [
+        "瀑布逆光",
+        "Supertree蓝调"
+      ],
+      "crowd_strategy": "避开周末；维护日提前复核。",
+      "nearby_backup": "金沙商场与滨海湾室内路线",
+      "skip_logic": "预算不足时只保留免费Supertree外场。",
+      "booking_or_opening_risk": "2027维护日尚未发布。"
+    },
+    {
+      "poi": "乔治市UNESCO核心区",
+      "why_go": "本次槟城段的文化主轴，建筑、宗教和饮食高度集中。",
+      "arrival_window": "08:00-16:00",
+      "stay_minutes_min": 300,
+      "stay_minutes_ideal": 420,
+      "play_order": "姓氏桥→亚美尼亚街→邱公司→和谐街→娘惹博物馆",
+      "highlights": [
+        "骑楼",
+        "移民宗教建筑",
+        "娘惹生活史"
+      ],
+      "photo_points": [
+        "姓氏桥木栈道",
+        "骑楼透视"
+      ],
+      "crowd_strategy": "壁画排队超过15分钟就跳过。",
+      "nearby_backup": "Hin Bus Depot或蓝屋导览",
+      "skip_logic": "高温时删街头壁画，保留室内馆和午休。",
+      "booking_or_opening_risk": "博物馆和导览时段需临近复核。"
+    },
+    {
+      "poi": "Tirta Empul",
+      "why_go": "补足巴厘岛宗教与生活文化，不只看海滩。",
+      "arrival_window": "09:00-11:00",
+      "stay_minutes_min": 90,
+      "stay_minutes_ideal": 120,
+      "play_order": "换纱笼→外院→泉池→内院",
+      "highlights": [
+        "泉池仪式",
+        "寺庙院落"
+      ],
+      "photo_points": [
+        "外院门框",
+        "中焦记录仪式"
+      ],
+      "crowd_strategy": "早到并避免贴近仪式参与者。",
+      "nearby_backup": "Mas木雕村",
+      "skip_logic": "人流过密时只看外院和泉池边缘。",
+      "booking_or_opening_risk": "宗教活动可能临时限制。"
+    },
+    {
+      "poi": "乌布中心",
+      "why_go": "用宫殿、市场、艺术馆和山脊步道形成完整文化日。",
+      "arrival_window": "08:00-19:00",
+      "stay_minutes_min": 360,
+      "stay_minutes_ideal": 540,
+      "play_order": "皇宫/Saraswati→市场→午休→艺术馆→Campuhan",
+      "highlights": [
+        "传统建筑",
+        "巴厘绘画",
+        "山脊日落"
+      ],
+      "photo_points": [
+        "莲花池",
+        "Campuhan剪影"
+      ],
+      "crowd_strategy": "早上先逛中心，正午回酒店。",
+      "nearby_backup": "ARMA或咖啡馆",
+      "skip_logic": "下雨删山脊步道。",
+      "booking_or_opening_risk": "艺术馆开放情况需复核。"
+    },
+    {
+      "poi": "黑风洞与吉隆坡文化纵线",
+      "why_go": "用半天连接宗教空间、殖民建筑和现代城市。",
+      "arrival_window": "07:30-20:30",
+      "stay_minutes_min": 420,
+      "stay_minutes_ideal": 600,
+      "play_order": "黑风洞→独立广场→中央市场→伊斯兰艺术馆→KLCC",
+      "highlights": [
+        "彩色阶梯",
+        "独立广场",
+        "双子塔夜景"
+      ],
+      "photo_points": [
+        "阶梯纵深",
+        "KLCC公园倒影"
+      ],
+      "crowd_strategy": "黑风洞早到，KLCC日落前到。",
+      "nearby_backup": "国家清真寺或商场室内路线",
+      "skip_logic": "体力不足时取消登塔，只看外观。",
+      "booking_or_opening_risk": "双子塔为定时票。"
+    }
+  ],
+  "photo_plan": [
+    {
+      "poi": "新加坡滨海湾",
+      "priority": "高",
+      "best_time": "17:00至20:30",
+      "gear": "手机广角/相机24-70mm",
+      "shot_list": [
+        "鱼尾狮与金沙",
+        "Supertree蓝调",
+        "Cloud Forest瀑布"
+      ],
+      "minimum_stay_minutes": 150,
+      "ideal_stay_minutes": 210,
+      "crowd_strategy": "工作日傍晚，三脚架限制处不用脚架。",
+      "backup_scene": "金沙室内与滨海艺术中心连廊"
+    },
+    {
+      "poi": "乔治市",
+      "priority": "高",
+      "best_time": "08:00至11:00",
+      "gear": "手机或35mm定焦",
+      "shot_list": [
+        "姓氏桥纵深",
+        "骑楼门窗",
+        "和谐街宗教建筑"
+      ],
+      "minimum_stay_minutes": 240,
+      "ideal_stay_minutes": 360,
+      "crowd_strategy": "壁画排队就跳过，拍真实街景。",
+      "backup_scene": "娘惹博物馆室内细节"
+    },
+    {
+      "poi": "Campuhan Ridge",
+      "priority": "中",
+      "best_time": "17:15至18:45",
+      "gear": "广角或24-70mm",
+      "shot_list": [
+        "草坡曲线",
+        "人物剪影"
+      ],
+      "minimum_stay_minutes": 60,
+      "ideal_stay_minutes": 90,
+      "crowd_strategy": "不摸黑走远。",
+      "backup_scene": "乌布酒店庭院"
+    },
+    {
+      "poi": "Apurva/Nusa Dua",
+      "priority": "高",
+      "best_time": "清晨与17:00后",
+      "gear": "手机广角/24mm",
+      "shot_list": [
+        "酒店中轴",
+        "阶梯水景",
+        "海岸人像"
+      ],
+      "minimum_stay_minutes": 240,
+      "ideal_stay_minutes": 480,
+      "crowd_strategy": "避开公共区住客正脸。",
+      "backup_scene": "室内大堂与连廊"
+    },
+    {
+      "poi": "吉隆坡KLCC",
+      "priority": "高",
+      "best_time": "18:30至20:00",
+      "gear": "手机超广角或16-35mm",
+      "shot_list": [
+        "公园水池倒影",
+        "双子塔仰拍"
+      ],
+      "minimum_stay_minutes": 90,
+      "ideal_stay_minutes": 150,
+      "crowd_strategy": "先在公园找远景，不购买街头广角附件。",
+      "backup_scene": "Suria KLCC室内"
+    }
+  ],
+  "weather_plan": {
+    "basis": "2027年5月不在实时预报窗口内，以下为季节预期。",
+    "expected_conditions": [
+      "巴厘岛5月进入旱季，通常比7至8月旺季便宜且降雨较少。",
+      "新加坡、槟城和吉隆坡全年炎热潮湿，午后雷阵雨仍可能出现。",
+      "所有城市日间体感可能超过30℃，老城步行安排在早晚。"
+    ],
+    "rain_plan": "新加坡改博物馆/商场连廊；槟城改娘惹博物馆、蓝屋或Hin Bus Depot；乌布改艺术馆和SPA；吉隆坡改伊斯兰艺术博物馆与商场。",
+    "heat_plan": "每天12:00至15:00尽量安排午餐、室内馆或酒店休息。",
+    "refresh_rule": "出发前10天开始看趋势，前3天按小时预报调整户外顺序。"
+  },
+  "seasonal_notes": [
+    "推荐5月中旬的主要原因是巴厘岛进入旱季但尚未到7至8月高峰。",
+    "若2027年5月航班显著高于预算，可整体平移至2027年9月中旬，路线结构不变。",
+    "新加坡和马来西亚没有绝对干季保证，轻便雨衣与防水鞋袋比雨伞更实用。"
+  ],
+  "special_modules": [
+    {
+      "type": "low_budget",
+      "success_criteria": "两人总支出尽量控制在31,500元左右。",
+      "protected_constraints": [
+        "不牺牲跨境中转安全",
+        "不住位置过偏的廉价酒店",
+        "双床房"
+      ],
+      "daily_handling": [
+        "免费老城和公共空间为主",
+        "正午用平价餐馆和酒店休息"
+      ],
+      "booking_implications": [
+        "廉航提前买托运行李",
+        "酒店先订可取消房",
+        "价格超过阈值就用备选"
+      ],
+      "fallbacks": [
+        "总价超35,000元时取消新加坡酒店升级，保留巴厘岛升级"
+      ]
+    },
+    {
+      "type": "luxury",
+      "success_criteria": "两次住宿升级要有建筑、泳池、早餐或海滩的明确体验差异。",
+      "protected_constraints": [
+        "升级房不买不可取消",
+        "不为换酒店损失半天"
+      ],
+      "daily_handling": [
+        "升级日减少景点",
+        "安排早餐和泳池使用"
+      ],
+      "booking_implications": [
+        "新加坡上限2600元/晚",
+        "巴厘岛Apurva上限3200元/晚"
+      ],
+      "fallbacks": [
+        "新加坡改Mondrian",
+        "巴厘岛改Renaissance或MERUSAKA"
+      ]
+    }
+  ],
+  "meal_plan": [
+    {
+      "day": 1,
+      "city": "新加坡",
+      "anchor": "Maxwell与Chinatown Complex",
+      "budget": "两人300-500元",
+      "backup": "Bugis熟食中心"
+    },
+    {
+      "day": 2,
+      "city": "新加坡",
+      "anchor": "City Hall/Marina Bay本地餐与园区简餐",
+      "budget": "两人450-700元",
+      "backup": "金沙商场食阁"
+    },
+    {
+      "day": 3,
+      "city": "槟城",
+      "anchor": "New Lane或汕头街",
+      "budget": "两人100-170元",
+      "backup": "酒店附近茶室"
+    },
+    {
+      "day": 4,
+      "city": "槟城",
+      "anchor": "娘惹午餐与老城小吃",
+      "budget": "两人300-450元",
+      "backup": "Komtar商场餐饮"
+    },
+    {
+      "day": 5,
+      "city": "转场/乌布",
+      "anchor": "机场简餐与酒店晚餐",
+      "budget": "两人300-500元",
+      "backup": "便利店补给"
+    },
+    {
+      "day": 6,
+      "city": "乌布",
+      "anchor": "印尼拼盘与乌布晚餐",
+      "budget": "两人500-750元",
+      "backup": "酒店餐厅"
+    },
+    {
+      "day": 7,
+      "city": "巴厘岛",
+      "anchor": "稻田午餐与Sanur海边餐",
+      "budget": "两人500-800元",
+      "backup": "Sanur主街餐厅"
+    },
+    {
+      "day": 8,
+      "city": "Nusa Dua",
+      "anchor": "酒店外简餐与Bali Collection",
+      "budget": "两人650-1000元",
+      "backup": "Grab送餐"
+    },
+    {
+      "day": 9,
+      "city": "吉隆坡",
+      "anchor": "酒店附近夜宵",
+      "budget": "两人150-250元",
+      "backup": "便利店和酒店"
+    },
+    {
+      "day": 10,
+      "city": "吉隆坡",
+      "anchor": "南洋午餐与KLCC晚餐",
+      "budget": "两人350-550元",
+      "backup": "Suria KLCC食阁"
+    },
+    {
+      "day": 11,
+      "city": "吉隆坡/返程",
+      "anchor": "茶室早餐与机场午餐",
+      "budget": "两人200-350元",
+      "backup": "机上预购餐"
+    }
+  ],
+  "preparation_checklist": [
+    "核对两本护照在2027年5月仍有至少6个月有效期。",
+    "把所有航班、酒店、e-VoA、SGAC、MDAC和Love Bali二维码离线保存。",
+    "廉航每段分别核对登机箱尺寸、重量和托运行李是否直挂。",
+    "准备Visa/Mastercard实体卡、少量SGD/MYR/IDR现金和备用银行卡。",
+    "购买境外保险，查看航班延误、行李、医疗和摩托车相关除外责任。",
+    "携带轻便雨衣、防晒、驱蚊、肠胃药、创可贴和防水鞋袋。",
+    "寺庙日准备遮肩上衣和过膝下装，现场纱笼按要求使用。",
+    "出发前7天检查所有航班、酒店双床、门票维护日和入境表格。"
+  ],
+  "language_cards": [
+    {
+      "scene": "酒店",
+      "local": "Could we have a twin room with two separate beds?",
+      "chinese": "请确认是两张分开的床。"
+    },
+    {
+      "scene": "航空行李",
+      "local": "Is our checked baggage tagged through to Denpasar?",
+      "chinese": "我们的托运行李是否直挂到巴厘岛？"
+    },
+    {
+      "scene": "餐厅",
+      "local": "No food allergies. Please make it less spicy.",
+      "chinese": "没有食物过敏，请做得少辣一些。"
+    },
+    {
+      "scene": "叫车",
+      "local": "Please confirm the licence plate and destination before departure.",
+      "chinese": "出发前请确认车牌和目的地。"
+    },
+    {
+      "scene": "医疗",
+      "local": "I need a clinic or hospital. Please call an ambulance if necessary.",
+      "chinese": "我需要诊所或医院，必要时请叫救护车。"
+    },
+    {
+      "scene": "马来语/印尼语",
+      "local": "Terima kasih",
+      "chinese": "谢谢。"
+    }
+  ],
+  "emergency_guide": [
+    "证件遗失：先报警取得记录，再联系中国驻当地使领馆或12308；同时冻结银行卡。",
+    "航班取消：先让承运人给出书面改签方案；分开出票时不要自行错过后段，立即联系后段航司。",
+    "行李未到：离开机场前在行李柜台取得PIR编号，保留登机牌和行李条。",
+    "急病：优先正规医院或保险指定机构，不自行骑车就医。",
+    "支付失败：改用实体卡或现金，不让陌生人代刷，不在非官方页面输入护照和银行卡信息。"
+  ],
+  "scenario_variants": [
+    {
+      "name": "省钱版",
+      "when_to_use": "两人总价超过35,000元",
+      "changes": [
+        "取消新加坡升级酒店，原酒店连住2晚",
+        "巴厘岛升级改Renaissance或MERUSAKA",
+        "双子塔只看外观"
+      ],
+      "time_impact": "减少一次换酒店",
+      "budget_impact": "预计节省2500-4500元",
+      "risk": "豪华体验减少但路线更顺。"
+    },
+    {
+      "name": "舒适版",
+      "when_to_use": "机票低于预期且预算有余",
+      "changes": [
+        "PEN-KUL-DPS购买更长受保护中转",
+        "巴厘岛机场与包车均使用酒店合作车辆",
+        "升级房都含早餐"
+      ],
+      "time_impact": "转场更稳",
+      "budget_impact": "增加1500-2500元",
+      "risk": "需警惕酒店接送溢价。"
+    },
+    {
+      "name": "雨天版",
+      "when_to_use": "午后雷雨或巴厘岛连续降雨",
+      "changes": [
+        "新加坡改博物馆与商场",
+        "槟城删升旗山",
+        "乌布删山脊步道",
+        "KL保留室内馆"
+      ],
+      "time_impact": "户外步行减少",
+      "budget_impact": "增加少量馆票和打车",
+      "risk": "室内热门点可能排队。"
+    },
+    {
+      "name": "航班延误版",
+      "when_to_use": "跨境航班延误超过2小时",
+      "changes": [
+        "D3取消槟城夜市，酒店附近吃",
+        "D5只保留机场到乌布",
+        "D9取消亚罗街夜宵"
+      ],
+      "time_impact": "不影响后续固定主线",
+      "budget_impact": "可能增加机场餐与交通",
+      "risk": "分开出票的后续段仍需单独处理。"
+    }
+  ],
+  "fallback_options": [
+    "Cloud Forest维护：改国家美术馆或ArtScience Museum，并保留Supertree免费夜景。",
+    "槟城升旗山雷雨：改Gurney Bay、蓝屋导览或室内娘惹文化路线。",
+    "Campuhan湿滑：改ARMA/Neka Art Museum与酒店泳池。",
+    "Apurva价格超过3200元：切Renaissance Bali Nusa Dua或MERUSAKA。",
+    "双子塔门票无票：不影响KLCC公园与外观夜景。"
+  ],
+  "risk_notes": [
+    "2027年具体航班时刻和价格尚未形成可直接预订的确认结果。",
+    "PEN-DPS不能依据2022年旧直飞新闻安排行程；当前应按KUL中转设计。",
+    "两次进入马来西亚要分别准备到达信息和住宿地址。",
+    "新加坡和巴厘岛各住一晚升级酒店会增加搬运行李；若连续住宿促销更好，应优先减少换酒店。",
+    "巴厘岛公路拥堵波动大，地图时间与缓冲必须分开。"
+  ],
+  "open_questions": [
+    "付款前确认2027-05-09/10 HGH-SIN与2027-05-20 KUL-HGH具体直飞班期。",
+    "确认两人是否各有托运行李，或共享1件20公斤。",
+    "确认升级酒店是否坚持一城一晚，还是接受减少换酒店的替代方案。"
+  ],
+  "decision_log": [
+    "日期选择2027年5月中旬：避开五一，进入巴厘岛旱季初段，通常低于七八月旺季。",
+    "停留分配采用2+2+4+2晚，保持用户选择的海岛优先。",
+    "槟城至巴厘岛按吉隆坡中转而非直飞，原因是当前搜索结果与旧航线宣传存在冲突。",
+    "豪华住宿设价格上限，超过阈值自动切换备选，不为了品牌突破总预算。",
+    "吉隆坡安排在最后，有利于接KUL-HGH直飞候选并降低返程复杂度。"
+  ],
+  "research_evidence": [
+    {
+      "source": "Singapore ICA",
+      "status": "confirmed",
+      "confidence": "high",
+      "details": "中国普通护照赴新加坡30天免签；SGAC在入境前三天内提交，护照通常需至少6个月有效期。",
+      "raw_reference": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "Malaysia Immigration",
+      "status": "confirmed",
+      "confidence": "high",
+      "details": "中国普通护照短期社交访问免签规则与MDAC官方入口；本路线有两次入境。",
+      "raw_reference": "https://malaysiavisa.imi.gov.my/faq/",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "Indonesia official tourism/immigration",
+      "status": "confirmed",
+      "confidence": "high",
+      "details": "中国护照在VoA/e-VoA适用名单；当前费用500,000 IDR，需护照和后续行程。",
+      "raw_reference": "https://evisa.imigrasi.go.id/",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "Love Bali",
+      "status": "confirmed",
+      "confidence": "high",
+      "details": "外国游客税当前为150,000 IDR/人。",
+      "raw_reference": "https://lovebali.baliprov.go.id/faq",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "Scoot",
+      "status": "live_candidate",
+      "confidence": "medium",
+      "details": "HGH-SIN与SIN-PEN航线存在；2027具体班期需搜索确认。",
+      "raw_reference": "https://www.flyscoot.com/flights/en/flights-from-hangzhou-to-singapore",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "AirAsia MOVE",
+      "status": "live_candidate",
+      "confidence": "medium",
+      "details": "DPS-KUL和KUL-HGH直飞候选存在；PEN-DPS当前更适合按KUL中转。",
+      "raw_reference": "https://www.airasia.com/flights/from-penang-pen-to-bali-dps/",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "Gardens by the Bay official",
+      "status": "confirmed",
+      "confidence": "high",
+      "details": "Cloud Forest常规开放9:00-21:00且有月度维护日；2027日期需复核。",
+      "raw_reference": "https://www.gardensbythebay.com.sg/en/plan-your-visit/opening-hours.html",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "myPenang/UNESCO",
+      "status": "confirmed",
+      "confidence": "high",
+      "details": "乔治市世界遗产核心区适合步行串联。",
+      "raw_reference": "https://www.mypenang.gov.my/culture-heritage/heritage-zones/",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "Bali seasonal source",
+      "status": "estimated",
+      "confidence": "medium",
+      "details": "5月处于巴厘岛旱季初段，通常比7至8月游客高峰价格友好。",
+      "raw_reference": "https://www.visitbali.org/essentials/weather/",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "PETRONAS official ticketing",
+      "status": "confirmed",
+      "confidence": "high",
+      "details": "双子塔登塔使用官方定时票系统。",
+      "raw_reference": "https://eticket.petronastwintowers.com.my/?lang=en",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "FlyAI",
+      "status": "unavailable",
+      "confidence": "low",
+      "details": "本机未检测到FlyAI CLI或API配置，因此没有保留FlyAI直达商品链接。",
+      "raw_reference": "local provider check",
+      "retrieved_at": "2026-08-16"
+    },
+    {
+      "source": "Map providers",
+      "status": "unavailable",
+      "confidence": "low",
+      "details": "未检测到Google Maps/Amap API key，路线时间采用保守估算并生成SVG示意图。",
+      "raw_reference": "local provider check",
+      "retrieved_at": "2026-08-16"
+    }
+  ],
+  "reference_materials": [],
+  "progress_log": [
+    "需求与参考资料已确认。",
+    "完成入境、季节、航线结构和核心景点官方信息检索。",
+    "FlyAI、携程问道和地图API不可用，已采用官方搜索入口、估算价格和SVG地图降级。"
+  ],
+  "visual_outputs": {
+    "watermark_text": "Skill for 我不知道-bz",
+    "html_path": "/Users/shenguagua/Documents/Codex/2026-08-16/zhe-g/outputs/hangzhou-singapore-penang-bali-kuala-lumpur-2027/trip-plan.html",
+    "excel_path": "/Users/shenguagua/Documents/Codex/2026-08-16/zhe-g/outputs/hangzhou-singapore-penang-bali-kuala-lumpur-2027/trip-plan.xlsx",
+    "route_svg_path": "outputs/hangzhou-singapore-penang-bali-kuala-lumpur-2027/route-map.svg",
+    "route_map_status": "rendered_svg",
+    "route_map_provider": "svg"
+  }
+}

@@ -287,7 +287,7 @@ def render_form_page(values: dict[str, str] | None = None, error: str = "") -> s
     }}
     .create-modes {{
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
       margin-top: 18px;
     }}
@@ -567,6 +567,22 @@ def render_form_page(values: dict[str, str] | None = None, error: str = "") -> s
     <section class="create-modes" aria-label="选择制定方式">
       <div class="create-mode active"><span>方式一</span><strong>AI 帮我生成</strong><span>说清楚目的地、时间和偏好，由 AI 先生成完整攻略，再继续修改。</span></div>
       <a class="create-mode" href="/manual-plan"><span>方式二</span><strong>我自己制定</strong><span>自己填写每天去哪里和时间，系统负责整理、绘制路线并检查是否绕路。</span></a>
+      <a class="create-mode" href="/trips"><span>旅行工作台</span><strong>我的旅行</strong><span>直接查看已保存的攻略，继续修改行程并整理订单与凭证。</span></a>
+    </section>
+
+    <section class="panel" aria-labelledby="featured-plan-title">
+      <div class="panel-head">
+        <div>
+          <div class="section-kicker">Featured itinerary</div>
+          <h2 id="featured-plan-title">杭州出发，新加坡、槟城、巴厘岛和吉隆坡 11 天</h2>
+        </div>
+        <p>两人经济出行，在新加坡和巴厘岛各安排一晚升级住宿。包含逐日计划、预算、酒店候选、入境准备和路线图。</p>
+      </div>
+      <div class="assist-row">
+        <a class="primary-btn" href="/featured" style="text-decoration:none;">打开完整攻略</a>
+        <a class="ghost-btn" href="/featured/excel" style="text-decoration:none;">下载 Excel</a>
+        <a class="ghost-btn" href="/featured/plan" style="text-decoration:none;">查看 JSON</a>
+      </div>
     </section>
 
     <section class="panel">

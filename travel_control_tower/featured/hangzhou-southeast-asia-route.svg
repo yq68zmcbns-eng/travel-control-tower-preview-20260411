@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1352" viewBox="0 0 1280 1352">
+<style>
+text{font-family:Arial,'Microsoft YaHei',sans-serif;fill:#17324d} .muted{fill:#7a6553;font-size:18px} .label{font-size:24px;font-weight:700} .small{font-size:16px;fill:#7a6553}
+</style>
+<rect width="100%" height="100%" fill="#fff9f0"/>
+<rect x="28" y="24" width="1224" height="64" rx="28" fill="#17324d"/>
+<text x="56" y="64" fill="#fff7ef" font-size="30" font-weight="800">Trip Route Map</text>
+<rect x="42" y="92" width="1196" height="92" rx="22" fill="#fffdf8" stroke="#eadccc"/>
+<circle cx="88" cy="138" r="24" fill="#B56742"/>
+<text x="78" y="146" fill="#fff" font-size="20" font-weight="800">D1</text>
+<text x="132" y="126" class="small">00:00 · flight · live_candidate</text>
+<text x="132" y="158" class="label">杭州HGH</text>
+<path d="M520 146 C610 110, 710 110, 800 146" fill="none" stroke="#B56742" stroke-width="8" stroke-linecap="round"/>
+<polygon points="800,146 778,134 778,158" fill="#B56742"/>
+<text x="565" y="170" class="small">map ? min + buffer 180 min</text>
+<text x="840" y="158" class="label">新加坡SIN</text>
+<rect x="42" y="210" width="1196" height="92" rx="22" fill="#fffdf8" stroke="#eadccc"/>
+<circle cx="88" cy="256" r="24" fill="#B56742"/>
+<text x="78" y="264" fill="#fff" font-size="20" font-weight="800">D3</text>
+<text x="132" y="244" class="small">14:30 · flight · live_candidate</text>
+<text x="132" y="276" class="label">新加坡SIN</text>
+<path d="M520 264 C610 228, 710 228, 800 264" fill="none" stroke="#B56742" stroke-width="8" stroke-linecap="round"/>
+<polygon points="800,264 778,252 778,276" fill="#B56742"/>
+<text x="565" y="288" class="small">map ? min + buffer 210 min</text>
+<text x="840" y="276" class="label">槟城PEN</text>
+<rect x="42" y="328" width="1196" height="92" rx="22" fill="#fffdf8" stroke="#eadccc"/>
+<circle cx="88" cy="374" r="24" fill="#B56742"/>
+<text x="78" y="382" fill="#fff" font-size="20" font-weight="800">D5</text>
+<text x="132" y="362" class="small">10:30 · flight · estimated</text>
+<text x="132" y="394" class="label">槟城PEN</text>
+<path d="M520 382 C610 346, 710 346, 800 382" fill="none" stroke="#B56742" stroke-width="8" stroke-linecap="round"/>
+<polygon points="800,382 778,370 778,394" fill="#B56742"/>
+<text x="565" y="406" class="small">map ? min + buffer 270 min</text>
+<text x="840" y="394" class="label">巴厘岛DPS</text>
+<rect x="42" y="446" width="1196" height="92" rx="22" fill="#fffdf8" stroke="#eadccc"/>
+<circle cx="88" cy="492" r="24" fill="#2F6F8F"/>
+<text x="78" y="500" fill="#fff" font-size="20" font-weight="800">D5</text>
+<text x="132" y="480" class="small">19:00 · taxi/private_car · estimated</text>
+<text x="132" y="512" class="label">巴厘岛DPS</text>
+<path d="M520 500 C610 464, 710 464, 800 500" fill="none" stroke="#2F6F8F" stroke-width="8" stroke-linecap="round"/>
+<polygon points="800,500 778,488 778,512" fill="#2F6F8F"/>
+<text x="565" y="524" class="small">map ? min + buffer 30 min</text>
+<text x="840" y="512" class="label">乌布</text>
+<rect x="42" y="564" width="1196" height="92" rx="22" fill="#fffdf8" stroke="#eadccc"/>
+<circle cx="88" cy="610" r="24" fill="#2F6F8F"/>
+<text x="78" y="618" fill="#fff" font-size="20" font-weight="800">D7</text>
+<text x="132" y="598" class="small">08:00 · private_car · estimated</text>
+<text x="132" y="630" class="label">乌布</text>
+<path d="M520 618 C610 582, 710 582, 800 618" fill="none" stroke="#2F6F8F" stroke-width="8" stroke-linecap="round"/>
+<polygon points="800,618 778,606 778,630" fill="#2F6F8F"/>
+<text x="565" y="642" class="small">map ? min + buffer 25 min</text>
+<text x="840" y="630" class="label">Tirta Empul</text>
+<rect x="42" y="682" width="1196" height="92" rx="22" fill="#fffdf8" stroke="#eadccc"/>
+<circle cx="88" cy="728" r="24" fill="#2F6F8F"/>
+<text x="78" y="736" fill="#fff" font-size="20" font-weight="800">D7</text>
+<text x="132" y="716" class="small">15:00 · private_car · estimated</text>
+<text x="132" y="748" class="label">Tegallalang</text>
+<path d="M520 736 C610 700, 710 700, 800 736" fill="none" stroke="#2F6F8F" stroke-width="8" stroke-linecap="round"/>
+<polygon points="800,736 778,724 778,748" fill="#2F6F8F"/>
+<text x="565" y="760" class="small">map ? min + buffer 30 min</text>
+<text x="840" y="748" class="label">Sanur</text>
+<rect x="42" y="800" width="1196" height="92" rx="22" fill="#fffdf8" stroke="#eadccc"/>
+<circle cx="88" cy="846" r="24" fill="#2F6F8F"/>
+<text x="78" y="854" fill="#fff" font-size="20" font-weight="800">D8</text>
+<text x="132" y="834" class="small">10:30 · taxi · estimated</text>
+<text x="132" y="866" class="label">Sanur</text>
+<path d="M520 854 C610 818, 710 818, 800 854" fill="none" stroke="#2F6F8F" stroke-width="8" stroke-linecap="round"/>
+<polygon points="800,854 778,842 778,866" fill="#2F6F8F"/>
+<text x="565" y="878" class="small">map ? min + buffer 25 min</text>
+<text x="840" y="866" class="label">Nusa Dua</text>
+<rect x="42" y="918" width="1196" height="92" rx="22" fill="#fffdf8" stroke="#eadccc"/>
+<circle cx="88" cy="964" r="24" fill="#B56742"/>
+<text x="78" y="972" fill="#fff" font-size="20" font-weight="800">D9</text>
+<text x="132" y="952" class="small">15:00 · flight · live_candidate</text>
+<text x="132" y="984" class="label">巴厘岛DPS</text>
+<path d="M520 972 C610 936, 710 936, 800 972" fill="none" stroke="#B56742" stroke-width="8" stroke-linecap="round"/>
+<polygon points="800,972 778,960 778,984" fill="#B56742"/>
+<text x="565" y="996" class="small">map ? min + buffer 270 min</text>
+<text x="840" y="984" class="label">吉隆坡KUL</text>
+<rect x="42" y="1036" width="1196" height="92" rx="22" fill="#fffdf8" stroke="#eadccc"/>
+<circle cx="88" cy="1082" r="24" fill="#2F6F8F"/>
+<text x="78" y="1090" fill="#fff" font-size="20" font-weight="800">D9</text>
+<text x="132" y="1070" class="small">18:05 · train/taxi · estimated</text>
+<text x="132" y="1102" class="label">吉隆坡KUL</text>
+<path d="M520 1090 C610 1054, 710 1054, 800 1090" fill="none" stroke="#2F6F8F" stroke-width="8" stroke-linecap="round"/>
+<polygon points="800,1090 778,1078 778,1102" fill="#2F6F8F"/>
+<text x="565" y="1114" class="small">map ? min + buffer 60 min</text>
+<text x="840" y="1102" class="label">Bukit Bintang</text>
+<rect x="42" y="1154" width="1196" height="92" rx="22" fill="#fffdf8" stroke="#eadccc"/>
+<circle cx="88" cy="1200" r="24" fill="#B56742"/>
+<text x="78" y="1208" fill="#fff" font-size="20" font-weight="800">D11</text>
+<text x="132" y="1188" class="small">16:30 · flight · live_candidate</text>
+<text x="132" y="1220" class="label">吉隆坡KUL</text>
+<path d="M520 1208 C610 1172, 710 1172, 800 1208" fill="none" stroke="#B56742" stroke-width="8" stroke-linecap="round"/>
+<polygon points="800,1208 778,1196 778,1220" fill="#B56742"/>
+<text x="565" y="1232" class="small">map ? min + buffer 240 min</text>
+<text x="840" y="1220" class="label">杭州HGH</text>
+</svg>

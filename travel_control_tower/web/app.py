@@ -21,6 +21,7 @@ from ..planner_core.planning_agent import CodexExecPlanningAgent, OpenAIPlanning
 from ..preview.render_html import render_plan_html
 from ..runtime_config import load_runtime_config
 from . import form_ui
+from . import workspace_ui
 from .generation_jobs import GenerationJob, GenerationJobStore, save_plan_json
 
 
@@ -156,6 +157,43 @@ def _job_html_path(job: GenerationJob) -> Path:
 def _job_excel_path(job: GenerationJob) -> Path:
     raw_path = str(getattr(job, "excel_path", "") or "").strip()
     return Path(raw_path) if raw_path else JOB_STORE.excel_path(job.job_id)
+
+
+def _job_orders_path(job: GenerationJob) -> Path:
+    return JOB_STORE.job_dir(job.job_id) / "orders.json"
+
+
+def _load_job_orders(job: GenerationJob) -> list[dict]:
+    path = _job_orders_path(job)
+    if not path.exists():
+        return []
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        return list(payload) if isinstance(payload, list) else []
+    except (OSError, json.JSONDecodeError):
+        return []
+
+
+def _save_edited_plan(job: GenerationJob, plan: dict, fields: dict[str, str]) -> None:
+    overview = plan.setdefault("overview", {})
+    overview["title"] = str(fields.get("title") or overview.get("title") or "旅行方案").strip()
+    overview["summary"] = str(fields.get("summary") or "").strip()
+    for di, day in enumerate(plan.get("daily_plan") or []):
+        day["date"] = str(fields.get(f"d{di}_date") or day.get("date") or "").strip()
+        day["theme"] = str(fields.get(f"d{di}_theme") or day.get("theme") or "").strip()
+        day["why_this_day"] = str(fields.get(f"d{di}_why") or "").strip()
+        for ii, item in enumerate(day.get("items") or []):
+            item["start_time"] = str(fields.get(f"d{di}_i{ii}_start") or item.get("start_time") or "").strip()
+            item["end_time"] = str(fields.get(f"d{di}_i{ii}_end") or item.get("end_time") or "").strip()
+            item["label"] = str(fields.get(f"d{di}_i{ii}_label") or item.get("label") or "").strip()
+            item["notes"] = str(fields.get(f"d{di}_i{ii}_notes") or "").strip()
+    plan_path = _job_plan_path(job)
+    html_path = _job_html_path(job)
+    excel_path = _job_excel_path(job)
+    save_plan_json(plan_path, plan)
+    html_path.write_text(render_result_page(plan, job_id=job.job_id), encoding="utf-8")
+    export_plan_to_excel(plan, excel_path)
+    JOB_STORE.set_artifact_paths(job.job_id, plan_path=plan_path, html_path=html_path, excel_path=excel_path)
 
 
 def _load_plan_payload(path: Path) -> dict | None:
@@ -393,10 +431,13 @@ def render_result_page(plan: dict, job_id: str = "") -> str:
       <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
         <div style="display:grid;gap:6px;">
           <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7b6b57;">workspace</div>
-          <div style="font-size:20px;font-weight:800;color:#13263a;">结果导出与复查入口</div>
+          <div style="font-size:20px;font-weight:800;color:#13263a;">旅行攻略工作台</div>
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="/" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(177,151,120,.35);background:#f8f2e8;color:#1f3248;text-decoration:none;font-weight:700;">重新填写</a>
+          <a href="/trips" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(177,151,120,.35);background:#f8f2e8;color:#1f3248;text-decoration:none;font-weight:700;">我的旅行</a>
+          <a href="/jobs/{job_id}/revise" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(177,151,120,.35);background:#13263a;color:#fff;text-decoration:none;font-weight:700;">AI 继续修改</a>
+          <a href="/jobs/{job_id}/edit" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(177,151,120,.35);background:#ffffff;color:#1f3248;text-decoration:none;font-weight:700;">手动编辑</a>
+          <a href="/jobs/{job_id}/orders" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(177,151,120,.35);background:#ffffff;color:#1f3248;text-decoration:none;font-weight:700;">订单与凭证</a>
           <a href="{plan_link}" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(177,151,120,.35);background:#ffffff;color:#1f3248;text-decoration:none;font-weight:700;">查看任务 JSON</a>
           <a href="{html_link}" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(177,151,120,.35);background:#ffffff;color:#1f3248;text-decoration:none;font-weight:700;">当前结果页</a>
           <a href="{excel_link}" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(177,151,120,.35);background:#13263a;color:#f7f3ec;text-decoration:none;font-weight:700;">下载 Excel</a>
@@ -929,6 +970,48 @@ class TravelControlTowerHandler(BaseHTTPRequestHandler):
                 return
             self._write_json(payload)
             return
+        if path == "/api/ip-location":
+            try:
+                self._write_json(form_ui.locate_city_by_ip(_client_ip(self)))
+            except Exception as exc:  # pragma: no cover
+                self._write_json({"error": str(exc)}, status=HTTPStatus.BAD_REQUEST)
+            return
+        if path == "/trips":
+            items: list[tuple[GenerationJob, dict]] = []
+            for item in JOB_STORE.list_jobs():
+                if item.status != "succeeded":
+                    continue
+                payload = _load_job_plan(item)
+                if payload is not None:
+                    items.append((item, payload))
+            self._write_html(workspace_ui.render_trips_page(items))
+            return
+        if path.startswith("/jobs/") and path.endswith("/edit"):
+            job_id = path.removeprefix("/jobs/").removesuffix("/edit").strip("/")
+            job = JOB_STORE.get(job_id)
+            plan = _load_job_plan(job) if job else None
+            if not job or plan is None:
+                self._write_html("<h1>job not found</h1>", status=HTTPStatus.NOT_FOUND)
+                return
+            self._write_html(workspace_ui.render_edit_page(plan, job_id))
+            return
+        if path.startswith("/jobs/") and path.endswith("/revise"):
+            job_id = path.removeprefix("/jobs/").removesuffix("/revise").strip("/")
+            job = JOB_STORE.get(job_id)
+            plan = _load_job_plan(job) if job else None
+            if not job or plan is None:
+                self._write_html("<h1>job not found</h1>", status=HTTPStatus.NOT_FOUND)
+                return
+            self._write_html(workspace_ui.render_revise_page(job, plan))
+            return
+        if path.startswith("/jobs/") and path.endswith("/orders"):
+            job_id = path.removeprefix("/jobs/").removesuffix("/orders").strip("/")
+            job = JOB_STORE.get(job_id)
+            if not job:
+                self._write_html("<h1>job not found</h1>", status=HTTPStatus.NOT_FOUND)
+                return
+            self._write_html(workspace_ui.render_orders_page(job_id, _load_job_orders(job)))
+            return
         if path.startswith("/jobs/") and path.endswith("/excel"):
             job_id = path.removeprefix("/jobs/").removesuffix("/excel").strip("/")
             job = JOB_STORE.get(job_id)
@@ -1024,6 +1107,58 @@ class TravelControlTowerHandler(BaseHTTPRequestHandler):
             return
         if not self._ensure_preview_access(urlparse(self.path)):
             return
+        path = urlparse(self.path).path
+        if path.startswith("/jobs/") and path.endswith("/edit"):
+            job_id = path.removeprefix("/jobs/").removesuffix("/edit").strip("/")
+            job = JOB_STORE.get(job_id)
+            plan = _load_job_plan(job) if job else None
+            if not job or plan is None:
+                self._write_html("<h1>job not found</h1>", status=HTTPStatus.NOT_FOUND)
+                return
+            fields = self._read_form_fields()
+            _save_edited_plan(job, plan, fields)
+            self._redirect(f"/results/{job_id}")
+            return
+        if path.startswith("/jobs/") and path.endswith("/revise"):
+            job_id = path.removeprefix("/jobs/").removesuffix("/revise").strip("/")
+            job = JOB_STORE.get(job_id)
+            if not job:
+                self._write_html("<h1>job not found</h1>", status=HTTPStatus.NOT_FOUND)
+                return
+            message = str(self._read_form_fields().get("message") or "").strip()
+            if not message:
+                self._write_html("<h1>请填写修改要求</h1>", status=HTTPStatus.BAD_REQUEST)
+                return
+            fields = dict(job.fields)
+            original = str(fields.get("freeform_request") or "").strip()
+            fields["freeform_request"] = f"{original}\n\n在原方案基础上继续修改：{message}".strip()
+            revised = _start_generation_job(fields)
+            self._redirect(f"/jobs/{revised.job_id}")
+            return
+        if path.startswith("/jobs/") and path.endswith("/orders"):
+            job_id = path.removeprefix("/jobs/").removesuffix("/orders").strip("/")
+            job = JOB_STORE.get(job_id)
+            if not job:
+                self._write_html("<h1>job not found</h1>", status=HTTPStatus.NOT_FOUND)
+                return
+            fields = self._read_form_fields()
+            try:
+                amount = max(0.0, float(fields.get("amount") or 0))
+            except ValueError:
+                amount = 0.0
+            orders = _load_job_orders(job)
+            orders.append({
+                "category": str(fields.get("category") or "其他").strip(),
+                "date": str(fields.get("date") or "").strip(),
+                "name": str(fields.get("name") or "未命名订单").strip(),
+                "amount": amount,
+                "confirmation": str(fields.get("confirmation") or "").strip(),
+                "url": str(fields.get("url") or "").strip(),
+                "notes": str(fields.get("notes") or "").strip(),
+            })
+            _job_orders_path(job).write_text(json.dumps(orders, ensure_ascii=False, indent=2), encoding="utf-8")
+            self._redirect(f"/jobs/{job_id}/orders")
+            return
         if self.path != "/generate":
             self._write_html("<h1>404</h1>", status=HTTPStatus.NOT_FOUND)
             return
@@ -1043,10 +1178,7 @@ class TravelControlTowerHandler(BaseHTTPRequestHandler):
             )
             return
 
-        length = int(self.headers.get("Content-Length", "0") or "0")
-        raw = self.rfile.read(length)
-        parsed_form = parse_qs(raw.decode("utf-8", errors="replace"), keep_blank_values=True)
-        fields = {key: values[0] if values else "" for key, values in parsed_form.items()}
+        fields = self._read_form_fields()
 
         if not str(fields.get("freeform_request", "") or "").strip():
             self._write_html(
@@ -1063,6 +1195,12 @@ class TravelControlTowerHandler(BaseHTTPRequestHandler):
 
     def log_message(self, format: str, *args) -> None:  # noqa: A003
         return
+
+    def _read_form_fields(self) -> dict[str, str]:
+        length = int(self.headers.get("Content-Length", "0") or "0")
+        raw = self.rfile.read(length)
+        parsed_form = parse_qs(raw.decode("utf-8", errors="replace"), keep_blank_values=True)
+        return {key: values[0] if values else "" for key, values in parsed_form.items()}
 
     def _ensure_preview_access(self, parsed) -> bool:
         expected_token = _preview_access_token()

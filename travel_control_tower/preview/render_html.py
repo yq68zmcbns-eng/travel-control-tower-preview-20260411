@@ -302,7 +302,13 @@ def _candidate_list(items: list[dict], kind: str) -> str:
             detail = _clean_display_text(item.get("category", ""))
             price = ""
             note = _stringify(item.get("notes", "") or item.get("address", ""))
-        cards.append(f"<article class='side-card'><strong>{_esc(title)}</strong><div>{_esc(detail)}</div><div>{_esc(price)}</div><p>{_esc(note)}</p></article>")
+        booking_url = _stringify(item.get("booking_url") or item.get("url") or "").strip()
+        action_label = "去飞猪查看酒店" if kind == "hotel" else "去飞猪查看班次" if kind == "transport" else "查看详情"
+        action = (
+            f"<a class='booking-link' href='{_esc(booking_url)}' target='_blank' rel='noopener noreferrer'>{action_label}</a>"
+            if booking_url else "<span class='link-missing'>当前结果没有可用预订链接</span>"
+        )
+        cards.append(f"<article class='side-card'><strong>{_esc(title)}</strong><div>{_esc(detail)}</div><div>{_esc(price)}</div><p>{_esc(note)}</p>{action}</article>")
     return "".join(cards)
 
 
@@ -359,7 +365,7 @@ def render_plan_html(plan: dict | object) -> str:
     price_scan_html = ""
     if price_scan_summary or price_scan_candidates:
         candidate_html = "".join(
-            f"<article class='side-card'><strong>{_esc(item.get('label', ''))}</strong><div>{_esc(_stringify(item.get('trip_start_date', '')))} - {_esc(_stringify(item.get('trip_end_date', '')))}</div><p>{_esc(_fmt_money(item.get('total_price', 0)))} {_esc(_stringify(item.get('booking_url', '')))}</p></article>"
+            f"<article class='side-card'><strong>{_esc(item.get('label', ''))}</strong><div>{_esc(_stringify(item.get('trip_start_date', '')))} - {_esc(_stringify(item.get('trip_end_date', '')))}</div><p>{_esc(_fmt_money(item.get('total_price', 0)))}</p>" + (f"<a class='booking-link' href='{_esc(_stringify(item.get('booking_url', '')))}' target='_blank' rel='noopener noreferrer'>去飞猪查看</a>" if _stringify(item.get('booking_url', '')).strip() else "") + "</article>"
             for item in price_scan_candidates[:4]
         ) or "<div class='empty'>暂无低价窗口候选。</div>"
         price_scan_html = (
@@ -411,7 +417,7 @@ def render_plan_html(plan: dict | object) -> str:
     .gantt-row{{display:grid;grid-template-columns:210px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid #efe7dc}} .gantt-row:first-child,.timeline-item:first-child{{border-top:0;padding-top:0}} .gantt-label strong{{display:block}} .gantt-track{{position:relative;min-height:48px;border-radius:16px;background:#f8f2e8;border:1px solid var(--line);overflow:hidden}} .gantt-block{{position:absolute;top:8px;bottom:8px;border-radius:12px;padding:0 10px;display:flex;align-items:center;font-size:12px;font-weight:700;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}} .empty-inline{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}}
     .budget-top{{display:flex;justify-content:space-between;gap:12px;align-items:end}} .budget-table{{width:100%;border-collapse:collapse;font-size:13px}} .budget-table th,.budget-table td{{padding:10px 0;text-align:left;border-top:1px solid #efe7dc;vertical-align:top}}
     .timeline-item{{display:grid;grid-template-columns:90px minmax(0,1fr);gap:14px;padding-top:14px;border-top:1px solid #efe7dc}} .time{{font-size:16px;font-weight:800}} .time span{{display:block;margin-top:6px;font-size:12px;color:var(--muted);font-weight:600}} .tag{{margin-bottom:10px}} .route-box{{display:grid;gap:4px;margin-top:10px;padding:12px 14px;border-radius:14px;background:#f8f2e8;border:1px solid var(--line)}} .route-box strong{{font-size:13px;color:var(--brand)}}
-    details.panel>summary{{cursor:pointer;list-style:none;font-size:20px;font-weight:800}} details.panel>summary::-webkit-details-marker{{display:none}} .booking-top{{display:flex;justify-content:space-between;gap:12px;align-items:center}} .link{{display:inline-flex;margin-top:10px;color:var(--brand);text-decoration:none;font-weight:700}} .empty{{padding:16px;border-radius:16px;background:#f8f2e8;border:1px dashed #e3d7c8;color:var(--muted)}}
+    details.panel>summary{{cursor:pointer;list-style:none;font-size:20px;font-weight:800}} details.panel>summary::-webkit-details-marker{{display:none}} .booking-top{{display:flex;justify-content:space-between;gap:12px;align-items:center}} .link,.booking-link{{display:inline-flex;margin-top:10px;padding:10px 14px;border-radius:12px;background:var(--brand);color:#fff;text-decoration:none;font-weight:700}} .link-missing{{display:block;margin-top:10px;color:var(--muted);font-size:12px}} .empty{{padding:16px;border-radius:16px;background:#f8f2e8;border:1px dashed #e3d7c8;color:var(--muted)}}
     @media (max-width:1180px){{.hero,.overview,.layout,.day-grid{{grid-template-columns:1fr}} .metrics{{grid-template-columns:repeat(2,minmax(0,1fr))}}}}
     @media (max-width:820px){{.page{{width:min(100vw - 18px,1320px)}} .metrics,.budget-inline,.meta-grid,.kv-grid,.gantt-row,.timeline-item{{grid-template-columns:1fr}} .budget-top,.booking-top{{align-items:flex-start;flex-direction:column}}}}
   </style>

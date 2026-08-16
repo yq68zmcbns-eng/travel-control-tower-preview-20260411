@@ -152,6 +152,28 @@ def reverse_geocode_city(lat: str, lng: str) -> dict[str, str]:
     }
 
 
+def locate_city_by_ip(ip: str = "") -> dict[str, str]:
+    runtime = load_runtime_config()
+    if not runtime.amap_web_key:
+        raise RuntimeError("缺少高德 key，暂时无法按网络位置识别城市。")
+    params = {"key": runtime.amap_web_key}
+    clean_ip = str(ip or "").strip()
+    if clean_ip and clean_ip not in {"127.0.0.1", "::1", "unknown"}:
+        params["ip"] = clean_ip
+    response = requests.get("https://restapi.amap.com/v3/ip", params=params, timeout=20)
+    response.raise_for_status()
+    data = response.json()
+    if str(data.get("status")) != "1":
+        raise RuntimeError(str(data.get("info") or "高德 IP 定位返回失败。"))
+    city = data.get("city")
+    if isinstance(city, list):
+        city = city[0] if city else ""
+    city = str(city or "").strip()
+    if not city:
+        raise RuntimeError("没有识别到城市，请手动填写。")
+    return {"city": city, "province": str(data.get("province") or "").strip(), "source": "ip"}
+
+
 def render_form_page(values: dict[str, str] | None = None, error: str = "") -> str:
     values = {**default_form_values(), **(values or {})}
     error_block = f"<div class='error'>{_esc(error)}</div>" if error else ""
@@ -729,6 +751,20 @@ def render_form_page(values: dict[str, str] | None = None, error: str = "") -> s
         }});
       }});
 
+      const fillLocationByNetwork = async () => {{
+        try {{
+          locationStatus.textContent = 'GPS 不可用，正在按网络位置识别城市...';
+          const resp = await fetch('/api/ip-location', {{ cache: 'no-store' }});
+          const payload = await resp.json();
+          if (!resp.ok || !payload.city) throw new Error(payload.error || '没有识别到城市');
+          if (departure) departure.value = payload.city;
+          locationStatus.dataset.city = payload.city;
+          locationStatus.textContent = `已按网络位置识别：${{payload.city}}（可手动修改）`;
+        }} catch (error) {{
+          locationStatus.textContent = `自动定位失败：${{error.message || error}}，请手动填写出发地。`;
+        }}
+      }};
+
       if (locationButton && locationStatus && navigator.geolocation) {{
         locationButton.addEventListener('click', () => {{
           locationStatus.textContent = '正在读取定位...';
@@ -745,14 +781,15 @@ def render_form_page(values: dict[str, str] | None = None, error: str = "") -> s
                 locationStatus.textContent = '未识别到城市，请手动填写。';
               }}
             }} catch (error) {{
-              locationStatus.textContent = `定位读取失败：${{error.message || error}}`;
+              await fillLocationByNetwork();
             }}
-          }}, () => {{
-            locationStatus.textContent = '定位权限被拒绝，请手动填写出发地。';
+          }}, async () => {{
+            await fillLocationByNetwork();
           }});
         }});
       }} else if (locationStatus) {{
-        locationStatus.textContent = '当前浏览器不支持定位，请手动填写出发地。';
+        locationButton?.addEventListener('click', fillLocationByNetwork);
+        locationStatus.textContent = '浏览器 GPS 不可用，可点击后按网络位置识别。';
       }}
 
       if (form) {{

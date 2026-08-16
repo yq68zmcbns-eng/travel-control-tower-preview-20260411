@@ -2,14 +2,18 @@ from __future__ import annotations
 
 import html
 import json
+import re
 import time
 import threading
 import webbrowser
+from datetime import date, timedelta
 from http.cookies import SimpleCookie
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
+
+import requests
 
 from ..adapters.route_amap import AmapRouteAdapter
 from ..adapters.route_google import GoogleRouteAdapter
@@ -23,6 +27,7 @@ from ..runtime_config import load_runtime_config
 from . import form_ui
 from . import workspace_ui
 from .generation_jobs import GenerationJob, GenerationJobStore, save_plan_json
+from .route_maps import enrich_plan_route_maps, static_map_params
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
@@ -187,6 +192,7 @@ def _save_edited_plan(job: GenerationJob, plan: dict, fields: dict[str, str]) ->
             item["end_time"] = str(fields.get(f"d{di}_i{ii}_end") or item.get("end_time") or "").strip()
             item["label"] = str(fields.get(f"d{di}_i{ii}_label") or item.get("label") or "").strip()
             item["notes"] = str(fields.get(f"d{di}_i{ii}_notes") or "").strip()
+    enrich_plan_route_maps(plan)
     plan_path = _job_plan_path(job)
     html_path = _job_html_path(job)
     excel_path = _job_excel_path(job)
@@ -422,6 +428,11 @@ def render_form_page(values: dict[str, str] | None = None, error: str = "") -> s
 
 
 def render_result_page(plan: dict, job_id: str = "") -> str:
+    if job_id:
+        for day in plan.get("daily_plan") or []:
+            route_map = day.get("route_map") or {}
+            if route_map.get("available"):
+                route_map["map_url"] = f"/jobs/{job_id}/maps/{int(day.get('day_index') or 0)}"
     body = render_plan_html(plan)
     plan_link = f"/jobs/{job_id}/plan" if job_id else "/latest/plan"
     html_link = f"/results/{job_id}" if job_id else "/latest/html"
@@ -447,6 +458,108 @@ def render_result_page(plan: dict, job_id: str = "") -> str:
     </section>
     """
     return body.replace('<main class="page">', '<main class="page">' + toolbar, 1)
+
+
+MANUAL_DAY_RE = re.compile(r"^第\s*(\d+)\s*天")
+MANUAL_TIME_RE = re.compile(r"^(?:(\d{1,2}:\d{2})\s*[-—–~至]\s*(\d{1,2}:\d{2})\s+)?(.+)$")
+
+
+def _manual_item_category(label: str) -> str:
+    text = str(label or "")
+    if any(word in text for word in ("酒店", "民宿", "入住", "住宿")):
+        return "住宿"
+    if any(word in text for word in ("午餐", "晚餐", "早餐", "小吃", "餐厅", "夜市", "咖啡")):
+        return "餐食"
+    if any(word in text for word in ("机场", "车站", "高铁", "航班", "地铁", "打车")):
+        return "交通"
+    return "游玩"
+
+
+def _parse_manual_schedule(fields: dict[str, str]) -> dict:
+    destination = str(fields.get("destination") or "").strip()
+    title = str(fields.get("title") or "").strip() or f"{destination}旅行计划"
+    try:
+        start = date.fromisoformat(str(fields.get("start_date") or "").strip())
+    except ValueError as exc:
+        raise ValueError("请选择正确的开始日期。") from exc
+    raw = str(fields.get("schedule_text") or "").strip()
+    if not destination or not raw:
+        raise ValueError("请填写目的地和每天的安排。")
+
+    groups: dict[int, list[dict]] = {}
+    current_day = 1
+    groups[current_day] = []
+    for raw_line in raw.splitlines():
+        line = raw_line.strip().lstrip("-• ")
+        if not line:
+            continue
+        heading = MANUAL_DAY_RE.match(line)
+        if heading:
+            current_day = max(1, int(heading.group(1)))
+            groups.setdefault(current_day, [])
+            continue
+        match = MANUAL_TIME_RE.match(line)
+        if not match:
+            continue
+        start_time, end_time, label = match.groups()
+        label = str(label or "").strip()
+        if not label:
+            continue
+        groups.setdefault(current_day, []).append({
+            "start_time": start_time or "",
+            "end_time": end_time or "",
+            "label": label,
+            "category": _manual_item_category(label),
+            "notes": "由你手动制定，可随时继续编辑。",
+        })
+
+    groups = {index: items for index, items in groups.items() if items}
+    if not groups:
+        raise ValueError("没有识别到地点。请按示例分天填写，每行写一个地点。")
+    daily_plan = []
+    for index in sorted(groups):
+        items = groups[index]
+        daily_plan.append({
+            "day_index": index,
+            "date": (start + timedelta(days=index - 1)).isoformat(),
+            "theme": "、".join(item["label"] for item in items[:3]),
+            "why_this_day": "这是你自己制定的当天安排。系统会检查地点顺序和距离。",
+            "transport_strategy": "根据地图距离选择步行、公交或打车",
+            "meal_strategy": "按当天地点就近安排",
+            "fallback_if_fast": "可在附近增加一个地点",
+            "fallback_if_tired": "优先保留最想去的地点",
+            "estimated_cost_total": 0,
+            "items": items,
+        })
+    return {
+        "overview": {"title": title, "summary": "你自己制定的旅行计划，已整理为逐日行程并检查地点距离。"},
+        "input_snapshot": {"目的地": destination, "开始日期": start.isoformat(), "制定方式": "自己制定"},
+        "request_context": {"natural_language_request": "", "manual_constraints": ["行程由用户手动制定"]},
+        "daily_plan": daily_plan,
+        "budget": {"fixed_cost_total": 0, "per_person_cost": 0, "optional_upgrade_total": 0, "breakdown": []},
+        "selected_hotel": {},
+        "selected_transport": {},
+        "booking_items": [],
+        "assumptions": ["费用尚未填写，可在订单与凭证中继续补充。"],
+        "provider_statuses": [],
+        "open_questions": [],
+        "planning_trace": {"engine": "manual", "mode": "manual", "model": "", "used_fallback": False, "details": "用户自行填写逐日安排。"},
+    }
+
+
+def _save_completed_plan(job: GenerationJob, plan: dict, route_adapter: AmapRouteAdapter | None = None) -> None:
+    plan_path = JOB_STORE.plan_path(job.job_id)
+    html_path = JOB_STORE.html_path(job.job_id)
+    excel_path = JOB_STORE.excel_path(job.job_id)
+    enrich_plan_route_maps(plan, route_adapter)
+    save_plan_json(plan_path, plan)
+    html_text = render_result_page(plan, job_id=job.job_id)
+    html_path.write_text(html_text, encoding="utf-8")
+    export_plan_to_excel(plan, excel_path)
+    save_plan_json(LATEST_PLAN_PATH, plan)
+    LATEST_HTML_PATH.write_text(html_text, encoding="utf-8")
+    LATEST_XLSX_PATH.write_bytes(excel_path.read_bytes())
+    JOB_STORE.mark_succeeded(job.job_id, plan_path=plan_path, html_path=html_path, excel_path=excel_path)
 
 
 def _format_constraint_value(value: str) -> str:
@@ -759,22 +872,9 @@ def _run_generation_job(job_id: str, request: TripRequest | None = None) -> None
             ordered_snapshot.update(plan["input_snapshot"])
             plan["input_snapshot"] = ordered_snapshot
 
-        plan_path = JOB_STORE.plan_path(job_id)
-        html_path = JOB_STORE.html_path(job_id)
-        excel_path = JOB_STORE.excel_path(job_id)
-
         JOB_STORE.mark_stage(job_id, stage="render", stage_label="生成结果页", progress=78)
-        save_plan_json(plan_path, plan)
-        html_text = render_result_page(plan, job_id=job_id)
-        html_path.write_text(html_text, encoding="utf-8")
         JOB_STORE.mark_stage(job_id, stage="export", stage_label="导出 Excel", progress=92)
-        export_plan_to_excel(plan, excel_path)
-
-        save_plan_json(LATEST_PLAN_PATH, plan)
-        LATEST_HTML_PATH.write_text(html_text, encoding="utf-8")
-        LATEST_XLSX_PATH.write_bytes(excel_path.read_bytes())
-
-        JOB_STORE.mark_succeeded(job_id, plan_path=plan_path, html_path=html_path, excel_path=excel_path)
+        _save_completed_plan(job, plan, route_adapter if isinstance(route_adapter, AmapRouteAdapter) else None)
     except Exception as exc:  # pragma: no cover
         JOB_STORE.mark_failed(job_id, str(exc))
 
@@ -938,6 +1038,9 @@ class TravelControlTowerHandler(BaseHTTPRequestHandler):
         if path in {"/", ""}:
             self._write_html(render_form_page())
             return
+        if path == "/manual-plan":
+            self._write_html(workspace_ui.render_manual_plan_page())
+            return
         if path.startswith("/api/jobs/"):
             job_id = path.removeprefix("/api/jobs/").strip("/")
             job = JOB_STORE.get(job_id)
@@ -969,6 +1072,33 @@ class TravelControlTowerHandler(BaseHTTPRequestHandler):
                 self._write_json({"error": "job plan not found"}, status=HTTPStatus.NOT_FOUND)
                 return
             self._write_json(payload)
+            return
+        map_match = re.fullmatch(r"/jobs/([^/]+)/maps/(\d+)", path)
+        if map_match:
+            job_id, raw_day_index = map_match.groups()
+            job = JOB_STORE.get(job_id)
+            plan = _load_job_plan(job) if job else None
+            if not job or plan is None:
+                self._write_html("<h1>map not found</h1>", status=HTTPStatus.NOT_FOUND)
+                return
+            day_index = int(raw_day_index)
+            day = next((item for item in plan.get("daily_plan") or [] if int(item.get("day_index") or 0) == day_index), None)
+            route_map = (day or {}).get("route_map") or {}
+            if not route_map.get("available"):
+                self._write_html("<h1>map not available</h1>", status=HTTPStatus.NOT_FOUND)
+                return
+            cache_path = JOB_STORE.job_dir(job_id) / f"map-day-{day_index}.png"
+            if not cache_path.exists():
+                runtime = load_runtime_config()
+                if not runtime.amap_web_key:
+                    self._write_html("<h1>AMAP_WEB_KEY missing</h1>", status=HTTPStatus.SERVICE_UNAVAILABLE)
+                    return
+                params = static_map_params(route_map)
+                params["key"] = runtime.amap_web_key
+                response = requests.get("https://restapi.amap.com/v3/staticmap", params=params, timeout=20)
+                response.raise_for_status()
+                cache_path.write_bytes(response.content)
+            self._write_file(cache_path.read_bytes(), "image/png")
             return
         if path == "/api/ip-location":
             try:
@@ -1108,6 +1238,19 @@ class TravelControlTowerHandler(BaseHTTPRequestHandler):
         if not self._ensure_preview_access(urlparse(self.path)):
             return
         path = urlparse(self.path).path
+        if path == "/manual-plan":
+            fields = self._read_form_fields()
+            try:
+                plan = _parse_manual_schedule(fields)
+                job = JOB_STORE.create(fields)
+                _save_completed_plan(job, plan)
+                self._redirect(f"/results/{job.job_id}")
+            except Exception as exc:
+                self._write_html(
+                    workspace_ui.render_manual_plan_page(fields, error=str(exc)),
+                    status=HTTPStatus.BAD_REQUEST,
+                )
+            return
         if path.startswith("/jobs/") and path.endswith("/edit"):
             job_id = path.removeprefix("/jobs/").removesuffix("/edit").strip("/")
             job = JOB_STORE.get(job_id)

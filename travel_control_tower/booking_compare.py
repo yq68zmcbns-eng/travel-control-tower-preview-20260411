@@ -88,6 +88,30 @@ def hotel_provider_links(city: str, hotel_name: str, check_in: str, check_out: s
     }
 
 
+def _hotel_provider_fields(option: dict, fallback_links: dict[str, str]) -> dict[str, str]:
+    direct_links = option.get("provider_links") or {}
+    price_snapshots = option.get("provider_price_snapshots") or {}
+    ctrip_direct = _text(direct_links.get("ctrip"))
+    fliggy_direct = _text(direct_links.get("fliggy"))
+    if ctrip_direct and fliggy_direct:
+        readiness = "可直接预订"
+    elif ctrip_direct or fliggy_direct:
+        readiness = "候选需复核"
+    else:
+        readiness = "仅搜索入口"
+    return {
+        "readiness": readiness,
+        "ctrip_url": ctrip_direct or fallback_links["ctrip_url"],
+        "fliggy_url": fliggy_direct or fallback_links["fliggy_url"],
+        "ctrip_action": "携程预订这家" if ctrip_direct else "携程搜索这家",
+        "fliggy_action": "飞猪预订这家" if fliggy_direct else "飞猪搜索这家",
+        "ctrip_price": _text(price_snapshots.get("ctrip") or "打开查看实时含税价"),
+        "fliggy_price": _text(price_snapshots.get("fliggy") or "打开查看实时含税价"),
+        "ctrip_link_type": "酒店详情页" if ctrip_direct else "搜索结果页",
+        "fliggy_link_type": "酒店详情页" if fliggy_direct else "搜索结果页",
+    }
+
+
 def flight_provider_links(origin: str, destination: str, depart_date: str, adults: int = 1) -> dict[str, str]:
     origin_code = _airport_code(origin)
     destination_code = _airport_code(destination)
@@ -155,14 +179,16 @@ def build_provider_comparison_rows(plan: dict) -> list[dict[str, str]]:
                 continue
             check_in, check_out = _stay_dates(group, plan)
             links = hotel_provider_links(city, name, check_in, check_out)
+            provider_fields = _hotel_provider_fields(option, links)
             rows.append(
                 {
                     "kind": "酒店",
                     "title": name,
                     "detail": f"{city} · {check_in or '日期待定'} 至 {check_out or '日期待定'} · {int(group.get('nights') or 1)}晚",
                     "price": _text(option.get("price_cny_per_night") or option.get("price") or "价格待平台复核"),
-                    "readiness": "仅搜索入口",
-                    **links,
+                    "why_fit": _text(option.get("why_fit") or group.get("selection_logic")),
+                    "image_url": _text(option.get("image_url") or option.get("main_pic")),
+                    **provider_fields,
                 }
             )
     else:
@@ -174,14 +200,16 @@ def build_provider_comparison_rows(plan: dict) -> list[dict[str, str]]:
             if not name:
                 continue
             city = _text(option.get("city") or city_default)
+            links = hotel_provider_links(city, name, check_in, check_out)
             rows.append(
                 {
                     "kind": "酒店",
                     "title": name,
                     "detail": f"{city} · {check_in or '日期待定'} 至 {check_out or '日期待定'}",
                     "price": _text(option.get("nightly_price") or option.get("price_cny_per_night") or "价格待平台复核"),
-                    "readiness": "仅搜索入口",
-                    **hotel_provider_links(city, name, check_in, check_out),
+                    "why_fit": _text(option.get("why_fit")),
+                    "image_url": _text(option.get("image_url") or option.get("main_pic")),
+                    **_hotel_provider_fields(option, links),
                 }
             )
 

@@ -1690,6 +1690,15 @@
         "booking_readiness": "search_only",
         "readiness_label": "仅搜索入口",
         "price_cny_per_night": "约750-1050元/晚",
+        "provider_links": {
+          "ctrip": "https://hotels.ctrip.com/hotels/10231080.html?checkIn=2027-05-10&checkOut=2027-05-11",
+          "fliggy": "https://hotel.fliggy.com/hotel_detail2.htm?shid=53652032&checkIn=2027-05-10&checkOut=2027-05-11"
+        },
+        "provider_price_snapshots": {
+          "ctrip": "打开查看实时含税价",
+          "fliggy": "FlyAI候选价：¥1xxx/晚"
+        },
+        "image_url": "https://img.alicdn.com/imgextra/i1/6000000002043/O1CN012rCq2a1Qxk6pSfXE8_!!6000000002043-0-hotel.jpg",
         "search_link": "https://www.google.com/search?q=Hotel%20Mi%20Bencoolen%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
         "why_fit": "地铁近、房间小但适合一晚过渡。",
         "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
@@ -1740,6 +1749,15 @@
         "booking_readiness": "search_only",
         "readiness_label": "仅搜索入口",
         "price_cny_per_night": "约1900-2600元/晚",
+        "provider_links": {
+          "ctrip": "https://hotels.ctrip.com/hotels/712600.html?checkIn=2027-05-11&checkOut=2027-05-12",
+          "fliggy": "https://hotel.fliggy.com/hotel_detail2.htm?shid=50362533&checkIn=2027-05-11&checkOut=2027-05-12"
+        },
+        "provider_price_snapshots": {
+          "ctrip": "打开查看实时含税价",
+          "fliggy": "打开查看实时含税价"
+        },
+        "image_url": "https://img.alicdn.com/imgextra/i3/6000000004973/O1CN01RV8Ox61mbggSIHt6t_!!6000000004973-0-hotel.jpg",
         "search_link": "https://www.google.com/search?q=PARKROYAL%20COLLECTION%20Pickering%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
         "why_fit": "建筑、泳池和早餐体验明显，且与牛车水路线相连。",
         "risk": "若双床含早超过2600元，不值得只住一晚。"
@@ -1790,6 +1808,15 @@
         "booking_readiness": "search_only",
         "readiness_label": "仅搜索入口",
         "price_cny_per_night": "约380-600元/晚",
+        "provider_links": {
+          "ctrip": "https://hotels.ctrip.com/hotels/7839752.html?checkIn=2027-05-12&checkOut=2027-05-14",
+          "fliggy": "https://hotel.fliggy.com/hotel_detail2.htm?shid=54622006&checkIn=2027-05-12&checkOut=2027-05-14"
+        },
+        "provider_price_snapshots": {
+          "ctrip": "打开查看实时含税价",
+          "fliggy": "FlyAI候选价：¥4xx/晚"
+        },
+        "image_url": "https://img.alicdn.com/imgextra/i4/6000000007297/O1CN01U6QHkB23m52VbxRrU_!!6000000007297-0-hotel.jpg",
         "search_link": "https://www.google.com/search?q=Areca%20Hotel%20Penang%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
         "why_fit": "传统建筑氛围与老城路线匹配。",
         "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
@@ -1840,6 +1867,15 @@
         "booking_readiness": "search_only",
         "readiness_label": "仅搜索入口",
         "price_cny_per_night": "约450-750元/晚",
+        "provider_links": {
+          "ctrip": "https://hotels.ctrip.com/hotels/684986.html?checkIn=2027-05-14&checkOut=2027-05-16",
+          "fliggy": "https://hotel.fliggy.com/hotel_detail2.htm?shid=50424019&checkIn=2027-05-14&checkOut=2027-05-16"
+        },
+        "provider_price_snapshots": {
+          "ctrip": "打开查看实时含税价",
+          "fliggy": "FlyAI候选价：¥6xx/晚"
+        },
+        "image_url": "https://img.alicdn.com/imgextra/i3/6000000006967/O1CN01zv06u421KwMTWAfU4_!!6000000006967-0-hotel.jpg",
         "search_link": "https://www.google.com/search?q=Artini%20Bisma%20Ubud%20Hotel%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
         "why_fit": "绿意、泳池和位置平衡。",
         "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
@@ -1882,16 +1918,25 @@
       "city": "巴厘岛",
       "area_strategy": "Sanur海边步行区，便于第二天去Nusa Dua。",
       "recommended_option": {
-        "name": "Akana Boutique Hotel Sanur",
+        "name": "Akaya Bali",
         "city": "巴厘岛",
         "area": "Sanur",
         "source": "manual_estimate",
         "status": "estimated",
         "booking_readiness": "search_only",
         "readiness_label": "仅搜索入口",
-        "price_cny_per_night": "约400-650元/晚",
-        "search_link": "https://www.google.com/search?q=Akana%20Boutique%20Hotel%20Sanur%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
-        "why_fit": "一晚过渡，餐饮和海边步行方便。",
+        "price_cny_per_night": "约500-650元/晚",
+        "provider_links": {
+          "ctrip": "https://hotels.ctrip.com/hotels/45758382.html?checkIn=2027-05-16&checkOut=2027-05-17",
+          "fliggy": "https://hotel.fliggy.com/hotel_detail2.htm?shid=60587196&checkIn=2027-05-16&checkOut=2027-05-17"
+        },
+        "provider_price_snapshots": {
+          "ctrip": "打开查看实时含税价",
+          "fliggy": "FlyAI候选价：¥5xx/晚"
+        },
+        "image_url": "https://img.alicdn.com/imgextra/i2/6000000007781/O1CN01Ll2amh27Lkl2JQm1d_!!6000000007781-0-hotel.jpg",
+        "search_link": "https://www.google.com/search?q=Akaya%20Bali%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
+        "why_fit": "飞猪和携程均有明确酒店详情页，位于Sanur餐饮和海边步行区，适合一晚过渡。",
         "risk": "价格、双床房、税费和取消条款需按最终日期复核。"
       },
       "backup_options": [
@@ -1927,6 +1972,15 @@
         "booking_readiness": "search_only",
         "readiness_label": "仅搜索入口",
         "price_cny_per_night": "约2200-3200元/晚",
+        "provider_links": {
+          "ctrip": "https://hotels.ctrip.com/hotels/25195229.html?checkIn=2027-05-17&checkOut=2027-05-18",
+          "fliggy": "https://hotel.fliggy.com/hotel_detail2.htm?shid=56229670&checkIn=2027-05-17&checkOut=2027-05-18"
+        },
+        "provider_price_snapshots": {
+          "ctrip": "打开查看实时含税价",
+          "fliggy": "FlyAI候选价：¥4xxx/晚"
+        },
+        "image_url": "https://img.alicdn.com/imgextra/i3/6000000000571/O1CN01AZF4cY1G5Z3AHL7Jh_!!6000000000571-0-hotel.jpg",
         "search_link": "https://www.google.com/search?q=The%20Apurva%20Kempinski%20Bali%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
         "why_fit": "建筑和度假设施足够形成一次明显升级。",
         "risk": "只买基础房；超过3200元就切换备选。"
@@ -1977,6 +2031,15 @@
         "booking_readiness": "search_only",
         "readiness_label": "仅搜索入口",
         "price_cny_per_night": "约420-650元/晚",
+        "provider_links": {
+          "ctrip": "https://hotels.ctrip.com/hotels/23675445.html?checkIn=2027-05-18&checkOut=2027-05-20",
+          "fliggy": "https://hotel.fliggy.com/hotel_detail2.htm?shid=60572449&checkIn=2027-05-18&checkOut=2027-05-20"
+        },
+        "provider_price_snapshots": {
+          "ctrip": "打开查看实时含税价",
+          "fliggy": "FlyAI候选价：¥3xx/晚"
+        },
+        "image_url": "https://img.alicdn.com/imgextra/i2/6000000005331/O1CN01LZx11W1pFeWcPANS6_!!6000000005331-2-hotel.png",
         "search_link": "https://www.google.com/search?q=citizenM%20Kuala%20Lumpur%20Bukit%20Bintang%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2",
         "why_fit": "位置、设计和价格平衡；需确认双床房是否供应。",
         "risk": "若无双床房直接切换备选。"
@@ -2059,15 +2122,15 @@
       "search_link": "https://www.google.com/search?q=Artini%20Bisma%20Ubud%20Hotel%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2"
     },
     {
-      "name": "Akana Boutique Hotel Sanur",
+      "name": "Akaya Bali",
       "city": "巴厘岛",
       "area": "Sanur",
       "source": "manual_estimate",
       "status": "estimated",
-      "price_cny_per_night": "约400-650元/晚",
-      "why_fit": "适合一晚海边过渡。",
+      "price_cny_per_night": "约500-650元/晚",
+      "why_fit": "位于Sanur餐饮和海边步行区，携程与飞猪均有明确详情页。",
       "risk": "双床房、含税价和取消条款待复核。",
-      "search_link": "https://www.google.com/search?q=Akana%20Boutique%20Hotel%20Sanur%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2"
+      "search_link": "https://www.google.com/search?q=Akaya%20Bali%202027%E5%B9%B45%E6%9C%88%20%E5%8F%8C%E5%BA%8A%E6%88%BF%20%E9%A2%84%E8%AE%A2"
     },
     {
       "name": "The Apurva Kempinski Bali",

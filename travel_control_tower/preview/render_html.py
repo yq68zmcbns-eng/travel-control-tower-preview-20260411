@@ -372,22 +372,49 @@ def render_booking_comparison(plan: dict) -> str:
         return ""
     cards = []
     for item in rows:
+        is_hotel = item.get("kind") == "酒店"
+        image_url = _stringify(item.get("image_url", "")).strip()
+        image_html = (
+            f"<img src='{_esc(image_url)}' alt='{_esc(item.get('title', '酒店'))}' "
+            "style='width:100%;height:170px;object-fit:cover;border-radius:14px;margin-bottom:12px;' "
+            "onerror=\"this.style.display='none'\">"
+            if image_url else ""
+        )
+        why_fit = _stringify(item.get("why_fit", "")).strip()
+        why_html = f"<p style='margin:8px 0 0;color:#4f463d;line-height:1.7;'>推荐理由：{_esc(why_fit)}</p>" if why_fit else ""
+        ctrip_price = _stringify(item.get("ctrip_price") or "进入平台查看实时价")
+        fliggy_price = _stringify(item.get("fliggy_price") or "进入平台查看实时价")
+        ctrip_action = _stringify(item.get("ctrip_action") or ("携程预订这家" if is_hotel else "携程查本航班"))
+        fliggy_action = _stringify(item.get("fliggy_action") or ("飞猪预订这家" if is_hotel else "飞猪查本航班"))
+        ctrip_link_type = _stringify(item.get("ctrip_link_type") or ("酒店详情页" if is_hotel else "同条件航班列表"))
+        fliggy_link_type = _stringify(item.get("fliggy_link_type") or ("酒店详情页" if is_hotel else "同条件航班列表"))
         cards.append(
             "<article style='padding:16px;border:1px solid #e6dccf;border-radius:18px;background:#fbf7f1;'>"
+            f"{image_html}"
             f"<div style='font-size:12px;color:#7d7060;'>{_esc(item.get('kind', ''))} · {_esc(item.get('readiness', '仅搜索入口'))}</div>"
             f"<h3 style='margin:7px 0 6px;'>{_esc(item.get('title', ''))}</h3>"
             f"<div style='color:#6b6258;line-height:1.7;'>{_esc(item.get('detail', ''))}</div>"
             f"<div style='margin-top:7px;font-weight:800;color:#1f3b57;'>{_esc(item.get('price', '价格待平台复核'))}</div>"
-            "<div style='display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;'>"
-            f"<a href='{_esc(item.get('ctrip_url', ''))}' target='_blank' rel='noopener noreferrer' style='display:inline-flex;padding:10px 14px;border-radius:12px;background:#287dfa;color:#fff;text-decoration:none;font-weight:800;'>携程同条件搜索</a>"
-            f"<a href='{_esc(item.get('fliggy_url', ''))}' target='_blank' rel='noopener noreferrer' style='display:inline-flex;padding:10px 14px;border-radius:12px;background:#ff6a00;color:#fff;text-decoration:none;font-weight:800;'>飞猪同条件搜索</a>"
-            "</div></article>"
+            f"{why_html}"
+            "<div style='display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px;'>"
+            "<div style='padding:12px;border-radius:14px;background:#eef5ff;border:1px solid #cfe0ff;'>"
+            "<strong style='color:#1e66d0;'>携程</strong>"
+            f"<div style='font-size:12px;color:#6b7280;margin-top:5px;'>{_esc(ctrip_link_type)}</div>"
+            f"<div style='min-height:42px;margin:7px 0;font-weight:750;'>{_esc(ctrip_price)}</div>"
+            f"<a href='{_esc(item.get('ctrip_url', ''))}' target='_blank' rel='noopener noreferrer' style='display:flex;justify-content:center;padding:10px;border-radius:10px;background:#287dfa;color:#fff;text-decoration:none;font-weight:800;'>{_esc(ctrip_action)}</a>"
+            "</div>"
+            "<div style='padding:12px;border-radius:14px;background:#fff3e8;border:1px solid #ffd7b5;'>"
+            "<strong style='color:#d95700;'>飞猪</strong>"
+            f"<div style='font-size:12px;color:#6b7280;margin-top:5px;'>{_esc(fliggy_link_type)}</div>"
+            f"<div style='min-height:42px;margin:7px 0;font-weight:750;'>{_esc(fliggy_price)}</div>"
+            f"<a href='{_esc(item.get('fliggy_url', ''))}' target='_blank' rel='noopener noreferrer' style='display:flex;justify-content:center;padding:10px;border-radius:10px;background:#ff6a00;color:#fff;text-decoration:none;font-weight:800;'>{_esc(fliggy_action)}</a>"
+            "</div></div></article>"
         )
     return (
         "<section class='panel' id='provider-comparison' style='margin-top:20px;'>"
         "<div class='eyebrow'>携程 × 飞猪</div>"
-        "<h2 style='margin-top:10px;'>机票和酒店双平台对比入口</h2>"
-        "<p style='margin:8px 0 16px;color:#6b6258;line-height:1.8;'>两个按钮使用相同路线、日期、人数或酒店名称。页面显示的是规划估价，不是实时成交价；付款前请比较含税总价、行李、早餐、房型、取消规则和支付费用。</p>"
+        "<h2 style='margin-top:10px;'>推荐酒店与航班双平台对比</h2>"
+        "<p style='margin:8px 0 16px;color:#6b6258;line-height:1.8;'>酒店按钮优先直达指定酒店详情页，航班按钮直达同路线和日期的结果页。平台价格会随库存和会员身份变化；页面只展示已核验的候选价或规划估价，付款前仍要比较含税总价、早餐、房型、行李和退改规则。</p>"
         f"<div style='display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;'>{''.join(cards)}</div>"
         "</section>"
     )

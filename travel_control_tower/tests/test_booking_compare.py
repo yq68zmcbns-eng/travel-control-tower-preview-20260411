@@ -32,7 +32,15 @@ class BookingCompareTests(unittest.TestCase):
                     "dates": "2027-05-10",
                     "nights": 1,
                     "city": "新加坡",
-                    "recommended_option": {"name": "Hotel Mi Bencoolen", "price_cny_per_night": "约750-1050元/晚"},
+                    "recommended_option": {
+                        "name": "Hotel Mi Bencoolen",
+                        "price_cny_per_night": "约750-1050元/晚",
+                        "provider_links": {
+                            "ctrip": "https://hotels.ctrip.com/hotels/10231080.html",
+                            "fliggy": "https://router.feizhu.com/hotel-mi",
+                        },
+                        "provider_price_snapshots": {"fliggy": "FlyAI候选价：¥1xxx/晚"},
+                    },
                 }
             ],
         }
@@ -62,9 +70,11 @@ class BookingCompareTests(unittest.TestCase):
 
         self.assertEqual(len(rows), 3)
         self.assertIn("Hotel Mi Bencoolen", html)
-        self.assertIn("携程同条件搜索", html)
-        self.assertIn("飞猪同条件搜索", html)
-        self.assertIn("仅搜索入口", html)
+        self.assertIn("携程预订这家", html)
+        self.assertIn("飞猪预订这家", html)
+        self.assertIn("可直接预订", html)
+        self.assertIn("FlyAI候选价：¥1xxx/晚", html)
+        self.assertEqual(rows[0]["ctrip_link_type"], "酒店详情页")
 
 
 if __name__ == "__main__":

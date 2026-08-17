@@ -232,9 +232,9 @@ def _write_provider_comparison(sheet, plan: dict) -> None:
     sheet.cell(
         row=2,
         column=2,
-        value="这些链接使用同一路线、日期、人数或酒店名称。页面估价不等于成交价，请比较含税总价、行李、早餐、房型和取消规则。",
+        value="酒店入口优先直达指定酒店详情页，航班入口使用同一路线、日期和人数。候选价不等于成交价，请比较含税总价、行李、早餐、房型和取消规则。",
     )
-    headers = ["类型", "项目", "同条件", "规划估价", "预订状态", "携程入口", "飞猪入口"]
+    headers = ["类型", "项目", "同条件", "规划估价", "预订状态", "携程显示价", "飞猪显示价", "携程入口", "飞猪入口"]
     for col, header in enumerate(headers, start=1):
         sheet.cell(row=4, column=col, value=header)
         sheet.cell(row=4, column=col).font = Font(bold=True)
@@ -246,17 +246,19 @@ def _write_provider_comparison(sheet, plan: dict) -> None:
             item.get("detail", ""),
             item.get("price", ""),
             item.get("readiness", ""),
-            "打开携程",
-            "打开飞猪",
+            item.get("ctrip_price", "进入平台查看实时价"),
+            item.get("fliggy_price", "进入平台查看实时价"),
+            item.get("ctrip_action", "打开携程"),
+            item.get("fliggy_action", "打开飞猪"),
         ]
         for col, value in enumerate(values, start=1):
             sheet.cell(row=row, column=col, value=value)
-        sheet.cell(row=row, column=6).hyperlink = item.get("ctrip_url", "")
-        sheet.cell(row=row, column=7).hyperlink = item.get("fliggy_url", "")
-        sheet.cell(row=row, column=6).style = "Hyperlink"
-        sheet.cell(row=row, column=7).style = "Hyperlink"
+        sheet.cell(row=row, column=8).hyperlink = item.get("ctrip_url", "")
+        sheet.cell(row=row, column=9).hyperlink = item.get("fliggy_url", "")
+        sheet.cell(row=row, column=8).style = "Hyperlink"
+        sheet.cell(row=row, column=9).style = "Hyperlink"
         row += 1
-    _set_widths(sheet, {1: 12, 2: 38, 3: 42, 4: 28, 5: 16, 6: 22, 7: 22})
+    _set_widths(sheet, {1: 12, 2: 38, 3: 42, 4: 28, 5: 16, 6: 24, 7: 24, 8: 22, 9: 22})
     _wrap_all(sheet)
 
 

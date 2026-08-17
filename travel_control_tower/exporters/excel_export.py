@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+from io import BytesIO
 from pathlib import Path
 
-from openpyxl import Workbook
+from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
+
+from ..booking_compare import build_provider_comparison_rows
 
 
 CATEGORY_COLORS = {
@@ -27,12 +30,23 @@ def export_plan_to_excel(plan: dict, output_path: Path) -> Path:
     _write_selected(workbook.create_sheet("当前选择"), plan)
     _write_budget(workbook.create_sheet("预算"), plan)
     _write_booking(workbook.create_sheet("预定事项"), plan)
+    _write_provider_comparison(workbook.create_sheet("携程飞猪对比"), plan)
     _write_itinerary(workbook.create_sheet("行程明细"), plan)
     _write_gantt(workbook.create_sheet("行程甘特图"), plan)
     _write_route_gantt(workbook.create_sheet("路线甘特图"), plan)
 
     workbook.save(output_path)
     return output_path
+
+
+def add_provider_comparison_to_workbook(source_path: Path, plan: dict) -> bytes:
+    workbook = load_workbook(source_path)
+    if "携程飞猪对比" in workbook.sheetnames:
+        del workbook["携程飞猪对比"]
+    _write_provider_comparison(workbook.create_sheet("携程飞猪对比", 1), plan)
+    output = BytesIO()
+    workbook.save(output)
+    return output.getvalue()
 
 
 def _title_cell(sheet, row: int, title: str) -> None:
@@ -209,6 +223,40 @@ def _write_booking(sheet, plan: dict) -> None:
         row += 1
 
     _set_widths(sheet, {1: 32, 2: 14, 3: 12, 4: 18, 5: 28, 6: 28, 7: 52, 8: 64})
+    _wrap_all(sheet)
+
+
+def _write_provider_comparison(sheet, plan: dict) -> None:
+    _title_cell(sheet, 1, "携程与飞猪同条件对比")
+    sheet.cell(row=2, column=1, value="说明")
+    sheet.cell(
+        row=2,
+        column=2,
+        value="这些链接使用同一路线、日期、人数或酒店名称。页面估价不等于成交价，请比较含税总价、行李、早餐、房型和取消规则。",
+    )
+    headers = ["类型", "项目", "同条件", "规划估价", "预订状态", "携程入口", "飞猪入口"]
+    for col, header in enumerate(headers, start=1):
+        sheet.cell(row=4, column=col, value=header)
+        sheet.cell(row=4, column=col).font = Font(bold=True)
+    row = 5
+    for item in build_provider_comparison_rows(plan):
+        values = [
+            item.get("kind", ""),
+            item.get("title", ""),
+            item.get("detail", ""),
+            item.get("price", ""),
+            item.get("readiness", ""),
+            "打开携程",
+            "打开飞猪",
+        ]
+        for col, value in enumerate(values, start=1):
+            sheet.cell(row=row, column=col, value=value)
+        sheet.cell(row=row, column=6).hyperlink = item.get("ctrip_url", "")
+        sheet.cell(row=row, column=7).hyperlink = item.get("fliggy_url", "")
+        sheet.cell(row=row, column=6).style = "Hyperlink"
+        sheet.cell(row=row, column=7).style = "Hyperlink"
+        row += 1
+    _set_widths(sheet, {1: 12, 2: 38, 3: 42, 4: 28, 5: 16, 6: 22, 7: 22})
     _wrap_all(sheet)
 
 

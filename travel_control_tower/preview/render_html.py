@@ -4,6 +4,8 @@ import html
 import json
 from pathlib import Path
 
+from ..booking_compare import build_provider_comparison_rows
+
 
 COLORS = {
     "交通": ("#dbeafe", "#1d4ed8"),
@@ -364,6 +366,33 @@ def _kv(data: dict) -> str:
     return "".join(rows) or "<div class='empty'>暂无内容。</div>"
 
 
+def render_booking_comparison(plan: dict) -> str:
+    rows = build_provider_comparison_rows(plan)
+    if not rows:
+        return ""
+    cards = []
+    for item in rows:
+        cards.append(
+            "<article style='padding:16px;border:1px solid #e6dccf;border-radius:18px;background:#fbf7f1;'>"
+            f"<div style='font-size:12px;color:#7d7060;'>{_esc(item.get('kind', ''))} · {_esc(item.get('readiness', '仅搜索入口'))}</div>"
+            f"<h3 style='margin:7px 0 6px;'>{_esc(item.get('title', ''))}</h3>"
+            f"<div style='color:#6b6258;line-height:1.7;'>{_esc(item.get('detail', ''))}</div>"
+            f"<div style='margin-top:7px;font-weight:800;color:#1f3b57;'>{_esc(item.get('price', '价格待平台复核'))}</div>"
+            "<div style='display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;'>"
+            f"<a href='{_esc(item.get('ctrip_url', ''))}' target='_blank' rel='noopener noreferrer' style='display:inline-flex;padding:10px 14px;border-radius:12px;background:#287dfa;color:#fff;text-decoration:none;font-weight:800;'>携程同条件搜索</a>"
+            f"<a href='{_esc(item.get('fliggy_url', ''))}' target='_blank' rel='noopener noreferrer' style='display:inline-flex;padding:10px 14px;border-radius:12px;background:#ff6a00;color:#fff;text-decoration:none;font-weight:800;'>飞猪同条件搜索</a>"
+            "</div></article>"
+        )
+    return (
+        "<section class='panel' id='provider-comparison' style='margin-top:20px;'>"
+        "<div class='eyebrow'>携程 × 飞猪</div>"
+        "<h2 style='margin-top:10px;'>机票和酒店双平台对比入口</h2>"
+        "<p style='margin:8px 0 16px;color:#6b6258;line-height:1.8;'>两个按钮使用相同路线、日期、人数或酒店名称。页面显示的是规划估价，不是实时成交价；付款前请比较含税总价、行李、早餐、房型、取消规则和支付费用。</p>"
+        f"<div style='display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;'>{''.join(cards)}</div>"
+        "</section>"
+    )
+
+
 def render_plan_html(plan: dict | object) -> str:
     plan = _plan_to_dict(plan)
     overview = plan.get("overview", {}) or {}
@@ -379,6 +408,7 @@ def render_plan_html(plan: dict | object) -> str:
     request_context = plan.get("request_context", {}) or {}
     price_scan_summary = plan.get("price_scan_summary") or {}
     price_scan_candidates = plan.get("price_scan_candidates", []) or []
+    booking_comparison_html = render_booking_comparison(plan)
 
     assumptions_html = "".join(f"<li>{_esc(_stringify(item))}</li>" for item in assumptions) or "<li>暂无额外假设。</li>"
     booking_cards: list[str] = []
@@ -497,6 +527,8 @@ def render_plan_html(plan: dict | object) -> str:
       <h2>逐日摘要</h2>
       <div class="day-grid">{_day_cards(daily_plan)}</div>
     </section>
+
+    {booking_comparison_html}
 
     <section class="layout">
       <section class="stack">

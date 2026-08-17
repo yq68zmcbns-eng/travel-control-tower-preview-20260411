@@ -18,11 +18,11 @@ import requests
 from ..adapters.route_amap import AmapRouteAdapter
 from ..adapters.route_google import GoogleRouteAdapter
 from ..adapters.stable_search_flyai import StableFlyAISearchAdapter
-from ..exporters.excel_export import export_plan_to_excel
+from ..exporters.excel_export import add_provider_comparison_to_workbook, export_plan_to_excel
 from ..planner_core.models import TripRequest
 from ..planner_core.pipeline import build_plan_stub
 from ..planner_core.planning_agent import CodexExecPlanningAgent, OpenAIPlanningAgent
-from ..preview.render_html import render_plan_html
+from ..preview.render_html import render_booking_comparison, render_plan_html
 from ..runtime_config import load_runtime_config
 from . import form_ui
 from . import workspace_ui
@@ -1047,7 +1047,15 @@ class TravelControlTowerHandler(BaseHTTPRequestHandler):
             if not FEATURED_HTML_PATH.exists():
                 self._write_html("<h1>featured plan not found</h1>", status=HTTPStatus.NOT_FOUND)
             else:
-                self._write_html(FEATURED_HTML_PATH.read_text(encoding="utf-8"))
+                featured_html = FEATURED_HTML_PATH.read_text(encoding="utf-8")
+                featured_plan = _load_plan_payload(FEATURED_PLAN_PATH) or {}
+                comparison = render_booking_comparison(featured_plan)
+                if comparison:
+                    if '<main class="page">' in featured_html:
+                        featured_html = featured_html.replace('<main class="page">', '<main class="page">' + comparison, 1)
+                    else:
+                        featured_html = featured_html.replace("<main>", "<main>" + comparison, 1)
+                self._write_html(featured_html)
             return
         if path == "/featured/plan":
             payload = _load_plan_payload(FEATURED_PLAN_PATH)
@@ -1060,8 +1068,9 @@ class TravelControlTowerHandler(BaseHTTPRequestHandler):
             if not FEATURED_XLSX_PATH.exists():
                 self._write_html("<h1>featured excel not found</h1>", status=HTTPStatus.NOT_FOUND)
             else:
+                featured_plan = _load_plan_payload(FEATURED_PLAN_PATH) or {}
                 self._write_file(
-                    FEATURED_XLSX_PATH.read_bytes(),
+                    add_provider_comparison_to_workbook(FEATURED_XLSX_PATH, featured_plan),
                     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     download_name="hangzhou-southeast-asia-2027.xlsx",
                 )

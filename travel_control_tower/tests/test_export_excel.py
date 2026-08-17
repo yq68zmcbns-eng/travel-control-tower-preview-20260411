@@ -33,7 +33,7 @@ class ExcelExportTests(unittest.TestCase):
             workbook = load_workbook(output_path)
             self.assertEqual(
                 workbook.sheetnames,
-                ["总览", "当前选择", "预算", "预定事项", "行程明细", "行程甘特图", "路线甘特图"],
+                ["总览", "当前选择", "预算", "预定事项", "携程飞猪对比", "行程明细", "行程甘特图", "路线甘特图"],
             )
             self.assertEqual(workbook["总览"]["A1"].value, plan["overview"]["title"])
             self.assertEqual(workbook["当前选择"]["A1"].value, "当前选择")
@@ -41,6 +41,8 @@ class ExcelExportTests(unittest.TestCase):
             self.assertEqual(workbook["预定事项"]["A1"].value, "预定事项")
             self.assertEqual(workbook["预定事项"]["E3"].value, "为什么现在订")
             self.assertEqual(workbook["预定事项"]["F3"].value, "拖晚的风险")
+            self.assertEqual(workbook["携程飞猪对比"]["F4"].value, "携程入口")
+            self.assertEqual(workbook["携程飞猪对比"]["G4"].value, "飞猪入口")
             self.assertEqual(workbook["行程明细"]["K3"].value, "交通方式")
             self.assertEqual(workbook["行程明细"]["L3"].value, "起点")
             self.assertEqual(workbook["行程明细"]["M3"].value, "终点")
